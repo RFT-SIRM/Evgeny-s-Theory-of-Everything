@@ -1,4 +1,4 @@
-name: Documentation integrity
+name: Documentation and reference audit
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  docs:
+  docs-and-arithmetic-audit:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,3 +22,7 @@ jobs:
           python-version: "3.12"
       - name: Validate documentation structure and provenance
         run: python scripts/check_docs.py
+      - name: Print recurrence arithmetic audit
+        run: python computational/audit_recurrence.py
+      - name: Test recurrence arithmetic audit
+        run: python -m unittest discover -s tests -p 'test_reference_recurrence_audit.py' -v

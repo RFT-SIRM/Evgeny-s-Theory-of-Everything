@@ -8,12 +8,15 @@ For each proposed recurrence of the form
 \]
 determine the exact starting level, parameter domain, and operator family for which it holds.
 
+An arithmetic audit of the published θ = π/2 reference table found that the first transition 1→2 has a different implied constant from transitions 2→3 and 3→4 for H⁶, H⁸, and H¹⁰. This is a warning about the claimed starting range, not a refutation of a recurrence that may hold from a later level.
+
 Requirements:
 - define Δ_m and the sign convention precisely;
 - estimate or derive C(θ) independently of the transition used to test the recurrence;
 - test at least one additional level not used to fit or define the constant;
 - include base cases and exceptional levels;
-- distinguish floating-point tolerance from exact equality.
+- distinguish floating-point tolerance from exact equality;
+- regenerate the source matrix traces rather than relying only on the published table.
 
 ## OP-2 — Structural derivation of higher-moment laws
 

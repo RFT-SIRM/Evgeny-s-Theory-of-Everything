@@ -26,7 +26,7 @@ Its documented central result is a closed fourth-moment trace defect:
 \]
 The source repository reports a Lean 4 formalization of this fourth-moment identity. The exact theorem statement, definitions, assumptions, and reproducible build command must be taken from the source formalization; this overview is not a substitute for them.
 
-Higher moments \(H^6,H^8,H^{10}\) remain a separate research strand. Numerical tables and proposed recurrences must not be described as general analytic theorems unless a proof is supplied.
+Higher moments \(H^6,H^8,H^{10}\) remain a separate research strand. An arithmetic audit of the published reference table found a first-transition discrepancy in the proposed constant-coefficient recurrence; see [Audit 001](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md). This audit uses the published values and does not yet independently rerun the operator matrices.
 
 ### 2. Signed Z₂-flux and spectral-decimation research
 
@@ -56,6 +56,7 @@ Use these labels consistently in documentation, issues, and commit messages:
 - `MATHEMATICAL_FRAMEWORK.md` — definitions and the proposed cross-project framework.
 - `references/SOURCE_REPOSITORIES.md` — source repositories and provenance boundaries.
 - `computational/REPRODUCIBILITY.md` — computational reporting requirements.
+- `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of the published H⁶/H⁸/H¹⁰ table.
 - `formalization/README.md` — formal proof integration policy.
 
 ## Current status
