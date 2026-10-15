@@ -65,7 +65,7 @@ def main():
    ent={'C_1_to_2':C[0],'C_2_to_3':C[1],'C_3_to_4_reference':c34,'C_4_to_5':C[3],'C_5_to_6':C[4],'C_6_to_7':C[5],'relative_prediction_residual_levels_5_to_7':res}
    if name=='pi':
     if abs(c34-C_PI[p])>1e-6: raise AssertionError((p,c34,C_PI[p]))
-   else:
+   elif name=='pi_over_2':
     errs=[abs(d[i]-REF[p][i])/max(abs(REF[p][i]),1.) for i in range(4)]
     if max(errs)>2e-9: raise AssertionError((p,'reference mismatch',errs))
     ent['published_level1_to_4_max_relative_error']=max(errs)

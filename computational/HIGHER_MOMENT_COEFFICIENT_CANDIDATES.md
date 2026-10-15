@@ -62,7 +62,7 @@ R_2^{(8)}(\theta)={}&87024+17984\cos\phi+71040\sin\phi\\
 
 \[
 \begin{aligned}
-R_2^{(10)}(\theta)={}&-1751949+2621560\cos\phi+5497240\sin\phi\\
+R_2^{(10)}(\theta)={}&-1751950+2621560\cos\phi+5497240\sin\phi\\
 &+1660950\cos(2\phi)-103570\sin(2\phi)\\
 &-2618620\cos(3\phi)-1831380\sin(3\phi)\\
 &+90970\cos(4\phi)+51800\sin(4\phi)\\
