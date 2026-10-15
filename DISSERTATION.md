@@ -37,7 +37,7 @@ Let $G_m$ be the finite graph at level $m$ in the specified Sierpiński-gasket a
 For even $p$, define
 
 $$
-\Delta_m^{(p)}(\theta)=\operatorname{Tr}(H_C(m,\theta)^p)-\operatorname{Tr}(H_{C'}(m,\theta)^p).
+\Delta_m^{(p)}(\theta)=\mathrm{Tr}(H_C(m,\theta)^p)-\mathrm{Tr}(H_{C'}(m,\theta)^p).
 $$
 
 For $m \geq 2$, define the transition residual
@@ -92,7 +92,7 @@ Every operator entry has Fourier coefficients with denominator dividing 2. A pro
 The graph family has maximum vertex degree at most 4. The documented block estimates bound the diagonal block norm by 4 and the connection-adjacency norm by 4, giving $\|H\|\leq 8$. For dimension $2n_m$,
 
 $$
-|\operatorname{Tr}(H^p)|\leq 2n_m 8^p.
+|\mathrm{Tr}(H^p)|\leq 2n_m 8^p.
 $$
 
 These bounds induce bounds on the scaled Fourier coefficients. The product of the three primes exceeds twice the applicable coefficient bound. If the candidate and true coefficient agree modulo each prime, their difference is divisible by the CRT modulus; the size bound then forces the difference to be zero.
