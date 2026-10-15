@@ -58,9 +58,9 @@ equivalently,
 \Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta),\quad m\geq3.
 \]
 
-The first transition, R_2, is treated separately from the later-transition candidate R_4. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining C_m = Delta_m - 3 Delta_(m-1) would make the recurrence true by definition and provide no evidence of level independence.
+The first transition, $R_2^{(p)}$, is treated separately from the later-transition candidate $R_4^{(p)}$. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining C_m = Delta_m - 3 Delta_(m-1) would make the recurrence true by definition and provide no evidence of level independence.
 
-Set phi = theta/2. Since the source operator entries are linear in cos(phi) and sin(phi), products of p entries have Fourier modes of order at most p. The 21 sample points theta_j = 4 pi j / 21, j = 0,...,20, are used for moments through p = 10. The exact certificate uses finite-field transforms and a uniqueness argument rather than relying on floating-point interpolation alone.
+Set $\phi=\theta/2$. Since the source operator entries are linear in $\cos\phi$ and $\sin\phi$, products of $p$ entries have Fourier modes of order at most $p$. The 21 sample points are $\theta_j=4\pi j/21$ for $j=0,1,\ldots,20$, and are used for moments through $p=10$. The exact certificate uses finite-field transforms and a uniqueness argument rather than relying on floating-point interpolation alone.
 
 ## 3. Fourth-moment result
 
@@ -89,7 +89,7 @@ Each prime is 1 modulo 84, providing roots needed for the 21-point transform and
 
 Every operator entry has Fourier coefficients with denominator dividing 2. A product of p entries therefore has denominator dividing 2^p, so 2^p times each coefficient is integral under the stated construction. The certificate uses this denominator control to compare integer coefficients modulo the three primes.
 
-The graph family has maximum vertex degree at most 4. The documented block estimates bound the diagonal block norm by 4 and the connection-adjacency norm by 4, giving ||H|| <= 8. For dimension 2 n_m,
+The graph family has maximum vertex degree at most 4. The documented block estimates bound the diagonal block norm by 4 and the connection-adjacency norm by 4, giving $\|H\|\leq 8$. For dimension $2n_m$,
 
 \[
 |\operatorname{Tr}(H^p)|\leq 2n_m 8^p.
@@ -129,7 +129,7 @@ The certified finite-level formulas show that R_2^(p) differs from R_4^(p). The 
 R_2^{(p)}(\theta)-R_4^{(p)}(\theta)=\sin^2(\phi)Q_p(\phi),\quad \phi=\theta/2.
 \]
 
-For p = 6, the reported quotient is Q_6(phi) = -24; for p = 8 and p = 10 it contains additional trigonometric modes. The exact coefficients are recorded in [HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md).
+For $p=6$, the reported quotient is $Q_6(\phi)=-24$; for $p=8$ and $p=10$ it contains additional trigonometric modes. The exact coefficients are recorded in [HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md).
 
 The factor implies that the correction vanishes at theta = 0 and theta = 2 pi. This is an algebraic property of the finite-level formulas, not yet a derivation from the recursive graph structure. Possible explanations involving new vertices, boundary/corner effects, newly available closed walks, or incomplete cancellation are hypotheses, not established results.
 
