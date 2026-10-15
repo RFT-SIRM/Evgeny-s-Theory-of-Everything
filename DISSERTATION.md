@@ -11,7 +11,7 @@
 
 This dissertation consolidates a research programme concerning trace defects of recursively constructed graph operators, focusing on Sierpinski-gasket approximations, SU(2)-connected operators, higher even trace moments, and a separate programme on signed Z2-flux Laplacians and spectral decimation. It distinguishes four kinds of claims: an upstream fourth-moment result reported as Lean-formalized; exact finite-level Fourier-coefficient certificates for selected higher-moment residuals; numerical recurrence checks at finitely many levels and angles; and universal recurrence statements that remain conjectural.
 
-For p in {6, 8, 10}, define the trace defect Delta_m^(p)(theta) between the specified SU(2)-connected operator and its commuting control at graph level m. Define R_m^(p)(theta) = Delta_m^(p)(theta) - 3 Delta_(m-1)^(p)(theta). The candidate recurrence asserts that R_m^(p)(theta) is independent of m for m >= 3, while the first transition m = 2 is exceptional. A modular calculation over three finite fields, together with Fourier-mode and denominator bounds, an operator-norm estimate, and a Chinese-remainder-theorem uniqueness argument, certifies the stated Fourier coefficients of R_2^(p) and R_4^(p) for the three moments. Independent sparse-matrix-power calculations check predictions through level 7 at five angles. These results are meaningful finite-level evidence; they do not establish the all-level recurrence.
+For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. Define the residual by $R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta)$. The candidate recurrence asserts that $R_m^{(p)}(\theta)$ is independent of $m$ for $m\geq3$, while the first transition $m=2$ is exceptional. A modular calculation over three finite fields, together with Fourier-mode and denominator bounds, an operator-norm estimate, and a Chinese-remainder-theorem uniqueness argument, certifies the stated Fourier coefficients of $R_2^{(p)}$ and $R_4^{(p)}$ for these moments. Independent sparse-matrix-power calculations check predictions through level 7 at five angles. These results are finite-level evidence; they do not establish the all-level recurrence.
 
 A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The dissertation concludes with a proof-oriented agenda: derive the recurrence from graph/operator recursion, explain the exceptional base transition, formalize the all-level result where feasible, and establish any cross-model bridge only after defining and proving a precise mapping.
 
@@ -32,7 +32,7 @@ The work has five goals:
 
 ## 2. Mathematical setting
 
-Let G_m be the finite graph at level m in the specified Sierpinski-gasket approximation. Let H_C(m, theta) be the SU(2)-connected operator and H_Cprime(m, theta) the commuting control operator from the pinned source construction. Their exact definitions, boundary conventions, dimensions, and connection data are those of the upstream source and must not be silently changed.
+Let $G_m$ be the finite graph at level $m$ in the specified Sierpiński-gasket approximation. Let $H_C(m,\theta)$ be the SU(2)-connected operator and $H_{C'}(m,\theta)$ the commuting control operator from the pinned source construction. Their exact definitions, boundary conventions, dimensions, and connection data are those of the upstream source and must not be silently changed.
 
 For even $p$, define
 
@@ -60,7 +60,7 @@ $$
 
 The first transition, $R_2^{(p)}$, is treated separately from the later-transition candidate $R_4^{(p)}$. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining $C_m=\Delta_m-3\Delta_{m-1}$ would make the recurrence true by definition and provide no evidence of level independence.
 
-Set $\phi=\theta/2$. Since the source operator entries are linear in $\cos\phi$ and $\sin\phi$, products of $p$ entries have Fourier modes of order at most $p$. The 21 sample points are $\theta_j=4\pi j/21$ for $j=0,1,\ldots,20$, and are used for moments through $p=10$. The exact certificate uses finite-field transforms and a uniqueness argument rather than relying on floating-point interpolation alone.
+Set $\phi=\theta/2$. Since the source operator entries are linear in $\cos\phi$ and $\sin\phi$, products of $p$ entries have Fourier modes of order at most $p$. The 21 sample points are $\theta_j=\frac{4\pi j}{21}$ for $j=0,1,\ldots,20$, and are used for moments through $p=10$. The exact certificate uses finite-field transforms and a uniqueness argument rather than relying on floating-point interpolation alone.
 
 ## 3. Fourth-moment result
 
@@ -117,13 +117,13 @@ The repository includes:
 
 The sparse implementation reconstructs the graph and operator and computes traces through sparse matrix powers without using eigenspectra. It is an independent numerical route, not an independent mathematical definition: it still aims to implement the same operator family.
 
-The recurrence note reports maximum relative residuals on the level-5 13-angle grid of approximately 1.47e-12 for H^6, 1.80e-12 for H^8, and 8.82e-13 for H^10. On the level-6 three-angle holdout, the reported maxima are approximately 9.28e-14, 6.74e-14, and 3.56e-14, respectively. The sparse level-7 report provides the exact angle set, tables, commands, and limitations.
+The recurrence note reports maximum relative residuals on the level-5 13-angle grid of approximately $1.47\times10^{-12}$ for $H^6$, $1.80\times10^{-12}$ for $H^8$, and $8.82\times10^{-13}$ for $H^{10}$. On the level-6 three-angle holdout, the reported maxima are approximately $9.28\times10^{-14}$, $6.74\times10^{-14}$, and $3.56\times10^{-14}$, respectively. The sparse level-7 report provides the exact angle set, tables, commands, and limitations.
 
 These small residuals support the candidate but are not universal error bounds. A finite set of angles cannot establish an identity for all angles, and a finite set of graph levels cannot establish a statement for every level. Independent implementations reduce some shared-code risks but may still share mathematical assumptions and graph conventions.
 
 ## 6. The exceptional first transition
 
-The certified finite-level formulas show that R_2^(p) differs from R_4^(p). The companion report factors the correction as
+The certified finite-level formulas show that $R_2^{(p)}$ differs from $R_4^{(p)}$. The companion report factors the correction as
 
 $$
 R_2^{(p)}(\theta)-R_4^{(p)}(\theta)=\sin^2(\phi)Q_p(\phi),\quad \phi=\theta/2.
@@ -171,7 +171,7 @@ Failed runs should remain in history as evidence tied to their original commit. 
 
 ### Priority 1: prove the all-level recurrence
 
-Prove R_m^(p)(theta) = R_4^(p)(theta) for every m >= 3, p in {6, 8, 10}, and all stated admissible angles. Candidate approaches include closed-walk expansions, block-operator recursion, cancellation of connection-dependent path classes, and representation-theoretic identities. These are research directions, not established results.
+Prove $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\geq3$, $p\in\{6,8,10\}$, and every stated admissible angle. Candidate approaches include closed-walk expansions, block-operator recursion, cancellation of connection-dependent path classes, and representation-theoretic identities. These are research directions, not established results.
 
 ### Priority 2: derive the base correction
 
