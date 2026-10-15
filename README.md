@@ -20,7 +20,9 @@ For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 
 - [Level-6 machine-readable results](computational/data/higher_moment_level6_3angles.json)
 - [Consolidated recurrence evidence note](computational/HIGHER_MOMENT_RECURRENCE_NOTE.md)
 - [Independent sparse level-7 holdout report](computational/HIGHER_MOMENT_SPARSE_LEVEL7.md)
+- [Higher-moment Fourier coefficient candidates](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md)
 - [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
+- [Fourier coefficient candidate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
 
 The candidate recurrence appears numerically stable from the transition \(2\to3\) onward on the tested finite set; the first transition \(1\to2\) is exceptional at every nonzero tested angle. This is numerical evidence, not a universal theorem. The exact coefficient functions \(C_6(\theta),C_8(\theta),C_{10}(\theta)\) and a proof for all levels and angles remain open.
 
@@ -69,6 +71,7 @@ No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplac
 - computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md — arithmetic audit of published values.
 - computational/HIGHER_MOMENT_RECURRENCE_NOTE.md — numerical evidence and proof-closure criteria.
 - computational/HIGHER_MOMENT_SPARSE_LEVEL7.md — sparse-trace holdout through level 7, without eigenspectrum evaluation.
+- computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md — numerically reconstructed Fourier candidates for the higher-moment coefficients and exceptional first transition.
 - MILESTONE_AND_RELEASE_CHECKLIST.md — milestone and mathematical closure criteria.
 - FINAL_STATUS.md — current-stage closure report.
 - computational/data/ — committed machine-readable calculation outputs.

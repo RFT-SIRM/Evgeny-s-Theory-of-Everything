@@ -1,0 +1,36 @@
+name: Higher-moment Fourier coefficient candidates
+on:
+  push:
+    branches: [main]
+    paths:
+      - "computational/derive_higher_moment_coefficients.py"
+      - "computational/independent_sparse_level7.py"
+      - ".github/workflows/higher-moment-coefficient-candidates.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "computational/derive_higher_moment_coefficients.py"
+      - "computational/independent_sparse_level7.py"
+      - ".github/workflows/higher-moment-coefficient-candidates.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coefficient-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependencies
+        run: python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
+      - name: Reconstruct Fourier coefficients and validate off-grid
+        run: python computational/derive_higher_moment_coefficients.py --output artifacts/higher_moment_coefficient_candidates.json
+      - name: Upload coefficient candidate report
+        if: always() && hashFiles('artifacts/higher_moment_coefficient_candidates.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: higher-moment-fourier-coefficient-candidates
+          path: artifacts/higher_moment_coefficient_candidates.json

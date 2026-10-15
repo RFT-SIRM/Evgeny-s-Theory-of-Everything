@@ -4,7 +4,7 @@ import argparse, json
 from pathlib import Path
 import numpy as np
 from scipy.sparse import coo_matrix
-POWERS=(6,8,10); ANGLES=(("pi_over_2",float(np.pi/2)),("pi",float(np.pi)))
+POWERS=(6,8,10); ANGLES=(("pi_over_2",float(np.pi/2)),("pi",float(np.pi)),("theta_0_51",0.51),("theta_1_23",1.23),("theta_2_7",2.7))
 REF={6:[-3180.,-6956.588745030516,-18274.354980121832,-52227.653685396537],8:[-246909.026268397924,-595053.284942481667,-1632052.331668503582,-4743049.471846580505],10:[-14013358.982483163476,-37686518.369789719582,-107772338.487565994263,-318029798.840893745422]}
 C_PI={6:5280.,8:277504.,10:4507520.}
 def graph(level):
