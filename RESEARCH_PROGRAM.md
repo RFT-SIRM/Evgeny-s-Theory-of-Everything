@@ -10,21 +10,23 @@ Tasks:
 - preserve the exact definitions and theorem statement from the Lean source;
 - record the exact Lean toolchain and Mathlib dependency state;
 - reproduce the build from a clean checkout;
-- add or verify CI that actually runs the Lean build;
+- complete the new pinned-source Lean CI build;
 - ensure explanatory documents agree with the formal theorem's hypotheses and indexing.
 
-## Workstream B — Higher moments
+## Workstream B — Higher moments and recurrence derivation
 
 Investigate H⁶, H⁸, H¹⁰ and beyond without presupposing that observed patterns are universal.
 
-Tasks:
-- regenerate the moment tables from source code;
-- verify graph-level indexing and the sign convention for the defect;
-- independently test proposed recurrences on levels not used to define their constants;
-- test base cases and exceptional levels explicitly;
-- seek structural proofs, or record precise obstructions and counterexamples.
+Numerical holdout coverage now includes levels 1–5 at seven angles and levels 1–6 at \(0,\pi/2,\pi\). The candidate recurrence appears stable from transition 2→3 onward, while transition 1→2 is exceptional. This is a research observation, not a general theorem.
 
-A recurrence constant defined by C_m = Δ_m − 3Δ_(m−1) makes the equation Δ_m = 3Δ_(m−1) + C_m true by definition. Evidence for a level-independent constant requires comparison across distinct transitions, with the constant fixed independently of the transition being tested.
+Next tasks:
+- derive the exact coefficient function \(C_p(\theta)\) for \(p=6,8,10\);
+- prove the starting level and explain the exceptional base transition;
+- use graph recursion, operator block structure, closed-walk enumeration, or representation theory to derive the recurrence;
+- retain the fixed-coefficient holdout tests as regression checks, not as a substitute for proof;
+- pursue Lean formalization only after the mathematical statement and proof route are clear.
+
+A recurrence constant defined by \(C_m=\Delta_m-3\Delta_{m-1}\) makes the equation true by definition at that transition. Evidence for a level-independent constant requires comparing distinct transitions, with the constant fixed independently of the transitions being tested.
 
 ## Workstream C — Signed Z₂-flux spectral decimation
 
@@ -48,10 +50,11 @@ A valid bridge must specify:
 - boundary conditions and exceptional cases;
 - a proof, or a clearly labelled conjecture with falsifiable consequences.
 
-## Initial sequence
+## Current sequence
 
-1. Establish a claim ledger and provenance map.
-2. Reproduce the source projects' documented results.
-3. Fix tests that are tautological or insufficiently independent.
-4. Add continuous integration for all formal and computational checks.
-5. Only then formulate a unified theorem with explicit hypotheses.
+1. Maintain the claims ledger and provenance map.
+2. Complete and review the Lean CI build.
+3. Derive the exact higher-moment coefficient functions and explain the base exception.
+4. Extend path-class cancellation results beyond the level-1 H⁶ calculation.
+5. Return to Gate A only with a precise exceptional-set criterion.
+6. Formulate a unified theorem only after a rigorous bridge between the operator families is established.
