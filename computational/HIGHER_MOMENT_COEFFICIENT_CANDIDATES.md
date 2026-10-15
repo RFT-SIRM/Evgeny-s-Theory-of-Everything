@@ -7,11 +7,11 @@ Let
 R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta),
 \qquad \phi=\theta/2.
 \]
-The candidate recurrence coefficient is (C_p(\theta)=R_4^{(p)}(\theta)). The exceptional first transition is (R_2^{(p)}(\theta)).
+The candidate later-transition coefficient is \(C_p(\theta)=R_4^{(p)}(\theta)\). The exceptional first transition is \(R_2^{(p)}(\theta)\).
 
-The following integer Fourier coefficients were reconstructed from 21 equally spaced samples over a (4\pi) period, then checked against off-grid sparse-trace evaluations. They are **candidate identities inferred numerically**, not yet symbolic proofs. The reproducibility script checks coefficient recovery and off-grid residuals in CI.
+The following integer Fourier coefficients were reconstructed from 21 equally spaced samples over a \(4\pi\) period, then checked against off-grid sparse-trace evaluations. They are **candidate identities inferred numerically**, not yet symbolic proofs.
 
-## Candidate later-transition coefficients (C_p(\theta)=R_4^{(p)}(\theta))
+## Candidate later-transition coefficients \(C_p(\theta)=R_4^{(p)}(\theta)\)
 
 \[
 \begin{aligned}
@@ -40,9 +40,9 @@ C_{10}(\theta)={}&-249810+2759440\cos\phi+3693520\sin\phi\\
 \end{aligned}
 \]
 
-At \(\theta=\pi/2\), these give the previously observed coefficients approximately (2595.41125497), (153107.523159), and (5287216.62180). At \(\theta=\pi\), they give (5280), (277504), and (4507520).
+At \(\theta=\pi/2\), these give approximately \(2595.41125497\), \(153107.523159\), and \(5287216.62180\). At \(\theta=\pi\), they give \(5280\), \(277504\), and \(4507520\).
 
-## Candidate first-transition coefficients (R_2^{(p)}(\theta))
+## Candidate first-transition coefficients \(R_2^{(p)}(\theta)\)
 
 \[
 \begin{aligned}
@@ -71,23 +71,49 @@ R_2^{(10)}(\theta)={}&-1751950+2621560\cos\phi+5497240\sin\phi\\
 \end{aligned}
 \]
 
-The distinct (R_2) and (R_4) candidates make the first-transition exception explicit as a different function of angle. They do **not** yet explain its structural cause in the graph/operator recursion.
+## A factorization pattern for the exceptional transition
+
+Subtracting the candidate later-transition coefficient gives
+\[
+R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi).
+\]
+The candidate quotient functions are
+\[
+Q_6(\phi)=-24,
+\]
+\[
+\begin{aligned}
+Q_8(\phi)={}&-19840-3840\cos\phi+11008\sin\phi\\
+&-288\cos(2\phi)-96\sin(2\phi),
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+Q_{10}(\phi)={}&-3103440-539280\cos\phi+2405520\sin\phi\\
+&-198320\cos(2\phi)-76240\sin(2\phi)\\
+&+12240\cos(3\phi)+1680\sin(3\phi)\\
+&-200\cos(4\phi)+80\sin(4\phi).
+\end{aligned}
+\]
+
+Thus, if the reconstructed coefficient identities are exact, the exceptional correction has a quadratic zero at \(\theta=0\) and also vanishes at \(\theta=2\pi\). This is an algebraic consequence of the **candidate formulas**, not yet a derivation from the graph/operator recursion. The structural cause of the exception remains open.
 
 ## Reconstruction protocol
 
-- Use (N=21=2p_{\max}+1) angle samples, (\theta_j=4\pi j/21), (j=0,\ldots,20).
-- Compute (R_2) and (R_4) directly from sparse matrix-power traces for levels 1–4.
-- Recover the Fourier coefficients by a discrete Fourier transform and compare them with the displayed integer candidates.
-- Validate at seven off-grid angles, not used in the Fourier reconstruction.
-- Separately test the proposed recurrence on held-out levels 5–7 with the sparse-trace workflow.
+- Use \(N=21=2p_{\max}+1\) samples, \(\theta_j=4\pi j/21\), \(j=0,\ldots,20\).
+- Compute \(R_2\) and \(R_4\) directly from sparse matrix-power traces for levels 1–4.
+- Recover Fourier coefficients by a discrete Fourier transform and compare them with the displayed integer candidates.
+- Validate at seven off-grid angles not used in the Fourier reconstruction.
+- Separately test recurrence predictions on held-out levels 5–7 with the sparse-trace workflow.
 
-The bound on Fourier frequency follows from each operator entry being linear in (\cos(\theta/2)) and (\sin(\theta/2)): a trace of the (p)-th matrix power is a trigonometric polynomial with modes at most (p) in (\phi=\theta/2\). The numerical calculation is consistent with that finite-dimensional representation. It does not by itself certify exact integer coefficients.
+Each operator entry is linear in \(\cos(\theta/2)\) and \(\sin(\theta/2)\), so a trace of the \(p\)-th matrix power has Fourier modes of order at most \(p\) in \(\phi=\theta/2\). The 21-point reconstruction is therefore the right finite Fourier sampling size for moments through \(p=10\). Floating-point coefficient recovery and off-grid agreement strongly support the candidates, but do not by themselves certify exact integer coefficients.
 
 Reproduce with:
 
-```sh
+\`\`\`sh
 python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/derive_higher_moment_coefficients.py --output artifacts/higher_moment_coefficient_candidates.json
-```
+\`\`\`
 
-Workflow: [Higher-moment Fourier coefficient candidates](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml).
+The dedicated [Fourier coefficient candidate workflow passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767383292). The expanded [independent sparse level-7 holdout also passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767388243).
