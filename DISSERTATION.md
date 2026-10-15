@@ -36,27 +36,27 @@ Let G_m be the finite graph at level m in the specified Sierpinski-gasket approx
 
 For even $p$, define
 
-\[
+$$
 \Delta_m^{(p)}(\theta)=\operatorname{Tr}(H_C(m,\theta)^p)-\operatorname{Tr}(H_{C'}(m,\theta)^p).
-\]
+$$
 
 For $m \geq 2$, define the transition residual
 
-\[
+$$
 R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta).
-\]
+$$
 
 The candidate recurrence is
 
-\[
+$$
 R_m^{(p)}(\theta)=C_p(\theta),\quad m\geq3,
-\]
+$$
 
 equivalently,
 
-\[
+$$
 \Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta),\quad m\geq3.
-\]
+$$
 
 The first transition, $R_2^{(p)}$, is treated separately from the later-transition candidate $R_4^{(p)}$. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining $C_m=\Delta_m-3\Delta_{m-1}$ would make the recurrence true by definition and provide no evidence of level independence.
 
@@ -66,9 +66,9 @@ Set $\phi=\theta/2$. Since the source operator entries are linear in $\cos\phi$ 
 
 The upstream project [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) reports the identity
 
-\[
+$$
 \Delta_m(H^4,\theta)=-16(3^{m-1}+1)\sin^2(\theta/2),\quad m\geq1,
-\]
+$$
 
 for its specified operator definitions and hypotheses, with a Lean 4 formalization. The synthesis repository builds a pinned source revision with a pinned toolchain. The upstream definitions and hypotheses remain authoritative; this dissertation does not independently re-prove that result.
 
@@ -81,9 +81,9 @@ The fourth-moment theorem does not automatically imply a recurrence for $H^6$, $
 
 The verifier documented in [HIGHER_MOMENT_MODULAR_CERTIFICATE.md](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md) certifies Fourier coefficients of R_2^(p) and R_4^(p), for $p\in\{6,8,10\}$. It repeats the computation over primes
 
-\[
+$$
 q\in\{10000453,20000569,30000769\}.
-\]
+$$
 
 Each prime is 1 modulo 84, providing roots needed for the 21-point transform and a square root of -1. The verifier builds the graph/operator data over each finite field, computes matrix-power traces modulo q, performs the transform, and compares scaled coefficients with the candidate integers.
 
@@ -91,9 +91,9 @@ Every operator entry has Fourier coefficients with denominator dividing 2. A pro
 
 The graph family has maximum vertex degree at most 4. The documented block estimates bound the diagonal block norm by 4 and the connection-adjacency norm by 4, giving $\|H\|\leq 8$. For dimension $2n_m$,
 
-\[
+$$
 |\operatorname{Tr}(H^p)|\leq 2n_m 8^p.
-\]
+$$
 
 These bounds induce bounds on the scaled Fourier coefficients. The product of the three primes exceeds twice the applicable coefficient bound. If the candidate and true coefficient agree modulo each prime, their difference is divisible by the CRT modulus; the size bound then forces the difference to be zero.
 
@@ -125,9 +125,9 @@ These small residuals support the candidate but are not universal error bounds. 
 
 The certified finite-level formulas show that R_2^(p) differs from R_4^(p). The companion report factors the correction as
 
-\[
+$$
 R_2^{(p)}(\theta)-R_4^{(p)}(\theta)=\sin^2(\phi)Q_p(\phi),\quad \phi=\theta/2.
-\]
+$$
 
 For $p=6$, the reported quotient is $Q_6(\phi)=-24$; for $p=8$ and $p=10$ it contains additional trigonometric modes. The exact coefficients are recorded in [HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md).
 
