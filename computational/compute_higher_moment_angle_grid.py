@@ -28,6 +28,7 @@ def main():
       "angles_radians": [float(x) for x in ANGLES],
       "results": {}
     }
+    crosscheck_max = {f"H{p}": 0.0 for p in (6,8,10)}
     for theta in ANGLES:
         key = f"{theta:.12g}"
         values = {}
@@ -39,6 +40,19 @@ def main():
                 raise RuntimeError("Operator vertex counts differ")
             ea, eb = np.linalg.eigvalsh(a), np.linalg.eigvalsh(b)
             values[str(m)] = {f"H{p}": float(np.sum(ea**p)-np.sum(eb**p)) for p in (6,8,10)}
+            # Independent numerical route: direct matrix powers on smaller levels.
+            if m <= 4:
+                for p in (6,8,10):
+                    direct = float(np.trace(np.linalg.matrix_power(a, p)).real
+                                   - np.trace(np.linalg.matrix_power(b, p)).real)
+                    spectral = values[str(m)][f"H{p}"]
+                    rel = abs(direct - spectral) / max(abs(direct), 1.0)
+                    crosscheck_max[f"H{p}"] = max(crosscheck_max[f"H{p}"], rel)
+                    if rel > 5e-9:
+                        raise AssertionError(
+                            f"H{p} spectral/direct-trace cross-check failed "
+                            f"at level={m}, theta={theta}: relative error={rel}"
+                        )
         transitions = {}
         for p in (6,8,10):
             d = [values[str(m)][f"H{p}"] for m in range(1,6)]
@@ -63,6 +77,7 @@ def main():
                 report["pi_over_2_reference_relative_errors"][f"H{p}"] = errors
                 if max(errors) > 2e-9:
                     raise AssertionError(f"H{p} pi/2 published reference check failed: {errors}")
+    report["independent_direct_trace_crosscheck_max_relative_error_levels_1_to_4"] = crosscheck_max
     out = Path(args.output); out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2, sort_keys=True)+"\n", encoding="utf-8")
     print(json.dumps(report, indent=2, sort_keys=True))
