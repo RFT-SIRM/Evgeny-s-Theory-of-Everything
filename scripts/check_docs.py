@@ -6,6 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
     "README.md",
+    "DISSERTATION.md",
     "LICENSE",
     "NOTICE",
     "CITATION.cff",

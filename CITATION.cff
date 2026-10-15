@@ -3,7 +3,9 @@ message: "If you use this research repository, please cite it using the metadata
 title: "Evgeny's Theory of Everything"
 type: software
 authors:
-  - name: "RFT-SIRM"
+  - family-names: "Zaprudnov"
+    given-names: "Evgeny"
+    affiliation: "RFT-SIRM"
 date-released: 2026-10-15
 url: "https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything"
 license: Apache-2.0

@@ -10,6 +10,10 @@ This repository organizes a long-term mathematical research program. Its title n
 
 This repository's original synthesis documentation, scripts, and configuration are licensed under the [Apache License 2.0](LICENSE). The upstream projects linked below are separate works; their files and licenses are not relicensed by this repository. See [NOTICE](NOTICE) for provenance and attribution boundaries. To cite this research snapshot, see [CITATION.cff](CITATION.cff).
 
+## Research dissertation
+
+The standalone research dissertation by **Evgeny Zaprudnov** consolidates the definitions, exact finite-level modular/CRT certificates, numerical evidence, open conjectures, and reproducibility requirements: [DISSERTATION.md](DISSERTATION.md). It explicitly distinguishes certified finite-level identities from the still-open all-level recurrence.
+
 ## Current milestone
 
 The current milestone is a reproducible research package: a pinned Lean build for the source project's fourth-moment result, expanded numerical holdouts for the sixth, eighth, and tenth trace moments, versioned machine-readable outputs, and explicit evidence boundaries.
