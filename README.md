@@ -12,6 +12,8 @@ Across the grid, maximum relative prediction residuals were approximately \(1.65
 
 - [Angle-grid results and interpretation](computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md)
 - [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759029736)
+- [Level-6 results](computational/HIGHER_MOMENT_LEVEL6_RESULTS.md)
+- [Level-6 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759404528)
 - [Level-5 protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
 - [Earlier arithmetic audit](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md)
 
@@ -68,6 +70,8 @@ This project studies signed graph Laplacians, spectral decimation with boundary/
 - `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — level-5 result at \(\theta=\pi/2\).
 - `computational/HIGHER_MOMENT_ANGLE_GRID.md` — angle-grid protocol.
 - `computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md` — angle-grid results.
+- `computational/HIGHER_MOMENT_LEVEL6.md` — level-6 protocol.
+- `computational/HIGHER_MOMENT_LEVEL6_RESULTS.md` — level-6 results.
 
 ## Contribution requirements
 
