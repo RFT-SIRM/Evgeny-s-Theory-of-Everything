@@ -50,13 +50,13 @@ def build_operator(level, sample, q, zeta, imag_unit, commuting):
     vertices, edges, faces = graph(level)
     n = len(vertices)
     if n != VERTICES[level]:
-        raise AssertionError(f\"unexpected vertex count at level {level}: {n}\")
+        raise AssertionError(f"unexpected vertex count at level {level}: {n}")
     degree = [0] * n
     for a, b in edges:
         degree[a] += 1
         degree[b] += 1
     if max(degree) > 4:
-        raise AssertionError(f\"maximum degree exceeds the certified bound at level {level}\")
+        raise AssertionError(f"maximum degree exceeds the certified bound at level {level}")
 
     z = pow(zeta, sample, q)
     z_inv = pow(zeta, (-sample) % N, q)
