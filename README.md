@@ -10,12 +10,14 @@ The current milestone is a reproducible research package: a pinned Lean build fo
 
 ### Higher-moment holdouts
 
-For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 and then tested on held-out levels. The level-5 test covers 13 predeclared angles \(\theta=k\pi/12\), \(k=0,\ldots,12\). The level-6 test covers \(0,\pi/2,\pi\). Direct matrix-power traces are also compared with eigenvalue-power sums on levels 1–4.
+For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 and then tested on held-out levels. The level-5 test covers 13 predeclared angles \(\theta=k\pi/12\), \(k=0,\ldots,12\). The level-6 test covers \(0,\pi/2,\pi\). A separate sparse-matrix-power holdout tests levels 1–7 at five angles without using eigenspectra; Fourier coefficient candidates are reconstructed from 21 samples and checked at seven off-grid angles. Direct matrix-power traces are also compared with eigenvalue-power sums on levels 1–4.
 
 - [13-angle holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044)
 - [Level-6 holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012)
-- [Latest documentation audit — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644843)
-- [Latest pinned Lean build — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644964)
+- [Documentation/reference audit workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/documentation-integrity.yml)
+- [Pinned Lean formalization build workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/lean-formalization.yml)
+- [Independent sparse holdout through level 7 — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767388243)
+- [Fourier coefficient reconstruction and off-grid validation — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767383292)
 - [13-angle machine-readable results](computational/data/higher_moment_angle_grid_13.json)
 - [Level-6 machine-readable results](computational/data/higher_moment_level6_3angles.json)
 - [Consolidated recurrence evidence note](computational/HIGHER_MOMENT_RECURRENCE_NOTE.md)
