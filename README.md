@@ -2,75 +2,78 @@
 
 **A unified research program for recursive operators, spectral invariants, and higher-moment trace laws.**
 
-This repository organizes a long-term mathematical research program around recursive graph operators, spectral invariants, trace-moment identities, and computationally testable conjectures. The title names the scope of the program; it does **not** assert that a complete theory of everything has been established.
+This repository organizes a long-term mathematical research program. Its title names the scope of the program; it does **not** assert that a complete theory of everything has been established.
+
+## Latest result: level-5 holdout
+
+A pinned GitHub Actions calculation independently recomputed H⁶, H⁸, and H¹⁰ at \(\theta=\pi/2\) through level 5 using Hermitian eigenvalues. Levels 1–4 matched the published reference values with relative discrepancies below \(1.3\times10^{-13}\). A recurrence constant fixed from levels 3 and 4 predicted level 5 with relative residuals:
+
+| Moment | Relative residual at level 5 |
+|---|---:|
+| H⁶ | \(2.01\times10^{-13}\) |
+| H⁸ | \(8.36\times10^{-14}\) |
+| H¹⁰ | \(5.63\times10^{-14}\) |
+
+The first transition \(1\to2\) remains an exception in the published table. The new calculation supports a later-level numerical recurrence at this angle; it is not a universal proof.
+
+- [Full result and limitations](computational/HIGHER_MOMENT_LEVEL5_RESULTS.md)
+- [Reproduction protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
+- [Workflow and artifact](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38758708458)
+- [Earlier arithmetic audit](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md)
 
 ## Research principles
 
-1. **Separate theorem from evidence.** Every substantial claim must be labelled as formally proved, proved on paper, numerically observed, conjectural, or unresolved.
-2. **Preserve negative results.** Failed tests, counterexamples, exceptional cases, and non-reproduced hypotheses are part of the research record.
-3. **Make computation reproducible.** Record the exact operator, graph level, parameters, precision, algorithm, code revision, and test command.
-4. **Do not promote a fit into a law.** Numerical agreement on finitely many levels is evidence for a conjecture, not a proof of a universal identity.
-5. **Keep source projects distinct.** Results from different graph models or operator families may be compared, but a connection is not a theorem until its hypotheses and proof are supplied.
+1. **Separate theorem from evidence.** Label each claim as formalized, proved on paper, numerically reproduced, observed, conjectural, or open.
+2. **Preserve negative results.** Failed tests, counterexamples, exceptional cases, and non-reproduced hypotheses are part of the record.
+3. **Make computation reproducible.** Record the operator, graph level, parameters, precision, algorithm, source revision, and command.
+4. **Do not promote a fit into a law.** Finite numerical agreement is not a proof of a universal identity.
+5. **Keep source projects distinct.** Similarities between different operator families do not establish equivalence.
 
-## Starting research strands
+## Research strands
 
-### 1. SU(2)-connected Sierpiński-gasket operators
+### SU(2)-connected Sierpiński-gasket operators
 
-The source project [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) studies graph operators with SU(2) edge connections and compares a noncommuting connection pattern with a commuting control.
+Source: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
 
-Its documented central result is a closed fourth-moment trace defect:
+The documented fourth-moment trace defect is
 \[
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge 1.
 \]
-The source repository reports a Lean 4 formalization of this fourth-moment identity. The exact theorem statement, definitions, assumptions, and reproducible build command must be taken from the source formalization; this overview is not a substitute for them.
+The source project reports this identity as formalized in Lean 4. Exact definitions and assumptions are in the source formalization. Higher moments \(H^6,H^8,H^{10}\) remain a separate numerical and analytical research program.
 
-Higher moments \(H^6,H^8,H^{10}\) remain a separate research strand. An arithmetic audit of the published reference table found a first-transition discrepancy in the proposed constant-coefficient recurrence; see [Audit 001](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md). This audit uses the published values and does not yet independently rerun the operator matrices.
+### Signed Z₂-flux and spectral decimation
 
-### 2. Signed Z₂-flux and spectral-decimation research
+Source: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis).
 
-The source project [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) studies signed graph Laplacians, spectral decimation with boundary/corner-defect corrections, inertia computations, and exploratory spectral or mass-index patterns.
-
-Its claims have a different operator setup from the SU(2)-connected model above. A structural bridge between the projects is an open research question, not an assumed equivalence. The Gate A decimation audit and the proposed mass-index selection rule must remain explicitly unresolved unless new independent evidence closes them.
+This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Gate A remains open while residual mismatches and the full exceptional set remain unexplained. The proposed mass-index rule is not established as a predictive law.
 
 ## Evidence labels
 
-Use these labels consistently in documentation, issues, and commit messages:
-
 - **FORMALIZED** — machine-checked in a specified proof assistant and build configuration.
-- **PROVED** — a complete mathematical proof is documented, but not necessarily machine-checked.
-- **NUMERICALLY REPRODUCED** — computation can be rerun from identified code and parameters; this is not a universal proof.
-- **OBSERVED** — a reported pattern whose independent reproducibility or scope is not yet fully established.
-- **CONJECTURE** — a precise statement proposed for proof or refutation.
-- **OPEN** — not resolved.
-- **REFUTED / NOT REPRODUCED** — contradicted by a counterexample or not recovered under a stated reproduction protocol. Include the protocol and scope.
+- **PROVED** — complete written proof with assumptions and quantifiers.
+- **NUMERICALLY REPRODUCED** — rerunnable computation with identified code, parameters, and outputs.
+- **OBSERVED** — pattern not yet independently reproduced or fully scoped.
+- **CONJECTURE** — precise statement awaiting proof or refutation.
+- **OPEN** — unresolved.
+- **NOT ESTABLISHED / NOT REPRODUCED / REFUTED** — use with an explicit evidence boundary or counterexample.
 
 ## Repository map
 
-- `FOUNDATIONS.md` — scope, terminology, and standards of evidence.
-- `RESEARCH_PROGRAM.md` — workstreams and near-term research questions.
-- `CLAIMS_AND_EVIDENCE.md` — claim ledger with source links and status.
-- `OPEN_PROBLEMS.md` — precise unresolved questions and closure criteria.
-- `HISTORICAL_DEVELOPMENT.md` — verified chronology and provenance.
-- `MATHEMATICAL_FRAMEWORK.md` — definitions and the proposed cross-project framework.
-- `references/SOURCE_REPOSITORIES.md` — source repositories and provenance boundaries.
+- `FOUNDATIONS.md` — scope, terminology, and evidence standards.
+- `RESEARCH_PROGRAM.md` — workstreams and research questions.
+- `CLAIMS_AND_EVIDENCE.md` — claim ledger.
+- `OPEN_PROBLEMS.md` — unresolved questions and closure criteria.
+- `HISTORICAL_DEVELOPMENT.md` — chronology and provenance.
+- `MATHEMATICAL_FRAMEWORK.md` — definitions and cross-project boundaries.
+- `references/SOURCE_REPOSITORIES.md` — source repositories and provenance.
 - `computational/REPRODUCIBILITY.md` — computational reporting requirements.
-- `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of the published H⁶/H⁸/H¹⁰ table.
+- `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of published values.
+- `computational/HIGHER_MOMENT_HOLDOUT.md` — reproducible level-5 calculation protocol.
+- `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — observed numerical results.
 - `formalization/README.md` — formal proof integration policy.
 
-## Current status
+## Contribution requirements
 
-This repository begins as a synthesis and verification layer over existing projects. It does not silently replace their results, change their claims, or assert that every source artifact has already been independently reproduced. The initial task is to make the research inventory auditable, then reproduce and extend results one claim at a time.
-
-## How to contribute
-
-Before adding a result, include:
-1. the exact statement and definitions;
-2. assumptions and domain of validity;
-3. proof or algorithm;
-4. tests and commands, including versions and parameters;
-5. known exceptions, counterexamples, and limitations;
-6. a status label from the list above.
-
-A passing test establishes only what that test actually checks. A test that defines a constant from the same values used in an identity is not an independent verification of that identity.
+Every result should include exact definitions, assumptions, proof or algorithm, commands and versions, known exceptions, and an evidence label. A passing test establishes only what that test actually checks.
