@@ -2,8 +2,8 @@
 
 **Status:** numerical holdout passed on the pinned source implementation; not a proof.
 
-- Workflow: [Higher-moment angle-grid holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759029736)
-- Synthesis commit tested: `b0f73045deff77aa84aaa8446af1020c8915539e`
+- Workflow: [Higher-moment angle-grid holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
+- Synthesis commit tested: `4351fb4803138c3cb3c97b7ce93315d0bbeabdc3`
 - Source commit: [RFT-SIRM/Evgeny-Theorem @ 9ed32ae](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/9ed32ae27b4493945624c2911d2815059613a9f5)
 - Levels: 1–5
 - Powers: 6, 8, 10
@@ -35,4 +35,4 @@ Examples at \(\theta=\pi\):
 
 The numerical evidence now supports a more precise candidate statement: for the tested operator family, the recurrence with a level-independent constant appears to apply from the transition \(2\to3\) onward (equivalently, \(m\ge3\) in \(\Delta_m=3\Delta_{m-1}+C(\theta)\)), while the base transition \(1\to2\) is exceptional.
 
-This remains a finite numerical result on levels 1–5 and seven angles. It does not prove the recurrence for all levels or all angles, nor does it derive a symbolic expression for \(C(\theta)\). A level-6 holdout and an analytic derivation are the next verification targets.
+The 13-angle data are stored in [`data/higher_moment_angle_grid_13.json`](data/higher_moment_angle_grid_13.json). Maximum relative level-5 residuals across the grid are approximately \\(1.47\\times10^{-12}\\) (H⁶), \\(1.80\\times10^{-12}\\) (H⁸), and \\(8.82\\times10^{-13}\\) (H¹⁰). This remains a finite numerical result on levels 1–5 and 13 angles. It does not prove the recurrence for all levels or all angles, nor does it derive a symbolic expression for \(C(\theta)\). A separate [level-6 holdout](HIGHER_MOMENT_LEVEL6_RESULTS.md) has also passed at \\(0,\\pi/2,\\pi\\). An analytic derivation remains the principal open target.

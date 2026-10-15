@@ -17,7 +17,7 @@ Tasks:
 
 Investigate H⁶, H⁸, H¹⁰ and beyond without presupposing that observed patterns are universal.
 
-Numerical holdout coverage now includes levels 1–5 at seven angles and levels 1–6 at \(0,\pi/2,\pi\). The candidate recurrence appears stable from transition 2→3 onward, while transition 1→2 is exceptional. This is a research observation, not a general theorem.
+Numerical holdout coverage now includes levels 1–5 at thirteen predeclared angles \\(k\\pi/12, k=0,\\ldots,12\\) and levels 1–6 at \(0,\pi/2,\pi\). The candidate recurrence appears stable from transition 2→3 onward, while transition 1→2 is exceptional. This is a research observation, not a general theorem.
 
 Next tasks:
 - derive the exact coefficient function \(C_p(\theta)\) for \(p=6,8,10\);

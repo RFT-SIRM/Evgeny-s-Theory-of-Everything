@@ -10,7 +10,7 @@ For the SU(2)-connected Sierpiński-gasket operator family, numerical calculatio
 from the transition \(2\to3\) onward for the tested levels and angles. The transition \(1\to2\) is exceptional in every nonzero angle tested.
 
 Evidence already collected:
-- levels 1–5 across seven angles \(0,\pi/6,\pi/4,\pi/3,\pi/2,2\pi/3,\pi\);
+- levels 1–5 across thirteen predeclared angles \\(k\\pi/12, k=0,\\ldots,12\\) \(0,\pi/6,\pi/4,\pi/3,\pi/2,2\pi/3,\pi\);
 - levels 1–6 at \(0,\pi/2,\pi\);
 - recurrence constants fixed using levels 3 and 4, with later levels held out;
 - maximum relative level-6 prediction residuals below \(9.3\times10^{-14}\) for all three moments on the three-angle subset.
@@ -40,4 +40,4 @@ Determine whether there is a mathematically precise relation between the SU(2)-c
 
 ## OP-5 — Reproducible formal CI
 
-The synthesis repository now has a Lean CI workflow pointed at a pinned source revision. Verify that it completes a clean `lake build`, then keep formal proof status distinct from numerical CI status. A Python test pass does not establish that a Lean theorem compiles.
+The synthesis repository now has a Lean CI workflow pointed at a pinned source revision. The pinned-source Lean CI has completed a successful `lake build`; rerun it after source or toolchain changes and keep formal proof status distinct from numerical CI status. A Python test pass does not establish that a Lean theorem compiles.

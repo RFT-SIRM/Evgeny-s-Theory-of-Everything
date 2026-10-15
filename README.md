@@ -11,7 +11,9 @@ A pinned GitHub Actions calculation recomputed H⁶, H⁸, and H¹⁰ through le
 Across the grid, maximum relative prediction residuals were approximately \(1.65\times10^{-12}\) for H⁶, \(8.28\times10^{-13}\) for H⁸, and \(5.70\times10^{-13}\) for H¹⁰. The first transition \(1\to2\) remains exceptional at every nonzero angle tested. This supports a candidate numerical recurrence from transition \(2\to3\) onward; it is not a universal proof.
 
 - [Angle-grid results and interpretation](computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md)
-- [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759029736)
+- [Machine-readable 13-angle results](computational/data/higher_moment_angle_grid_13.json)
+- [13-angle workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
+- [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
 - [Level-6 results](computational/HIGHER_MOMENT_LEVEL6_RESULTS.md)
 - [Level-6 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759404528)
 - [Level-5 protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
