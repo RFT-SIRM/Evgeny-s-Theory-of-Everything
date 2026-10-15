@@ -200,6 +200,16 @@ def main():
         f"{kind}_H{p}": coefficient_bound(kind, p)
         for kind in ("R2", "R4") for p in POWERS
     }
+    candidate_scaled_maxima = {}
+    for kind in ("R2", "R4"):
+        for p in POWERS:
+            constant, modes = CANDIDATES[kind][p]
+            largest = max([abs(constant)] + [abs(value) for pair in modes for value in pair])
+            scaled_max = (2 ** p) * largest
+            key = f"{kind}_H{p}"
+            candidate_scaled_maxima[key] = scaled_max
+            if scaled_max > bounds[key]:
+                raise AssertionError(f"candidate coefficients exceed the proven bound for {key}")
     if any(product <= 2 * bound for bound in bounds.values()):
         raise AssertionError("CRT modulus product is not large enough for the coefficient bounds")
 
