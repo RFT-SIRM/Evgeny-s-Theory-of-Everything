@@ -28,7 +28,7 @@ For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 
 - [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
 - [Fourier coefficient candidate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
 
-The recurrence candidate appears stable from transition \(2\to3\) onward on the tested finite set. Exact modular/CRT checks certify the Fourier coefficients of the finite-level residuals \(R_2\) and \(R_4\), while sparse-trace holdouts test levels 5–7 at five angles. This is not yet a proof that the recurrence holds at every level and angle. The exact coefficient functions \(C_6(\theta),C_8(\theta),C_{10}(\theta)\) and a proof for all levels and angles remain open.
+The recurrence candidate appears stable from transition \\(2\\to3\\) onward on the tested finite set. Exact modular/CRT checks certify the Fourier coefficients of the finite-level residuals \\(R_2^{(p)}=\\Delta_2^{(p)}-3\\Delta_1^{(p)}\\) and \\(R_4^{(p)}=\\Delta_4^{(p)}-3\\Delta_3^{(p)}\\), for \\(p\\in\\{6,8,10\\}\\). Thus the finite-level coefficient formulas are certified; what remains open is proving that \\(R_m^{(p)}(\\theta)=R_4^{(p)}(\\theta)\\) for every \\(m\\ge3\\) and every stated angle, and deriving this identity from the recursive graph/operator structure.
 
 ## Research strands
 
