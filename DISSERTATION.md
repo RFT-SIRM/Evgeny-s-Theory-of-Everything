@@ -34,13 +34,13 @@ The work has five goals:
 
 Let G_m be the finite graph at level m in the specified Sierpinski-gasket approximation. Let H_C(m, theta) be the SU(2)-connected operator and H_Cprime(m, theta) the commuting control operator from the pinned source construction. Their exact definitions, boundary conventions, dimensions, and connection data are those of the upstream source and must not be silently changed.
 
-For even p, define
+For even $p$, define
 
 \[
 \Delta_m^{(p)}(\theta)=\operatorname{Tr}(H_C(m,\theta)^p)-\operatorname{Tr}(H_{C'}(m,\theta)^p).
 \]
 
-For m >= 2, define the transition residual
+For $m \geq 2$, define the transition residual
 
 \[
 R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta).
@@ -58,7 +58,7 @@ equivalently,
 \Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta),\quad m\geq3.
 \]
 
-The first transition, $R_2^{(p)}$, is treated separately from the later-transition candidate $R_4^{(p)}$. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining C_m = Delta_m - 3 Delta_(m-1) would make the recurrence true by definition and provide no evidence of level independence.
+The first transition, $R_2^{(p)}$, is treated separately from the later-transition candidate $R_4^{(p)}$. The coefficient is fixed from the level-3-to-4 transition and then used for prediction, not refitted at every level. Otherwise, defining $C_m=\Delta_m-3\Delta_{m-1}$ would make the recurrence true by definition and provide no evidence of level independence.
 
 Set $\phi=\theta/2$. Since the source operator entries are linear in $\cos\phi$ and $\sin\phi$, products of $p$ entries have Fourier modes of order at most $p$. The 21 sample points are $\theta_j=4\pi j/21$ for $j=0,1,\ldots,20$, and are used for moments through $p=10$. The exact certificate uses finite-field transforms and a uniqueness argument rather than relying on floating-point interpolation alone.
 
@@ -72,14 +72,14 @@ The upstream project [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgen
 
 for its specified operator definitions and hypotheses, with a Lean 4 formalization. The synthesis repository builds a pinned source revision with a pinned toolchain. The upstream definitions and hypotheses remain authoritative; this dissertation does not independently re-prove that result.
 
-The fourth-moment theorem does not automatically imply a recurrence for H^6, H^8, or H^10. Higher moments contain additional operator products and possible cancellations, so they require their own derivations. The evidence boundary is therefore explicit:
+The fourth-moment theorem does not automatically imply a recurrence for $H^6$, $H^8$, or $H^{10}$. Higher moments contain additional operator products and possible cancellations, so they require their own derivations. The evidence boundary is therefore explicit:
 - H^4: reported as formally proved upstream and checked by the pinned Lean build.
 - H^6, H^8, H^10: exact finite-level coefficient certificates and numerical recurrence evidence.
 - The all-level higher-moment recurrence: open.
 
 ## 4. Exact finite-level modular/CRT certificate
 
-The verifier documented in [HIGHER_MOMENT_MODULAR_CERTIFICATE.md](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md) certifies Fourier coefficients of R_2^(p) and R_4^(p), for p = 6, 8, 10. It repeats the computation over primes
+The verifier documented in [HIGHER_MOMENT_MODULAR_CERTIFICATE.md](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md) certifies Fourier coefficients of R_2^(p) and R_4^(p), for $p\in\{6,8,10\}$. It repeats the computation over primes
 
 \[
 q\in\{10000453,20000569,30000769\}.
@@ -131,7 +131,7 @@ R_2^{(p)}(\theta)-R_4^{(p)}(\theta)=\sin^2(\phi)Q_p(\phi),\quad \phi=\theta/2.
 
 For $p=6$, the reported quotient is $Q_6(\phi)=-24$; for $p=8$ and $p=10$ it contains additional trigonometric modes. The exact coefficients are recorded in [HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md).
 
-The factor implies that the correction vanishes at theta = 0 and theta = 2 pi. This is an algebraic property of the finite-level formulas, not yet a derivation from the recursive graph structure. Possible explanations involving new vertices, boundary/corner effects, newly available closed walks, or incomplete cancellation are hypotheses, not established results.
+The factor implies that the correction vanishes at $\theta=0$ and $\theta=2\pi$. This is an algebraic property of the finite-level formulas, not yet a derivation from the recursive graph structure. Possible explanations involving new vertices, boundary/corner effects, newly available closed walks, or incomplete cancellation are hypotheses, not established results.
 
 A satisfactory explanation must identify the operator terms or walk classes contributing to the correction, derive its trigonometric structure, explain why the contribution does not persist at later transitions, and prove the result for the specified graph/operator family. The exceptional case is a central mathematical clue and should not be hidden.
 
