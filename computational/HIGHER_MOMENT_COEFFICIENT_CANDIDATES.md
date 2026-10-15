@@ -1,6 +1,6 @@
 # Higher-moment Fourier coefficient candidates
 
-**Status: strong numerical reconstruction; exact symbolic derivation and universal proof remain open.**
+**Status: exact finite-level Fourier identities certified by modular/CRT; the all-level recurrence remains open.**
 
 Let
 \[
@@ -9,9 +9,9 @@ R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta),
 \]
 The candidate later-transition coefficient is \(C_p(\theta)=R_4^{(p)}(\theta)\). The exceptional first transition is \(R_2^{(p)}(\theta)\).
 
-The following integer Fourier coefficients were reconstructed from 21 equally spaced samples over a \(4\pi\) period, then checked against off-grid sparse-trace evaluations. They are **candidate identities inferred numerically**, not yet symbolic proofs.
+The following integer Fourier coefficients give the exact finite-level identities for \(R_2^{(p)}\) and \(R_4^{(p)}\). They were first reconstructed numerically, then certified by modular arithmetic over three finite fields and a CRT uniqueness bound; see [the exact certificate](HIGHER_MOMENT_MODULAR_CERTIFICATE.md). They do **not** establish that \(R_m^{(p)}=R_4^{(p)}\) for every \(m\ge3\).
 
-## Candidate later-transition coefficients \(C_p(\theta)=R_4^{(p)}(\theta)\)
+## Certified finite-level later-transition residual \(R_4^{(p)}(\theta)\)
 
 \[
 \begin{aligned}
@@ -42,7 +42,7 @@ C_{10}(\theta)={}&-249810+2759440\cos\phi+3693520\sin\phi\\
 
 At \(\theta=\pi/2\), these give approximately \(2595.41125497\), \(153107.523159\), and \(5287216.62180\). At \(\theta=\pi\), they give \(5280\), \(277504\), and \(4507520\).
 
-## Candidate first-transition coefficients \(R_2^{(p)}(\theta)\)
+## Certified finite-level first-transition residual \(R_2^{(p)}(\theta)\)
 
 \[
 \begin{aligned}
@@ -77,7 +77,7 @@ Subtracting the candidate later-transition coefficient gives
 \[
 R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi).
 \]
-The candidate quotient functions are
+The certified quotient functions are
 \[
 Q_6(\phi)=-24,
 \]
@@ -97,13 +97,13 @@ Q_{10}(\phi)={}&-3103440-539280\cos\phi+2405520\sin\phi\\
 \end{aligned}
 \]
 
-Thus, if the reconstructed coefficient identities are exact, the exceptional correction has a quadratic zero at \(\theta=0\) and also vanishes at \(\theta=2\pi\). This is an algebraic consequence of the **candidate formulas**, not yet a derivation from the graph/operator recursion. The structural cause of the exception remains open.
+The certified correction has a quadratic zero at \(\theta=0\) and also vanishes at \(\theta=2\pi\). This factorization follows algebraically from the certified finite-level formulas, but it is not yet a derivation from the graph/operator recursion. The structural cause of the exception remains open.
 
 ## Reconstruction protocol
 
 - Use \(N=21=2p_{\max}+1\) samples, \(\theta_j=4\pi j/21\), \(j=0,\ldots,20\).
 - Compute \(R_2\) and \(R_4\) directly from sparse matrix-power traces for levels 1–4.
-- Recover Fourier coefficients by a discrete Fourier transform and compare them with the displayed integer candidates.
+- Recover Fourier coefficients by a discrete Fourier transform and compare them with the displayed integer coefficients.
 - Validate at seven off-grid angles not used in the Fourier reconstruction.
 - Separately test recurrence predictions on held-out levels 5–7 with the sparse-trace workflow.
 
