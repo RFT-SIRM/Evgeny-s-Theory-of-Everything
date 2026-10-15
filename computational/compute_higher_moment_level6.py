@@ -45,8 +45,14 @@ def main():
             r5 = abs(d[4]-(3*d[3]+c34))/max(abs(d[4]),1.0)
             r6 = abs(d[5]-(3*d[4]+c34))/max(abs(d[5]),1.0)
             c12 = d[1]-3*d[0]
-            if max(r5, r6) > 1e-8:
-                raise AssertionError(f"H{p} holdout failed at theta={theta}: level5={r5}, level6={r6}")
+            r23 = abs((d[2]-3*d[1])-c34)/max(abs(c34), 1.0)
+            r45 = abs((d[4]-3*d[3])-c34)/max(abs(c34), 1.0)
+            r56 = abs((d[5]-3*d[4])-c34)/max(abs(c34), 1.0)
+            if max(r23, r45, r56, r5, r6) > 1e-8:
+                raise AssertionError(
+                    f"H{p} recurrence check failed at theta={theta}: "
+                    f"C23={r23}, C45={r45}, C56={r56}, level5={r5}, level6={r6}"
+                )
             if abs(theta) > 1e-12 and abs(c12-c34) < 1e-3:
                 raise AssertionError(f"H{p} expected base-transition exception not detected at theta={theta}")
             transitions[f"H{p}"] = {
