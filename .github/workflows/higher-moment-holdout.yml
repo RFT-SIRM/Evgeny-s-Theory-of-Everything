@@ -1,0 +1,46 @@
+name: Higher-moment holdout computation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "computational/compute_higher_moment_holdout.py"
+      - ".github/workflows/higher-moment-holdout.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "computational/compute_higher_moment_holdout.py"
+      - ".github/workflows/higher-moment-holdout.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout pinned operator source
+        uses: actions/checkout@v4
+        with:
+          repository: RFT-SIRM/Evgeny-Theorem
+          ref: 9ed32ae27b4493945624c2911d2815059613a9f5
+          path: Evgeny-Theorem
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install NumPy
+        run: python -m pip install "numpy>=1.24,<3"
+      - name: Calculate level-5 holdout
+        run: |
+          python computational/compute_higher_moment_holdout.py \
+            --source-root Evgeny-Theorem \
+            --output artifacts/higher_moment_level5.json
+      - name: Upload result artifact
+        if: always() && hashFiles('artifacts/higher_moment_level5.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: higher-moment-level5-holdout
+          path: artifacts/higher_moment_level5.json
