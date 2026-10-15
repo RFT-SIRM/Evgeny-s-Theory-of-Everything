@@ -12,7 +12,7 @@ Across the grid, maximum relative prediction residuals were approximately \(1.65
 
 - [Angle-grid results and interpretation](computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md)
 - [Machine-readable 13-angle results](computational/data/higher_moment_angle_grid_13.json)
-- [13-angle workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
+- [13-angle workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044)
 - [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
 - [Level-6 results](computational/HIGHER_MOMENT_LEVEL6_RESULTS.md)
 - [Level-6 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759404528)
@@ -68,6 +68,7 @@ This project studies signed graph Laplacians, spectral decimation with boundary/
 - `references/SOURCE_REPOSITORIES.md` — source repositories and provenance.
 - `computational/REPRODUCIBILITY.md` — computational reporting requirements.
 - `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of published values.
+- `computational/HIGHER_MOMENT_RECURRENCE_NOTE.md` — consolidated numerical evidence and proof-closure criteria.
 - `computational/HIGHER_MOMENT_HOLDOUT.md` — single-angle level-5 protocol.
 - `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — level-5 result at \(\theta=\pi/2\).
 - `computational/HIGHER_MOMENT_ANGLE_GRID.md` — angle-grid protocol.
