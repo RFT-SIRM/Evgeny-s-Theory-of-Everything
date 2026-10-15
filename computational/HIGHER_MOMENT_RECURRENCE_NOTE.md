@@ -92,6 +92,7 @@ This line of work should be called mathematically closed only when all of the fo
 ## Reproducibility links
 
 - [13-angle holdout workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
-- [Level-6 holdout workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38760362691)
+- [Level-6 holdout workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012)
 - [13-angle JSON results](data/higher_moment_angle_grid_13.json)
 - [Level-6 results](HIGHER_MOMENT_LEVEL6_RESULTS.md)
+- [Level-6 machine-readable data](data/higher_moment_level6_3angles.json)
