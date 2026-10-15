@@ -1,32 +1,29 @@
-# Final status of the current research stage
+# Status of the current research stage
 
-**Stage status: computational and documentation milestone complete; mathematical closure remains open.**
+**Status: reproducible numerical milestone strengthened; exact higher-moment derivation remains open.**
 
 Checked against GitHub on 2026-10-15 UTC:
-- The main branch had 31 commits, ending at 3476ac9e63b364c00e84f6a28883e3e77c317a18 before this status/documentation consolidation.
-- The documentation/reference audit on that commit completed successfully: [run 38761962702](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962702).
-- The pinned Lean formalization build on that commit completed successfully: [run 38761962625](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962625).
-- The higher-moment angle-grid holdout and level-6 holdout had completed successfully on the calculation commit: [13-angle run](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044), [level-6 run](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012).
+- Base commit before this update: `48ced0b1293040210f294255cfdc25217863a324`.
+- Documentation/reference audit: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644843).
+- Pinned Lean formalization build: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644964).
+- Existing angle-grid and level-6 holdouts: [13-angle run](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044), [level-6 run](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012).
 
-## What is established by this stage
+## Established at this checkpoint
 
-- A versioned synthesis repository with claim ledger, open problems, reproducibility policy, provenance notes, and closure checklist.
-- A successful pinned-source Lean build for the source project's reported fourth-moment theorem.
-- Reproducible numerical holdouts for H⁶/H⁸/H¹⁰ through level 5 at 13 predeclared angles and through level 6 at \(0,\pi/2,\pi\).
-- A direct matrix-power versus eigenvalue-power cross-check on levels 1–4 across the 13-angle grid.
-- Machine-readable outputs preserved in the repository.
-- A documented exceptional first transition and explicit criteria for future mathematical closure.
+- The synthesis repository separates the source H4 theorem from higher-moment conjectures.
+- The pinned Lean build for the source project's reported H4 result passes.
+- H6/H8/H10 holdouts exist through level 5 at 13 predeclared angles and through level 6 at 0, pi/2, pi, with machine-readable outputs.
+- A new numerical route reimplements the graph/operator construction and evaluates sparse matrix powers without eigenspectra, for levels 1-7 at pi/2 and pi. The local run reproduces the published level-1-to-4 references and the later transition constants through level 7. Its dedicated GitHub Actions workflow must pass on the new commit before being described as CI-verified.
+- The first transition 1->2 differs from later constants in all three moments at the tested nonzero angles.
 
-## What is not established
+## Still open
 
-- No exact formulas for \(C_6(\theta),C_8(\theta),C_{10}(\theta)\) have been derived here.
-- No proof of the higher-moment recurrence for all graph levels or all angles has been produced.
-- No proof has been produced explaining the exceptional \(1\to2\) transition.
-- No complete solution of Phi-Genesis Gate A has been established.
-- No predictive mass-index law or rigorous equivalence between the two source operator families has been established.
+- Exact symbolic expressions for C6(theta), C8(theta), C10(theta).
+- An analytic derivation of the recurrence from the graph/operator construction.
+- An analytic explanation of the exceptional 1->2 transition.
+- A proof for all levels and all angles, and a Lean formalization of that result.
+- Closure of Phi-Genesis Gate A, a predictive mass-index law, or a proven bridge between the SU(2) and signed Z2-flux models.
 
 ## Decision
 
-Close this stage as a **reproducible research and numerical-evidence milestone**, not as a completed mathematical Theory of Everything and not as a proof of the higher-moment recurrence. Keep the repository open for the next research stage: derive the coefficient functions from the operator/graph recursion, explain the base transition, and prove the result before upgrading its evidence label.
-
-A release tag claiming a completed theorem would be premature. The appropriate next checkpoint is a reviewed analytic derivation, followed by independent verification and, where feasible, Lean formalization.
+This is a reproducible research and numerical-evidence milestone, not a completed mathematical Theory of Everything. The sparse holdout adds an independent numerical evaluation route but does not complete the coefficient-derivation task. The next mathematical checkpoint is an exact symbolic derivation, then a proof of the base-case exception and recurrence; only then should the project move to formal proof closure.

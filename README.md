@@ -14,11 +14,13 @@ For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 
 
 - [13-angle holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044)
 - [Level-6 holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012)
-- [Latest documentation audit — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962702)
-- [Latest pinned Lean build — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962625)
+- [Latest documentation audit — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644843)
+- [Latest pinned Lean build — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38763644964)
 - [13-angle machine-readable results](computational/data/higher_moment_angle_grid_13.json)
 - [Level-6 machine-readable results](computational/data/higher_moment_level6_3angles.json)
 - [Consolidated recurrence evidence note](computational/HIGHER_MOMENT_RECURRENCE_NOTE.md)
+- [Independent sparse level-7 holdout report](computational/HIGHER_MOMENT_SPARSE_LEVEL7.md)
+- [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
 
 The candidate recurrence appears numerically stable from the transition \(2\to3\) onward on the tested finite set; the first transition \(1\to2\) is exceptional at every nonzero tested angle. This is numerical evidence, not a universal theorem. The exact coefficient functions \(C_6(\theta),C_8(\theta),C_{10}(\theta)\) and a proof for all levels and angles remain open.
 
@@ -66,6 +68,7 @@ No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplac
 - computational/REPRODUCIBILITY.md — computational reporting requirements.
 - computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md — arithmetic audit of published values.
 - computational/HIGHER_MOMENT_RECURRENCE_NOTE.md — numerical evidence and proof-closure criteria.
+- computational/HIGHER_MOMENT_SPARSE_LEVEL7.md — sparse-trace holdout through level 7, without eigenspectrum evaluation.
 - MILESTONE_AND_RELEASE_CHECKLIST.md — milestone and mathematical closure criteria.
 - FINAL_STATUS.md — current-stage closure report.
 - computational/data/ — committed machine-readable calculation outputs.
