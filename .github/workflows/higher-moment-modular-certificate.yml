@@ -1,0 +1,36 @@
+name: Exact modular certificate for higher-moment coefficients
+on:
+  push:
+    branches: [main]
+    paths:
+      - "computational/verify_higher_moment_coefficients_modular.py"
+      - "computational/independent_sparse_level7.py"
+      - ".github/workflows/higher-moment-modular-certificate.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "computational/verify_higher_moment_coefficients_modular.py"
+      - "computational/independent_sparse_level7.py"
+      - ".github/workflows/higher-moment-modular-certificate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  modular-certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependencies
+        run: python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
+      - name: Verify Fourier coefficients over three finite fields and CRT bounds
+        run: python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
+      - name: Upload exact modular certificate report
+        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: higher-moment-modular-coefficient-certificate
+          path: artifacts/higher_moment_modular_certificate.json
