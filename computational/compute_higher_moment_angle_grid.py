@@ -44,11 +44,16 @@ def main():
             d = [values[str(m)][f"H{p}"] for m in range(1,6)]
             c12, c23, c34, c45 = [d[i]-3*d[i-1] for i in range(1,5)]
             pred5 = 3*d[3]+c34
+            relative_residual = abs(d[4]-pred5)/max(abs(d[4]),1.0)
+            if relative_residual > 1e-8:
+                raise AssertionError(f"H{p} level-5 holdout failed at theta={theta}: {relative_residual}")
+            if abs(theta) > 1e-12 and abs(c12-c34) < 1e-3:
+                raise AssertionError(f"H{p} expected base-transition exception not detected at theta={theta}")
             transitions[f"H{p}"] = {
               "C_1_to_2": c12, "C_2_to_3": c23, "C_3_to_4": c34,
               "C_4_to_5": c45, "level5_prediction_from_C34": pred5,
               "level5_actual": d[4], "level5_residual": d[4]-pred5,
-              "relative_residual": abs(d[4]-pred5)/max(abs(d[4]),1.0)
+              "relative_residual": relative_residual
             }
         report["results"][key] = {"theta": float(theta), "values": values, "transitions": transitions}
         if abs(theta - np.pi/2) < 1e-12:

@@ -42,16 +42,23 @@ def main():
         for p in (6,8,10):
             d = [values[str(m)][f"H{p}"] for m in range(1,7)]
             c34 = d[3] - 3*d[2]  # fixed from levels 3 and 4
+            r5 = abs(d[4]-(3*d[3]+c34))/max(abs(d[4]),1.0)
+            r6 = abs(d[5]-(3*d[4]+c34))/max(abs(d[5]),1.0)
+            c12 = d[1]-3*d[0]
+            if max(r5, r6) > 1e-8:
+                raise AssertionError(f"H{p} holdout failed at theta={theta}: level5={r5}, level6={r6}")
+            if abs(theta) > 1e-12 and abs(c12-c34) < 1e-3:
+                raise AssertionError(f"H{p} expected base-transition exception not detected at theta={theta}")
             transitions[f"H{p}"] = {
-              "C_1_to_2": d[1]-3*d[0], "C_2_to_3": d[2]-3*d[1],
+              "C_1_to_2": c12, "C_2_to_3": d[2]-3*d[1],
               "C_3_to_4": c34, "C_4_to_5": d[4]-3*d[3],
               "C_5_to_6": d[5]-3*d[4],
               "level5_prediction_from_C34": 3*d[3]+c34,
               "level5_actual": d[4],
-              "level5_relative_residual": abs(d[4]-(3*d[3]+c34))/max(abs(d[4]),1.0),
+              "level5_relative_residual": r5,
               "level6_prediction_from_C34": 3*d[4]+c34,
               "level6_actual": d[5],
-              "level6_relative_residual": abs(d[5]-(3*d[4]+c34))/max(abs(d[5]),1.0)
+              "level6_relative_residual": r6
             }
             if abs(theta-np.pi/2) < 1e-12:
                 errors=[abs(d[m-1]-REF_PI2[p][m-1])/max(abs(REF_PI2[p][m-1]),1.0) for m in range(1,5)]
