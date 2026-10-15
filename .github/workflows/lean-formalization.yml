@@ -1,0 +1,36 @@
+name: Lean formalization build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lean-formalization.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/lean-formalization.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out synthesis repository
+        uses: actions/checkout@v4
+      - name: Check out pinned formalization source
+        uses: actions/checkout@v4
+        with:
+          repository: RFT-SIRM/Evgeny-Theorem
+          ref: 9ed32ae27b4493945624c2911d2815059613a9f5
+          path: Evgeny-Theorem
+      - name: Build Lean formalization with pinned toolchain and Mathlib
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: Evgeny-Theorem
+          use-mathlib-cache: true
+          build: true
+          test: false
