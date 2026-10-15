@@ -4,21 +4,15 @@
 
 This repository organizes a long-term mathematical research program. Its title names the scope of the program; it does **not** assert that a complete theory of everything has been established.
 
-## Latest result: level-5 holdout
+## Latest result: higher-moment angle-grid holdout
 
-A pinned GitHub Actions calculation independently recomputed H⁶, H⁸, and H¹⁰ at \(\theta=\pi/2\) through level 5 using Hermitian eigenvalues. Levels 1–4 matched the published reference values with relative discrepancies below \(1.3\times10^{-13}\). A recurrence constant fixed from levels 3 and 4 predicted level 5 with relative residuals:
+A pinned GitHub Actions calculation recomputed H⁶, H⁸, and H¹⁰ through level 5 at seven angles \(0,\pi/6,\pi/4,\pi/3,\pi/2,2\pi/3,\pi\). The recurrence constant was fixed using levels 3 and 4; level 5 was held out.
 
-| Moment | Relative residual at level 5 |
-|---|---:|
-| H⁶ | \(2.01\times10^{-13}\) |
-| H⁸ | \(8.36\times10^{-14}\) |
-| H¹⁰ | \(5.63\times10^{-14}\) |
+Across the grid, maximum relative prediction residuals were approximately \(1.65\times10^{-12}\) for H⁶, \(8.28\times10^{-13}\) for H⁸, and \(5.70\times10^{-13}\) for H¹⁰. The first transition \(1\to2\) remains exceptional at every nonzero angle tested. This supports a candidate numerical recurrence from transition \(2\to3\) onward; it is not a universal proof.
 
-The first transition \(1\to2\) remains an exception in the published table. The new calculation supports a later-level numerical recurrence at this angle; it is not a universal proof.
-
-- [Full result and limitations](computational/HIGHER_MOMENT_LEVEL5_RESULTS.md)
-- [Reproduction protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
-- [Workflow and artifact](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38758708458)
+- [Angle-grid results and interpretation](computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md)
+- [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759029736)
+- [Level-5 protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
 - [Earlier arithmetic audit](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md)
 
 ## Research principles
@@ -70,9 +64,10 @@ This project studies signed graph Laplacians, spectral decimation with boundary/
 - `references/SOURCE_REPOSITORIES.md` — source repositories and provenance.
 - `computational/REPRODUCIBILITY.md` — computational reporting requirements.
 - `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of published values.
-- `computational/HIGHER_MOMENT_HOLDOUT.md` — reproducible level-5 calculation protocol.
-- `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — observed numerical results.
-- `formalization/README.md` — formal proof integration policy.
+- `computational/HIGHER_MOMENT_HOLDOUT.md` — single-angle level-5 protocol.
+- `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — level-5 result at \(\theta=\pi/2\).
+- `computational/HIGHER_MOMENT_ANGLE_GRID.md` — angle-grid protocol.
+- `computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md` — angle-grid results.
 
 ## Contribution requirements
 
