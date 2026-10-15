@@ -1,26 +1,30 @@
 # Status of the current research stage
 
-**Status: exact finite-level coefficient identities certified; the all-level recurrence remains open.**
+**Status: exact finite-level Fourier coefficient identities certified; the all-level recurrence remains open.**
 
 Checked against GitHub on 2026-10-15 UTC:
-- Current source-code revision before the certificate addition: \`209668f756f472c121d57e7cc166fd20654010f4\`.
-- Documentation audit and pinned Lean build for the subsequent documentation revision: [audit passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38768327573), [Lean build passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38768328137).
-- Floating-point Fourier coefficient reconstruction and seven off-grid validations: [passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767383292).
-- Independent sparse recurrence holdout through level 7 at five angles: [passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767388243).
+- Code and modular certificate commit: \`32b3467c5f0fda536e7b99f4ad888e2d9e6bb6eb\`.
+- Documentation/reference audit: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38769047909).
+- Exact modular/CRT coefficient certificate: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38769047951).
+- Pinned Lean formalization build: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38769048065).
+- Floating-point Fourier reconstruction and seven off-grid validations: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767383292).
+- Independent sparse recurrence holdout through level 7 at five angles: [successful](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767388243).
 
-## New mathematical/computational result
+## What is now established
 
-The integer Fourier coefficients for both \(R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}\) and \(R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}\), for \(p=6,8,10\), are now checked by a separate exact modular/CRT method. The method evaluates the graph/operator matrices over three finite fields, recovers the Fourier modes exactly modulo each prime, and uses a denominator argument plus an operator-norm bound to show that the CRT modulus is large enough to certify the integer coefficients. This is an exact finite-level certificate, not just floating-point interpolation.
-
-The difference \(R_2^{(p)}-R_4^{(p)}\) has the explicit candidate factorization \(\sin^2(\theta/2)Q_p(\theta/2)\), and the finite-level coefficient certificate is designed to certify that identity as well.
+- The Fourier coefficients of the finite-level residuals \(R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}\) and \(R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}\), for \(p=6,8,10\), are certified by exact modular computations over three finite fields plus a CRT uniqueness bound.
+- The exceptional correction \(R_2^{(p)}-R_4^{(p)}\) has an explicit finite-level Fourier form.
+- Independent sparse-matrix-power tests reproduce recurrence predictions through level 7 at five angles, without using eigenspectra.
+- The pinned Lean build for the source project's fourth-moment theorem remains green; it does not formalize the higher-moment recurrence.
 
 ## Still open
 
-- Prove that \(R_m^{(p)}=R_4^{(p)}\) for every \(m\ge3\) and every angle.
-- Derive the structural reason for the exceptional \(1\to2\) transition from the recursive graph/operator construction.
-- Formalize the all-level recurrence and base-case correction in Lean.
+- Prove \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\ge3\) and all stated angles.
+- Derive that level-independence from the recursive graph/operator construction or a closed-walk expansion.
+- Explain structurally why the \(1\to2\) transition is exceptional.
+- Formalize the all-level recurrence and base correction in Lean.
 - Close Phi-Genesis Gate A, establish any predictive mass-index law, or prove a bridge between the SU(2) and signed Z₂-flux models.
 
 ## Decision
 
-The project has progressed from finite numerical recurrence evidence to exact finite-level Fourier coefficient certification plus independent held-out tests through level 7. It is still not a completed mathematical Theory of Everything: the universal recurrence and its structural proof remain open.
+This is now an exact finite-level coefficient certificate plus independent numerical evidence, not a completed mathematical Theory of Everything. The next research target is a graph-recursive derivation proving that the certified \(R_4\) formula governs every transition from level 2 to level 3 onward, followed by formal proof closure.

@@ -16,14 +16,15 @@ Tasks:
 
 Investigate H⁶, H⁸, H¹⁰, and beyond without presupposing that observed patterns are universal.
 
-Numerical holdouts cover levels 1–5 at thirteen predeclared angles \(\theta=k\pi/12\), \(k=0,\ldots,12\), and levels 1–6 at \(0,\pi/2,\pi\). The candidate recurrence appears stable from transition 2→3 onward on the tested set; transition 1→2 is exceptional. This is a research observation, not a general theorem.
+Numerical holdouts cover levels 1–5 at thirteen predeclared angles \(\theta=k\pi/12\), \(k=0,\ldots,12\), levels 1–6 at \(0,\pi/2,\pi\), and independent sparse-matrix-power checks through level 7 at five angles. Exact modular/CRT checks now certify the Fourier coefficients of the finite-level residuals \(R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}\) and \(R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}\), for \(p=6,8,10\).
+
+The remaining central question is whether \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\ge3\) and every angle. This is still a conjecture.
 
 Next tasks:
-- derive the exact coefficient function \(C_p(\theta)\) for \(p=6,8,10\);
-- prove the starting level and explain the exceptional base transition;
-- derive the recurrence from graph recursion, operator block structure, closed-walk enumeration, or representation theory;
+- derive the level-independent recurrence from graph recursion, operator block structure, closed-walk enumeration, or representation theory;
+- explain the exceptional transition \(1\to2\), whose finite-level correction is now explicitly certified but not structurally explained;
 - retain fixed-coefficient holdouts as regression checks, not as a substitute for proof;
-- pursue Lean formalization only after the mathematical statement and proof route are clear.
+- pursue Lean formalization after the all-level statement and proof route are clear.
 
 A recurrence constant defined as \(C_m=\Delta_m-3\Delta_{m-1}\) makes the equation true by definition at that transition. Evidence for a level-independent constant requires comparing distinct transitions, with the coefficient fixed independently of the transitions being tested.
 
@@ -47,7 +48,8 @@ A valid bridge must specify both operator families and domains, the map relating
 ## Current sequence
 
 1. Maintain the claims ledger and provenance map.
-2. Derive the exact higher-moment coefficient functions and explain the base exception.
-3. Extend path-class cancellation results beyond the level-1 H⁶ calculation.
-4. Return to Gate A only with a precise exceptional-set criterion.
-5. Formulate a unified theorem only after a rigorous bridge between the operator families is established.
+2. Prove that the certified finite-level coefficient \(R_4^{(p)}\) is the same residual at every level \(m\ge3\).
+3. Derive the base-case correction from the recursive graph/operator structure.
+4. Extend path-class cancellation results beyond the level-1 H⁶ calculation.
+5. Return to Gate A only with a precise exceptional-set criterion.
+6. Formulate a unified theorem only after a rigorous bridge between the operator families is established.
