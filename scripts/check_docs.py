@@ -6,6 +6,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
     "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CITATION.cff",
     "FOUNDATIONS.md",
     "RESEARCH_PROGRAM.md",
     "CLAIMS_AND_EVIDENCE.md",
@@ -42,6 +45,19 @@ def main() -> int:
         ):
             if source not in readme:
                 errors.append(f"README missing source provenance URL: {source}")
+
+    license_path = ROOT / "LICENSE"
+    if license_path.is_file():
+        license_text = license_path.read_text(encoding="utf-8")
+        if "Apache License" not in license_text or "Version 2.0" not in license_text:
+            errors.append("LICENSE must contain the Apache License 2.0 text")
+
+    readme_path = ROOT / "README.md"
+    if readme_path.is_file():
+        readme = readme_path.read_text(encoding="utf-8")
+        for reference in ("LICENSE", "NOTICE", "CITATION.cff"):
+            if reference not in readme:
+                errors.append(f"README missing repository-governance reference: {reference}")
 
     if errors:
         print("Documentation integrity checks FAILED:")

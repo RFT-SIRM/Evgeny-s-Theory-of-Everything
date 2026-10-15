@@ -1,0 +1,23 @@
+# NOTICE
+
+Copyright 2026 RFT-SIRM
+
+The original synthesis documentation, scripts, configuration, and original
+research notes in this repository are licensed under the Apache License 2.0
+unless a file or directory states otherwise.
+
+## Upstream projects
+
+This repository references, and its CI may check out, separate upstream
+projects including:
+
+- https://github.com/RFT-SIRM/Evgeny-Theorem
+- https://github.com/RFT-SIRM/Phi-Genesis
+
+Those repositories are separate works. Their source files, licenses, copyright
+notices, and contribution terms are not changed or superseded by this
+repository's LICENSE. Consult each upstream repository for its applicable
+license and notices before copying or redistributing its materials.
+
+Scientific claims inherited from an upstream project are identified as such;
+citation or linkage does not mean this repository independently proves them.

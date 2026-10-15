@@ -1,8 +1,14 @@
 # Evgeny's Theory of Everything
 
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+
 **A unified research program for recursive operators, spectral invariants, and higher-moment trace laws.**
 
 This repository organizes a long-term mathematical research program. Its title names the scope of the program; it does **not** assert that a complete theory of everything has been established.
+
+## License and attribution
+
+This repository's original synthesis documentation, scripts, and configuration are licensed under the [Apache License 2.0](LICENSE). The upstream projects linked below are separate works; their files and licenses are not relicensed by this repository. See [NOTICE](NOTICE) for provenance and attribution boundaries. To cite this research snapshot, see [CITATION.cff](CITATION.cff).
 
 ## Current milestone
 
@@ -78,6 +84,11 @@ No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplac
 - computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md — numerically reconstructed Fourier candidates for the higher-moment coefficients and exceptional first transition.
 - MILESTONE_AND_RELEASE_CHECKLIST.md — milestone and mathematical closure criteria.
 - FINAL_STATUS.md — current-stage closure report.
+- LICENSE — Apache License 2.0 for this repository's original contributions.
+- NOTICE — upstream provenance and third-party licensing boundary.
+- CITATION.cff — citation metadata for the research repository.
+- CHANGELOG.md — curated milestone and documentation changes.
+- SECURITY.md — responsible reporting guidance.
 - computational/data/ — committed machine-readable calculation outputs.
 
 ## Research principles

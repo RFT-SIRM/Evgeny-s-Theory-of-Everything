@@ -2,7 +2,7 @@
 
 ## Scope and verification policy
 
-This chronology is reconstructed from the GitHub commit history of this repository and the pinned source references used by its workflows. The first 31 commits on main were created on 2026-10-15 UTC. Their commit messages are preserved in Git history; the milestones below group those commits by the work they introduced. A commit message is evidence of a recorded change, not by itself evidence that a mathematical claim is true.
+This chronology is reconstructed from the GitHub commit history of this repository and the pinned source references used by its workflows. The initial chronology below records the first 31 commits on main as grouped milestones. Later changes are listed separately in the addendum; all commit messages remain available in Git history. A commit message is evidence of a recorded change, not by itself evidence that a mathematical claim is true.
 
 Source projects:
 - [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) — SU(2)-connected Sierpiński-gasket operators and the reported formalized fourth-moment result.
@@ -26,7 +26,7 @@ The higher-moment workflows pin the operator source to [RFT-SIRM/Evgeny-Theorem 
 | Explicit closure criteria and preserved level-6 data | 06e5edbbd88a | Preserved level-6 outputs and documented the criteria required before the recurrence can be called a theorem. |
 | Lean build on every main update | 3476ac9e63b3 | Added a pinned-source Lean build to push and pull-request CI. The successful build concerns the source project's fourth-moment formalization only. |
 
-The commit history contains 31 commits through 3476ac9e63b364c00e84f6a28883e3e77c317a18 at the time this chronology was checked. The chronology is intentionally commit-backed and does not invent earlier dates for the source projects or claim that all prior research archives have been reviewed.
+The milestone table above is a historical snapshot, not a complete listing of every later commit. The chronology does not invent earlier dates for the source projects or claim that all prior research archives have been reviewed.
 
 ## Current scientific interpretation
 
@@ -39,3 +39,15 @@ The commit history contains 31 commits through 3476ac9e63b364c00e84f6a28883e3e77
 ## Provenance rule for future changes
 
 Every new milestone should record the commit or tag, exact claim or code change, test command/workflow, result, and remaining limitations. Preserve failed tests and negative results. Do not infer mathematical validity from a green status icon alone.
+
+## Addendum — subsequent reproducibility and release hygiene
+
+The following later commits extend the initial milestone table:
+
+- [`25cc027ba583c04c966fed1721d6b485e6b06fd5`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/25cc027ba583c04c966fed1721d6b485e6b06fd5) — repaired the modular certificate verifier; the exact certificate workflow subsequently passed.
+- [`eb7787559570222e79c3f2da9097afcf17710e53`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/eb7787559570222e79c3f2da9097afcf17710e53) — documentation alignment.
+- [`50f9db88201f3ceb33dd201727c2a272edfebffa`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/50f9db88201f3ceb33dd201727c2a272edfebffa) — aligned the README with the certified finite-level coefficient boundary.
+- [`9a3e49672eb2c0a71f6182ec69fd7b175ff559ba`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/9a3e49672eb2c0a71f6182ec69fd7b175ff559ba) — made the modular certificate workflow run on every main push and added a Python syntax precheck.
+- [`d786e022c4b4b06a1fa20a9f5e60ecd56485f27d`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/d786e022c4b4b06a1fa20a9f5e60ecd56485f27d) — added the Apache License 2.0 file.
+
+This addendum records repository changes and CI scope; it does not elevate the higher-moment conjecture to a theorem.

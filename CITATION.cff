@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this research repository, please cite it using the metadata below."
+title: "Evgeny's Theory of Everything"
+type: software
+authors:
+  - name: "RFT-SIRM"
+date-released: 2026-10-15
+url: "https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything"
+license: Apache-2.0
+abstract: >-
+  A mathematical research repository collecting formalization and computational
+  evidence concerning recursive graph operators, spectral invariants, trace
+  moments, and higher-moment recurrence conjectures. The universal higher-moment
+  recurrence remains open; finite-level coefficient certificates and numerical
+  holdouts must not be cited as an all-level proof.
