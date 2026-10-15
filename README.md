@@ -20,7 +20,7 @@ Across the grid, maximum relative prediction residuals were approximately \(1.65
 - [Level-5 protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
 - [Earlier arithmetic audit](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md)
 
-## Research principles
+## Latest automated checks\n\n- [13-angle higher-moment holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044) — passed.\n- [Level-6 holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012) — passed.\n- [Pinned Lean formalization build](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759528216) — passed; this builds the source project's H⁴ formalization, not the H⁶/H⁸/H¹⁰ conjecture.\n\n## Research principles
 
 1. **Separate theorem from evidence.** Label each claim as formalized, proved on paper, numerically reproduced, observed, conjectural, or open.
 2. **Preserve negative results.** Failed tests, counterexamples, exceptional cases, and non-reproduced hypotheses are part of the record.
