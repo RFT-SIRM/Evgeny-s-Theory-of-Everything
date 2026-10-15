@@ -49,10 +49,14 @@ def is_prime(n):
 def build_operator(level, sample, q, zeta, imag_unit, commuting):
     vertices, edges, faces = graph(level)
     n = len(vertices)
+    if n != VERTICES[level]:
+        raise AssertionError(f\"unexpected vertex count at level {level}: {n}\")
     degree = [0] * n
     for a, b in edges:
         degree[a] += 1
         degree[b] += 1
+    if max(degree) > 4:
+        raise AssertionError(f\"maximum degree exceeds the certified bound at level {level}\")
 
     z = pow(zeta, sample, q)
     z_inv = pow(zeta, (-sample) % N, q)
@@ -212,6 +216,7 @@ def main():
         "primes_and_primitive_roots": [{"prime": q, "primitive_root": root, "prime_factors_of_q_minus_1": list(factors)} for q, root, factors in PRIMES],
         "crt_modulus_product": product,
         "scaled_coefficient_absolute_bounds": bounds,
+        "candidate_scaled_coefficient_maxima": candidate_scaled_maxima,
         "crt_uniqueness_check": "modulus product exceeds twice every coefficient bound",
         "candidate_coefficients": CANDIDATES,
         "modular_checks": prime_checks,
