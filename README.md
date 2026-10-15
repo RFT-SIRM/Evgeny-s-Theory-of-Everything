@@ -4,29 +4,23 @@
 
 This repository organizes a long-term mathematical research program. Its title names the scope of the program; it does **not** assert that a complete theory of everything has been established.
 
-## Latest result: higher-moment angle-grid holdout
+## Current milestone
 
-A pinned GitHub Actions calculation recomputed H⁶, H⁸, and H¹⁰ through level 5 at seven angles \(0,\pi/6,\pi/4,\pi/3,\pi/2,2\pi/3,\pi\). The recurrence constant was fixed using levels 3 and 4; level 5 was held out.
+The current milestone is a reproducible research package: a pinned Lean build for the source project's fourth-moment result, expanded numerical holdouts for the sixth, eighth, and tenth trace moments, versioned machine-readable outputs, and explicit evidence boundaries.
 
-Across the grid, maximum relative prediction residuals were approximately \(1.65\times10^{-12}\) for H⁶, \(8.28\times10^{-13}\) for H⁸, and \(5.70\times10^{-13}\) for H¹⁰. The first transition \(1\to2\) remains exceptional at every nonzero angle tested. This supports a candidate numerical recurrence from transition \(2\to3\) onward; it is not a universal proof.
+### Higher-moment holdouts
 
-- [Angle-grid results and interpretation](computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md)
-- [Machine-readable 13-angle results](computational/data/higher_moment_angle_grid_13.json)
-- [Machine-readable level-6 results](computational/data/higher_moment_level6_3angles.json)
-- [13-angle workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044)
-- [Angle-grid workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761024619)
-- [Level-6 results](computational/HIGHER_MOMENT_LEVEL6_RESULTS.md)
-- [Level-6 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759404528)
-- [Level-5 protocol](computational/HIGHER_MOMENT_HOLDOUT.md)
-- [Earlier arithmetic audit](computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md)
+For \(H^6,H^8,H^{10}\), the recurrence coefficient is fixed from levels 3 and 4 and then tested on held-out levels. The level-5 test covers 13 predeclared angles \(\theta=k\pi/12\), \(k=0,\ldots,12\). The level-6 test covers \(0,\pi/2,\pi\). Direct matrix-power traces are also compared with eigenvalue-power sums on levels 1–4.
 
-## Latest automated checks\n\n- [13-angle higher-moment holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044) — passed.\n- [Level-6 holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012) — passed.\n- [Pinned Lean formalization build](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38759528216) — passed; this builds the source project's H⁴ formalization, not the H⁶/H⁸/H¹⁰ conjecture.\n\n## Research principles
+- [13-angle holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487044)
+- [Level-6 holdout workflow — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761487012)
+- [Latest documentation audit — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962702)
+- [Latest pinned Lean build — passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38761962625)
+- [13-angle machine-readable results](computational/data/higher_moment_angle_grid_13.json)
+- [Level-6 machine-readable results](computational/data/higher_moment_level6_3angles.json)
+- [Consolidated recurrence evidence note](computational/HIGHER_MOMENT_RECURRENCE_NOTE.md)
 
-1. **Separate theorem from evidence.** Label each claim as formalized, proved on paper, numerically reproduced, observed, conjectural, or open.
-2. **Preserve negative results.** Failed tests, counterexamples, exceptional cases, and non-reproduced hypotheses are part of the record.
-3. **Make computation reproducible.** Record the operator, graph level, parameters, precision, algorithm, source revision, and command.
-4. **Do not promote a fit into a law.** Finite numerical agreement is not a proof of a universal identity.
-5. **Keep source projects distinct.** Similarities between different operator families do not establish equivalence.
+The candidate recurrence appears numerically stable from the transition \(2\to3\) onward on the tested finite set; the first transition \(1\to2\) is exceptional at every nonzero tested angle. This is numerical evidence, not a universal theorem. The exact coefficient functions \(C_6(\theta),C_8(\theta),C_{10}(\theta)\) and a proof for all levels and angles remain open.
 
 ## Research strands
 
@@ -34,19 +28,21 @@ Across the grid, maximum relative prediction residuals were approximately \(1.65
 
 Source: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
 
-The documented fourth-moment trace defect is
+The source project reports the fourth-moment trace-defect identity
 \[
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
-=-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge 1.
+=-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1,
 \]
-The source project reports this identity as formalized in Lean 4. Exact definitions and assumptions are in the source formalization. Higher moments \(H^6,H^8,H^{10}\) remain a separate numerical and analytical research program.
+for its specified operator definitions and assumptions, with a Lean 4 formalization. The synthesis CI builds a pinned source revision. Higher moments \(H^6,H^8,H^{10}\) are a separate research program and are not covered by that theorem.
 
 ### Signed Z₂-flux and spectral decimation
 
 Source: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis).
 
 This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Gate A remains open while residual mismatches and the full exceptional set remain unexplained. The proposed mass-index rule is not established as a predictive law.
+
+No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplacians is assumed. A bridge between them remains an open research question.
 
 ## Evidence labels
 
@@ -60,24 +56,27 @@ This project studies signed graph Laplacians, spectral decimation with boundary/
 
 ## Repository map
 
-- `FOUNDATIONS.md` — scope, terminology, and evidence standards.
-- `RESEARCH_PROGRAM.md` — workstreams and research questions.
-- `CLAIMS_AND_EVIDENCE.md` — claim ledger.
-- `OPEN_PROBLEMS.md` — unresolved questions and closure criteria.
-- `HISTORICAL_DEVELOPMENT.md` — chronology and provenance.
-- `MATHEMATICAL_FRAMEWORK.md` — definitions and cross-project boundaries.
-- `references/SOURCE_REPOSITORIES.md` — source repositories and provenance.
-- `computational/REPRODUCIBILITY.md` — computational reporting requirements.
-- `computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md` — arithmetic audit of published values.
-- `computational/HIGHER_MOMENT_RECURRENCE_NOTE.md` — consolidated numerical evidence and proof-closure criteria.
-- `MILESTONE_AND_RELEASE_CHECKLIST.md` — current milestone and criteria for mathematical closure.
-- `computational/HIGHER_MOMENT_HOLDOUT.md` — single-angle level-5 protocol.
-- `computational/HIGHER_MOMENT_LEVEL5_RESULTS.md` — level-5 result at \(\theta=\pi/2\).
-- `computational/HIGHER_MOMENT_ANGLE_GRID.md` — angle-grid protocol.
-- `computational/HIGHER_MOMENT_ANGLE_GRID_RESULTS.md` — angle-grid results.
-- `computational/HIGHER_MOMENT_LEVEL6.md` — level-6 protocol.
-- `computational/HIGHER_MOMENT_LEVEL6_RESULTS.md` — level-6 results.
+- FOUNDATIONS.md — scope, terminology, and evidence standards.
+- RESEARCH_PROGRAM.md — workstreams and research questions.
+- CLAIMS_AND_EVIDENCE.md — claim ledger.
+- OPEN_PROBLEMS.md — unresolved questions and closure criteria.
+- HISTORICAL_DEVELOPMENT.md — commit-backed chronology and provenance.
+- MATHEMATICAL_FRAMEWORK.md — definitions and cross-project boundaries.
+- references/SOURCE_REPOSITORIES.md — source repositories and provenance.
+- computational/REPRODUCIBILITY.md — computational reporting requirements.
+- computational/HIGHER_MOMENT_RECURRENCE_AUDIT.md — arithmetic audit of published values.
+- computational/HIGHER_MOMENT_RECURRENCE_NOTE.md — numerical evidence and proof-closure criteria.
+- MILESTONE_AND_RELEASE_CHECKLIST.md — milestone and mathematical closure criteria.
+- FINAL_STATUS.md — current-stage closure report.
+- computational/data/ — committed machine-readable calculation outputs.
 
-## Contribution requirements
+## Research principles
 
-Every result should include exact definitions, assumptions, proof or algorithm, commands and versions, known exceptions, and an evidence label. A passing test establishes only what that test actually checks.
+1. Separate theorem from evidence.
+2. Preserve negative results and exceptional cases.
+3. Record source revisions, parameters, algorithms, and outputs.
+4. Do not promote a fit or finite numerical agreement into a universal law.
+5. Keep distinct operator constructions separate until a precise bridge is proved.
+6. Treat passing CI as evidence only for the assertions the workflow actually runs.
+
+Every result should state its definitions, assumptions, proof or algorithm, commands and versions, known exceptions, and evidence label.
