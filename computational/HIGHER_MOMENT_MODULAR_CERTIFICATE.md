@@ -14,7 +14,7 @@ Each operator entry has Fourier coefficients with denominator dividing 2. A prod
 
 ## CRT uniqueness bound
 
-For these Sierpiński graphs the maximum vertex degree is 4. The block operator has diagonal block norm at most 4 and connection-adjacency norm at most 4, hence $\|H\|\le8$. For a graph with $n_m$ vertices, the operator dimension is $2n_m$, so $|\operatorname{Tr}(H^p)|\le 2n_m\,8^p$.
+For these Sierpiński graphs the maximum vertex degree is 4. The block operator has diagonal block norm at most 4 and connection-adjacency norm at most 4, hence $\|H\|\le8$. For a graph with $n_m$ vertices, the operator dimension is $2n_m$, so $|\mathrm{Tr}(H^p)|\le 2n_m\,8^p$.
 This yields bounds on $R_2^{(p)}$ and $R_4^{(p)}$, and hence on each scaled Fourier coefficient. The product of the three primes is greater than twice every such bound. Since the candidate and the true scaled coefficients agree modulo each prime, their difference is divisible by the CRT modulus; the bound forces that difference to be zero.
 
 This certifies the finite-level Fourier coefficients exactly, subject to the stated graph/operator construction, Fourier-mode bound, denominator argument, and norm bound. The committed script records and checks each bound and modular residue.
