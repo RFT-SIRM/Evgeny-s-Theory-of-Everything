@@ -2,11 +2,7 @@
 
 **Status: exact finite-level Fourier identities certified by modular/CRT; the all-level recurrence remains open.**
 
-Let
-$$
-R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta),
-\qquad \phi=\theta/2.
-$$
+Let $R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta)$ and $\phi=\theta/2$.
 The candidate later-transition coefficient is $C_p(\theta)=R_4^{(p)}(\theta)$. The exceptional first transition is $R_2^{(p)}(\theta)$.
 
 The following integer Fourier coefficients give the exact finite-level identities for $R_2^{(p)}$ and $R_4^{(p)}$. They were first reconstructed numerically, then certified by modular arithmetic over three finite fields and a CRT uniqueness bound; see [the exact certificate](HIGHER_MOMENT_MODULAR_CERTIFICATE.md). They do **not** establish that $R_m^{(p)}=R_4^{(p)}$ for every $m\ge3$.
