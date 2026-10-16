@@ -21,7 +21,9 @@ The constant \(C=d_4-3d_3\) was fixed using levels 3 and 4. Neither level 5 nor 
 | \(\pi/2\) | \(9.28\times10^{-14}\) | \(6.74\times10^{-14}\) | \(3.56\times10^{-14}\) |
 | \(\pi\) | \(7.63\times10^{-15}\) | \(1.11\times10^{-14}\) | \(2.06\times10^{-14}\) |
 
-Full output for all three angles, moments, levels, transition constants, and residuals is preserved in [machine-readable JSON](data/higher_moment_level6_3angles.json).\n\n## Interpretation
+Full output for all three angles, moments, levels, transition constants, and residuals is preserved in [machine-readable JSON](data/higher_moment_level6_3angles.json).
+
+## Interpretation
 
 1. The candidate recurrence with a constant fixed from levels 3 and 4 predicts both levels 5 and 6 to numerical precision at all three tested angles.
 2. The first transition \(1\to2\) remains exceptional at nonzero angles; later transition constants agree to numerical precision.
