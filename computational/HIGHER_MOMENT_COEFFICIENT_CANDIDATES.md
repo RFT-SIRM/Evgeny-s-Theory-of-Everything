@@ -69,14 +69,8 @@ $$
 
 ## A factorization pattern for the exceptional transition
 
-Subtracting the candidate later-transition coefficient gives
-$$
-R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi).
-$$
-The certified quotient functions are
-$$
-Q_6(\phi)=-24,
-$$
+Subtracting the candidate later-transition coefficient gives \(R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi)\).
+The certified quotient functions are \(Q_6(\phi)=-24\),
 $$
 \begin{aligned}
 Q_8(\phi)={}&-19840-3840\cos\phi+11008\sin\phi\\
