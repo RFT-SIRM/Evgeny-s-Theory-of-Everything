@@ -11,4 +11,4 @@ The script then predicts both level 5 and level 6 without refitting. It reports 
 Level 6 has 2,190-dimensional operators, so this workflow has a 45-minute limit. If the job fails due to time, memory, or numerical mismatch, record the failure and investigate; do not silently weaken the validation thresholds.
 
 This is a numerical test of a candidate recurrence at three angles and six levels, not a proof for all levels or all angles.
-\nThe current script explicitly checks recurrence consistency at the level-2-to-level-3, level-4-to-level-5, and level-5-to-level-6 transitions, in addition to predicting levels 5 and 6 from the coefficient fixed at levels 3 and 4. The output is preserved in `data/higher_moment_level6_3angles.json`.\n
+\nThe current script explicitly checks recurrence consistency at the level-2-to-level-3, level-4-to-level-5, and level-5-to-level-6 transitions, in addition to predicting levels 5 and 6 from the coefficient fixed at levels 3 and 4. The output is preserved in `data/higher_moment_level6_3angles.json`.
