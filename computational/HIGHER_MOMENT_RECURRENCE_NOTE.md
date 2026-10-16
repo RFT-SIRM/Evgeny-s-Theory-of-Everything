@@ -4,25 +4,11 @@
 
 ## 1. Definitions
 
-For graph level $m$, angle $\theta$, and even power $p\in\{6,8,10\}$, define
-$$
-\Delta_m^{(p)}(\theta)
-=\operatorname{Tr}\bigl(H_C(m,\theta)^p\bigr)
--\operatorname{Tr}\bigl(H_{C'}(m,\theta)^p\bigr),
-$$
-where $H_C$ is the non-commuting SU(2)-connection operator and $H_{C'}$ is the commuting control operator built by the pinned implementation in [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
+For graph level $m$, angle $\theta$, and even power $p\in\{6,8,10\}$, define $\Delta_m^{(p)}(\theta)=\mathrm{Tr}\bigl(H_C(m,\theta)^p\bigr)-\mathrm{Tr}\bigl(H_{C'}(m,\theta)^p\bigr)$, where $H_C$ is the non-commuting SU(2)-connection operator and $H_{C'}$ is the commuting control operator built by the pinned implementation in [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
 
-Define the transition residual
-$$
-R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta),
-\qquad m\ge2.
-$$
+Define the transition residual $R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta)$ for $m\ge2$.
 
-The candidate recurrence is
-$$
-\Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta),
-\qquad m\ge3.
-$$
+The candidate recurrence is $\Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta)$ for $m\ge3$.
 Equivalently, $R_m^{(p)}(\theta)=C_p(\theta)$ for $m\ge3$. The first transition $R_2^{(p)}$ is exceptional.
 
 ## 2. Evidence and exact finite-level result
