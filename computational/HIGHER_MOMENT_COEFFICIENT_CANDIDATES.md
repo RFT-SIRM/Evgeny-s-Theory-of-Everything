@@ -111,9 +111,9 @@ Each operator entry is linear in \(\cos(\theta/2)\) and \(\sin(\theta/2)\), so a
 
 Reproduce with:
 
-\`\`\`sh
+```sh
 python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/derive_higher_moment_coefficients.py --output artifacts/higher_moment_coefficient_candidates.json
-\`\`\`
+```
 
 The dedicated [Fourier coefficient candidate workflow passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767383292). The expanded [independent sparse level-7 holdout also passed](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/runs/38767388243).
