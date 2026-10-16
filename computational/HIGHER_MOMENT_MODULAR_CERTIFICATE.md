@@ -54,9 +54,9 @@ This certifies the finite-level Fourier coefficients exactly, subject to the sta
 
 Reproduce with:
 
-\`\`\`sh
+```sh
 python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
-\`\`\`
+```
 
 Workflow: [Exact modular coefficient certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-modular-certificate.yml).
