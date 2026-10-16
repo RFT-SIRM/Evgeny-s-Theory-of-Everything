@@ -47,11 +47,11 @@ The recurrence candidate appears stable from transition $2\to3$ onward on the te
 Source: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
 
 The source project reports the fourth-moment trace-defect identity
-$$
+$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
-=-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1,
-$$
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
+$
 for its specified operator definitions and assumptions, with a Lean 4 formalization. The synthesis CI builds a pinned source revision. Higher moments $H^6,H^8,H^{10}$ are a separate research program and are not covered by that theorem.
 
 ### Signed Z₂-flux and spectral decimation
