@@ -74,7 +74,7 @@ The certified quotient functions are:
 
 \(Q_6(\phi)=-24\), and
 
-$
+$$
 \begin{aligned}
 Q_8(\phi)={}&-19840-3840\cos\phi+11008\sin\phi\\
 &-288\cos(2\phi)-96\sin(2\phi),
