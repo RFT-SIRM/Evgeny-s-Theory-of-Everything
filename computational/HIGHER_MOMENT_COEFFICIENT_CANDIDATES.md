@@ -107,7 +107,7 @@ The certified correction has a quadratic zero at \(\theta=0\) and also vanishes 
 - Validate at seven off-grid angles not used in the Fourier reconstruction.
 - Separately test recurrence predictions on held-out levels 5–7 with the sparse-trace workflow.
 
-Each operator entry is linear in \(\cos(\theta/2)\) and \(\sin(\theta/2)\), so a trace of the \(p\)-th matrix power has Fourier modes of order at most \(p\) in \(\phi=\theta/2\). The 21-point reconstruction is therefore the right finite Fourier sampling size for moments through \(p=10\). Floating-point coefficient recovery and off-grid agreement strongly support the candidates, but do not by themselves certify exact integer coefficients.
+Each operator entry is linear in \(\cos(\theta/2)\) and \(\sin(\theta/2)\), so a trace of the \(p\)-th matrix power has Fourier modes of order at most \(p\) in \(\phi=\theta/2\). The 21-point reconstruction is therefore the right finite Fourier sampling size for moments through \(p=10\). Floating-point reconstruction and off-grid agreement were the discovery and consistency checks; exact integer coefficients are certified separately by the modular/CRT argument above.
 
 Reproduce with:
 
