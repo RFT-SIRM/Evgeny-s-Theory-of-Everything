@@ -45,6 +45,23 @@ No equivalence between the SU(2)-connection operators and signed Z₂-flux Lapla
 
 A valid bridge must specify both operator families and domains, the map relating them, preserved spectral or trace quantities, boundary conditions and exceptional cases, and a proof—or a clearly labelled conjecture with falsifiable consequences.
 
+## Workstream E — Exact scalar-invariant limit
+
+**Source:** [RFT-SIRM/RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+
+The scalar invariant defined in that project has the exact remainder
+
+\[
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\!\left(\frac{\theta}{2}\right),
+\qquad
+I_\infty(\theta)=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
+\]
+
+Its convergence theorem is machine-checked in Lean as **rftInvariant_tendsto**; the post-merge Lean build passed. The shared theorem dossier records the statement and provenance in [the exact invariant limit page](theorems/exact_invariant_limit.md).
+
+This workstream is deliberately tracked separately from the higher-moment recurrence and signed-flux decimation programme. It does not establish a physical cosmological law or a bridge between the distinct operator models.
+
 ## Current sequence
 
 1. Maintain the claims ledger and provenance map.
