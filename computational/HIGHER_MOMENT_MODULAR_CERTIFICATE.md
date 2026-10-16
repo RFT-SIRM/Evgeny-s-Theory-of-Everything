@@ -2,27 +2,13 @@
 
 **Status: exact finite-level coefficient identities certified by modular arithmetic and CRT; the all-level recurrence remains open.**
 
-This certificate upgrades the floating-point Fourier reconstruction in [the coefficient-candidate note](HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md). It verifies the displayed Fourier coefficients for
-$$
-R_2^{(p)}(\theta)=\Delta_2^{(p)}(\theta)-3\Delta_1^{(p)}(\theta)
-\quad\text{and}\quad
-R_4^{(p)}(\theta)=\Delta_4^{(p)}(\theta)-3\Delta_3^{(p)}(\theta),
-$$
-for $p=6,8,10$. It does **not** prove that $R_m^{(p)}=R_4^{(p)}$ for all $m\ge3$.
+This certificate upgrades the floating-point Fourier reconstruction in [the coefficient-candidate note](HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md). It verifies the displayed Fourier coefficients for $R_2^{(p)}(\theta)=\Delta_2^{(p)}(\theta)-3\Delta_1^{(p)}(\theta)$ and $R_4^{(p)}(\theta)=\Delta_4^{(p)}(\theta)-3\Delta_3^{(p)}(\theta)$, for $p=6,8,10$. It does **not** prove that $R_m^{(p)}=R_4^{(p)}$ for all $m\ge3$.
 
 ## Exact reconstruction
 
-Write $\phi=\theta/2$. The $p$-th trace is a trigonometric polynomial with modes $e^{ik\phi}$, $|k|\le p$, because every matrix entry is linear in $\cos\phi$ and $\sin\phi$. For $p\le10$, the 21 points
-$$
-\theta_j=\frac{4\pi j}{21},\qquad j=0,\ldots,20,
-$$
-therefore determine all possible Fourier modes without aliasing.
+Write $\phi=\theta/2$. The $p$-th trace is a trigonometric polynomial with modes $e^{ik\phi}$ for $|k|\le p$, because every matrix entry is linear in $\cos\phi$ and $\sin\phi$. For $p\le10$, the 21 points $\theta_j=\frac{4\pi j}{21}$, $j=0,\ldots,20$, therefore determine all possible Fourier modes without aliasing.
 
-The calculation is repeated in three finite fields with primes
-$$
-q\in\{10000453,\ 20000569,\ 30000769\}.
-$$
-Each prime is $1\bmod 84$, so the field contains a primitive 21st root of unity and a square root of $-1$. The script builds the source graph/operator construction over each field, computes traces of matrix powers exactly modulo $q$, and performs the 21-point discrete Fourier transform in the field.
+The calculation is repeated in three finite fields with primes $q\in\{10000453,\ 20000569,\ 30000769\}$. Each prime is $1\bmod 84$, so the field contains a primitive 21st root of unity and a square root of $-1$. The script builds the source graph/operator construction over each field, computes traces of matrix powers exactly modulo $q$, and performs the 21-point discrete Fourier transform in the field.
 
 Each operator entry has Fourier coefficients with denominator dividing 2. A product of $p$ entries therefore has denominator dividing $2^p$; consequently, $2^p$ times every Fourier coefficient of the trace defect is an integer. The script compares these scaled coefficients with the proposed integer coefficients modulo all three primes.
 
