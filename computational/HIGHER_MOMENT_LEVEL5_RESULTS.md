@@ -11,11 +11,7 @@
 
 ## Level-5 results and holdout residuals
 
-The recurrence constant was fixed from levels 3 and 4:
-\[
-C=d_4-3d_3,
-\]
-then the level-5 prediction was $d_5^{\mathrm{pred}}=3d_4+C$. Level 5 was not used to fit the constant.
+The recurrence constant was fixed from levels 3 and 4: $C=d_4-3d_3$. The level-5 prediction was $d_5^{\mathrm{pred}}=3d_4+C$. Level 5 was not used to fit the constant.
 
 | Moment | $d_5=\Delta_5(H^p,\pi/2)$ | $C_{3\to4}$ | $C_{4\to5}$ | Relative prediction residual |
 |---|---:|---:|---:|---:|
