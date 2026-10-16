@@ -15,10 +15,10 @@ The existing angle-grid and level-6 workflows evaluate traces through Hermitian 
 
 Reproduce with:
 
-\`\`\`sh
+```sh
 python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/independent_sparse_level7.py --output artifacts/independent_sparse_level7.json
-\`\`\`
+```
 
 ## Results at \(\theta=\pi/2\)
 
