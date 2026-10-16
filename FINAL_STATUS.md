@@ -16,6 +16,10 @@ Workflows:
 - [Independent sparse level-7 holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
 - [Fourier coefficient candidates and off-grid validation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
 
+## Related formally checked result
+
+A separate scalar-invariant limit theorem has been merged into [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) via [PR #3](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/3). Its post-merge Lean build passed, and the shared theorem dossier records its exact statement and evidence in [theorems/exact_invariant_limit.md](theorems/exact_invariant_limit.md). This result does not change the open status of the all-level higher-moment recurrence described in this status report.
+
 ## What is established
 
 - The Fourier coefficients of the finite-level residuals \(R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}\) and \(R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}\), for \(p=6,8,10\), are certified by exact modular computations over three finite fields plus a CRT uniqueness bound, subject to the stated construction and bounds in the certificate.

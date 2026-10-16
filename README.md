@@ -57,6 +57,10 @@ This project studies signed graph Laplacians, spectral decimation with boundary/
 
 No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplacians is assumed. A bridge between them remains an open research question.
 
+### Exact scalar-invariant limit theorem
+
+A related, separately sourced result is the exact limit and finite-level remainder of a defined scalar invariant. Its theorem statement, algebraic derivation, Lean source, provenance, and evidence boundary are recorded in [the exact invariant limit theorem dossier](theorems/exact_invariant_limit.md). The machine-checked proof is maintained in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis), where [PR #3](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/3) was merged and the post-merge Lean build passed. This theorem concerns the stated scalar formula; it does not establish a physical cosmological law or a bridge between the other operator models in this archive.
+
 ## Evidence labels
 
 - **FORMALIZED** — machine-checked in a specified proof assistant and build configuration.

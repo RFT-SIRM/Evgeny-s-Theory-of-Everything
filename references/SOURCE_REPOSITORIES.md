@@ -16,6 +16,16 @@ Research area: signed Z₂-flux Laplacians, spectral decimation with boundary/co
 
 Boundary: incomplete Gate A closure and exploratory fitted patterns must not be represented as completed theorems.
 
+## 3. RFT-Cosmology-Genesis
+
+URL: https://github.com/RFT-SIRM/RFT-Cosmology-Genesis
+
+Research area: a reduced phenomenological cosmology workflow together with an exact scalar-invariant remainder identity and a Lean formalization of its limit.
+
+Formal result: PR #3, “formalize convergence of the invariant to its exact limit,” was merged on 16 October 2026. The merged source commit is [2a7782a8a56181313808019202089f167cf09cc2](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/commit/2a7782a56181313808019202089f167cf09cc2). The named Lean theorem is **rftInvariant_tendsto**; the exact remainder and decomposition are also machine-checked.
+
+Boundary: this result proves a limit for the specified scalar formula only. It does not establish an observational fit, physical cosmological interaction, or a bridge to either of the two operator families above. The synthesis archive records the theorem and provenance; the proof remains in its source repository.
+
 ## Provenance requirements
 
 For every imported result, record:

@@ -13,6 +13,8 @@ This dissertation consolidates a research programme concerning trace defects of 
 
 For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. Define the residual by $R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta)$. The candidate recurrence asserts that $R_m^{(p)}(\theta)$ is independent of $m$ for $m\geq3$, while the first transition $m=2$ is exceptional. A modular calculation over three finite fields, together with Fourier-mode and denominator bounds, an operator-norm estimate, and a Chinese-remainder-theorem uniqueness argument, certifies the stated Fourier coefficients of $R_2^{(p)}$ and $R_4^{(p)}$ for these moments. Independent sparse-matrix-power calculations check predictions through level 7 at five angles. These results are finite-level evidence; they do not establish the all-level recurrence.
 
+A separate, cross-project result now recorded in this synthesis archive proves the exact limit and finite-level remainder for a defined scalar invariant; its source proof is maintained in RFT-Cosmology-Genesis. This result is documented independently and is not presented as an all-level higher-moment recurrence or as a physical cosmological law.
+
 A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The dissertation concludes with a proof-oriented agenda: derive the recurrence from graph/operator recursion, explain the exceptional base transition, formalize the all-level result where feasible, and establish any cross-model bridge only after defining and proving a precise mapping.
 
 **Keywords:** spectral graph theory; trace moments; Sierpinski graphs; SU(2) connections; Fourier coefficients; modular arithmetic; CRT; Lean; spectral decimation; reproducible computation.
@@ -157,6 +159,18 @@ A reproducible computational record should identify commit SHA, command, runtime
 
 Failed runs should remain in history as evidence tied to their original commit. A later successful run on a fixed commit does not rewrite the old result; both records have distinct meanings.
 
+### Related exact scalar-invariant limit theorem
+
+A separate formalized result concerns the scalar invariant
+
+\[
+I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}\sin^2\!\left(\frac{\theta}{2}\right),\quad m\geq1.
+\]
+
+Its exact limit is \(I_\infty(\theta)=-\frac{16}{9}\sin^2(\theta/2)\), with finite-level remainder \(I_m-I_\infty=-\frac{32}{9(3^m+1)}\sin^2(\theta/2)\). The full statement, algebraic derivation, Lean theorem names, source commit, and CI evidence are kept in [the exact invariant limit theorem dossier](theorems/exact_invariant_limit.md). The source proof is maintained separately in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis); it was merged in PR #3, and the post-merge Lean build passed.
+
+This is recorded as a related formalized scalar result, not as evidence for the open all-level recurrence for \(H^6,H^8,H^{10}\), an observational CMB fit, a physical interaction, or an equivalence among the distinct operator models.
+
 ## 9. Limitations
 
 1. **Finite levels:** the modular certificate covers specified transitions, not infinitely many levels.
@@ -242,6 +256,7 @@ This checks repository structure and provenance references, not mathematical val
 | Statement | Status | Evidence boundary |
 |---|---|---|
 | Fourth-moment trace-defect formula | Reported FORMALIZED upstream | Applies to source definitions and assumptions; pinned Lean build |
+| Exact limit and finite-level remainder of the defined scalar invariant | FORMALIZED in separate Lean source project | rftInvariant_tendsto, rftInvariant_remainder, and rftInvariant_exact_decomposition in RFT-Cosmology-Genesis; post-merge Lean CI passed. No physical-law claim follows |
 | R_2^(p) coefficients for p = 6, 8, 10 | Exact finite-level certificate | First transition only |
 | R_4^(p) coefficients for p = 6, 8, 10 | Exact finite-level certificate | Level-3-to-4 transition only |
 | Predictions through level 7 at five angles | Numerically reproduced | Finite sparse-matrix-power holdout |
