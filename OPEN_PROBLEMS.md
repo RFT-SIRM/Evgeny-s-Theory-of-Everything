@@ -4,24 +4,20 @@
 
 For the SU(2)-connected Sierpiński-gasket operator family, numerical calculations support
 
-$$
-
+$
 \Delta_m^{(p)}(\theta)=3\Delta_{m-1}^{(p)}(\theta)+C_p(\theta),
 \qquad p\in\{6,8,10\},
 
-$$
-
+$
 from transition $2\to3$ onward for tested levels and angles. The transition $1\to2$ is exceptional at every nonzero tested angle.
 
 The exact Fourier coefficients of the finite-level residuals
 
-$$
-
+$
 R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)},\qquad
 R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}
 
-$$
-
+$
 have now been certified by a modular/CRT computation for $p=6,8,10$. The certificate is documented in [HIGHER_MOMENT_MODULAR_CERTIFICATE.md](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md). It certifies the finite-level formulas, not the all-level assertion $R_m^{(p)}=R_4^{(p)}$ for every $m\ge3$.
 
 Evidence already collected:
