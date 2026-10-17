@@ -44,7 +44,20 @@ $$
 I_m(\theta)=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right)
 -\frac{32}{9(3^m+1)}\sin^2\!\left(\frac{\theta}{2}\right).
 $$
-Thus the limit is $-\frac{16}{9}\sin^2(\theta/2)$. The Lean proof is maintained in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis), with provenance and exact verification links in [the theorem dossier](theorems/exact_invariant_limit.md).
+Thus the limit is
+
+$$
+I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
+$$
+
+The exact finite-level remainder is
+
+$$
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+$$
+
+The Lean proof is maintained in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis), with provenance and exact verification links in [the theorem dossier](theorems/exact_invariant_limit.md).
 
 This scalar theorem has its own definitions and proof boundary. It does not establish a cosmological interaction, observational agreement, or an operator equivalence with the SU(2) or signed-flux strands above.
 
