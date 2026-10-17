@@ -22,16 +22,16 @@ A separate scalar-invariant limit theorem has been merged into [RFT-Cosmology-Ge
 
 ## What is established
 
-- The Fourier coefficients of the finite-level residuals \(R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}\) and \(R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}\), for \(p=6,8,10\), are certified by exact modular computations over three finite fields plus a CRT uniqueness bound, subject to the stated construction and bounds in the certificate.
-- The finite-level correction \(R_2^{(p)}-R_4^{(p)}\) has a certified Fourier expression.
+- The Fourier coefficients of the finite-level residuals $R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}$ and $R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}$, for $p=6,8,10$, are certified by exact modular computations over three finite fields plus a CRT uniqueness bound, subject to the stated construction and bounds in the certificate.
+- The finite-level correction $R_2^{(p)}-R_4^{(p)}$ has a certified Fourier expression.
 - Independent sparse-matrix-power checks reproduce recurrence predictions through level 7 at five angles, without using eigenspectra.
 - The synthesis Lean workflow builds a pinned source revision containing the source project's fourth-moment formalization. This does not formalize the higher-moment recurrence.
 
 ## Still open
 
-- Prove \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\ge3\) and all stated angles.
+- Prove $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and all stated angles.
 - Derive level-independence from the recursive graph/operator construction or a closed-walk expansion.
-- Explain structurally why the \(1\to2\) transition is exceptional.
+- Explain structurally why the $1\to2$ transition is exceptional.
 - Formalize the all-level recurrence and base correction in Lean.
 - Close Phi-Genesis Gate A, establish a predictive mass-index law, or prove a bridge between the SU(2) and signed Z₂-flux models.
 
@@ -43,4 +43,4 @@ A separate scalar-invariant limit theorem has been merged into [RFT-Cosmology-Ge
 
 ## Decision
 
-The defensible milestone is an exact finite-level coefficient certificate plus independent numerical evidence, not a completed mathematical “Theory of Everything.” The next scientific target is a graph-recursive derivation proving that the certified \(R_4\) formula governs every transition from level 2 to level 3 onward, followed by formal proof closure.
+The defensible milestone is an exact finite-level coefficient certificate plus independent numerical evidence, not a completed mathematical “Theory of Everything.” The next scientific target is a graph-recursive derivation proving that the certified $R_4$ formula governs every transition from level 2 to level 3 onward, followed by formal proof closure.
