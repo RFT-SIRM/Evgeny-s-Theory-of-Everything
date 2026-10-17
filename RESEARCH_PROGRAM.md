@@ -50,13 +50,11 @@ A valid bridge must specify both operator families and domains, the map relating
 **Source:** [RFT-SIRM/RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
 
 The scalar invariant defined in that project has the exact remainder
-
 $
 I_m(\theta)-I_\infty(\theta)
 =-\frac{32}{9(3^m+1)}\sin^2\!\left(\frac{\theta}{2}\right),
 \qquad
 I_\infty(\theta)=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
-
 $
 Its convergence theorem is machine-checked in Lean as **rftInvariant_tendsto**; the post-merge Lean build passed. The shared theorem dossier records the statement and provenance in [the exact invariant limit page](theorems/exact_invariant_limit.md).
 
