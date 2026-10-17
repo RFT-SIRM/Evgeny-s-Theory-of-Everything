@@ -4,55 +4,66 @@
 
 ## 1. Definition
 
-For an integer level \(m\geq 1\) and a real parameter \(\theta\), define the scalar invariant
+For an integer level $m\geq 1$ and a real parameter $\theta$, define the scalar invariant
 
-\[
+$
+
 I_m(\theta)
 =-16\frac{3^{m-1}+1}{3^{m+1}+3}
  \sin^2\!\left(\frac{\theta}{2}\right).
-\]
+
+$
 
 Set
 
-\[
+$
+
 I_\infty(\theta)
 :=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
-\]
+
+$
 
 ## 2. Theorem
 
-For every \(\theta\in\mathbb R\),
+For every $\theta\in\mathbb R$,
 
-\[
+$
+
 \boxed{\lim_{m\to\infty} I_m(\theta)=I_\infty(\theta)
 =-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).}
-\]
 
-Moreover, for every integer \(m\geq1\) and every \(\theta\in\mathbb R\), the exact finite-level remainder is
+$
 
-\[
+Moreover, for every integer $m\geq1$ and every $\theta\in\mathbb R$, the exact finite-level remainder is
+
+$
+
 \boxed{
 I_m(\theta)-I_\infty(\theta)
 =-\frac{32}{9(3^m+1)}
  \sin^2\!\left(\frac{\theta}{2}\right).
 }
-\]
 
-The remainder identity gives an explicit error term for each finite level; because \(3^m+1\to\infty\), the remainder tends to zero.
+$
+
+The remainder identity gives an explicit error term for each finite level; because $3^m+1\to\infty$, the remainder tends to zero.
 
 ## 3. Algebraic derivation
 
 The elementary identities
 
-\[
+$
+
 3^{m-1}+1=\frac{3^m+3}{3},
 \qquad
 3^{m+1}+3=3(3^m+1)
-\]
+
+$
 
 give
 
-\[
+$
+
 \begin{aligned}
 I_m(\theta)
 &=-\frac{16(3^m+3)}{9(3^m+1)}
@@ -64,9 +75,10 @@ I_m(\theta)
   -\frac{32}{9(3^m+1)}
   \sin^2\!\left(\frac{\theta}{2}\right).
 \end{aligned}
-\]
 
-Subtracting \(I_\infty(\theta)\) yields the exact remainder. Its second term tends to zero as \(m\to\infty\), proving the stated limit.
+$
+
+Subtracting $I_\infty(\theta)$ yields the exact remainder. Its second term tends to zero as $m\to\infty$, proving the stated limit.
 
 ## 4. Formal verification and reproducibility
 
@@ -86,7 +98,7 @@ The source project pins Lean 4.33.1 and Mathlib 4.33.1. The Lean build is the ma
 
 This is a theorem about the scalar formula defined in Section 1. Its formalization proves the limit and remainder for those definitions and quantifiers.
 
-It does **not** by itself establish that the scalar invariant describes a physical cosmological interaction, fits observed CMB data, or constitutes a new physical law. It also does not prove an equivalence between the SU(2)-connected operators and the signed \(Z_2\)-flux Laplacians discussed elsewhere in this archive. Those are separate claims requiring their own precise definitions and proofs.
+It does **not** by itself establish that the scalar invariant describes a physical cosmological interaction, fits observed CMB data, or constitutes a new physical law. It also does not prove an equivalence between the SU(2)-connected operators and the signed $Z_2$-flux Laplacians discussed elsewhere in this archive. Those are separate claims requiring their own precise definitions and proofs.
 
 ## 6. Provenance
 
