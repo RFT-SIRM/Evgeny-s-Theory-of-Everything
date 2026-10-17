@@ -8,9 +8,9 @@ The existing angle-grid and level-6 workflows evaluate traces through Hermitian 
 
 ## Protocol
 
-- Moments \(p=6,8,10\), levels \(m=1,\ldots,7\).
-- Angles \(\theta=\pi/2,\pi,0.51,1.23,2.7\) radians.
-- Fix \(C_p(\theta)=\Delta_4^{(p)}(\theta)-3\Delta_3^{(p)}(\theta)\).
+- Moments $p=6,8,10$, levels $m=1,\ldots,7$.
+- Angles $\theta=\pi/2,\pi,0.51,1.23,2.7$ radians.
+- Fix $C_p(\theta)=\Delta_4^{(p)}(\theta)-3\Delta_3^{(p)}(\theta)$.
 - Predict levels 5, 6, and 7 without refitting; inspect the first transition separately.
 
 Reproduce with:
@@ -20,37 +20,37 @@ python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/independent_sparse_level7.py --output artifacts/independent_sparse_level7.json
 ```
 
-## Results at \(\theta=\pi/2\)
+## Results at $\theta=\pi/2$
 
-The sparse trace computation reproduces the published level-1-to-4 values within relative error \(4.4\times10^{-12}\) or better.
+The sparse trace computation reproduces the published level-1-to-4 values within relative error $4.4\times10^{-12}$ or better.
 
-| Moment | \(C_{1\to2}\) | \(C_{3\to4}\) | Level-7 defect |
+| Moment | $C_{1\to2}$ | $C_{3\to4}$ | Level-7 defect |
 |---|---:|---:|---:|
-| \(H^6\) | 2583.411254969 | 2595.411254969 | -1,376,406.303191 |
-| \(H^8\) | 145673.793862716 | 153107.523158938 | -126,071,937.938791 |
-| \(H^{10}\) | 4353558.577659726 | 5287216.621804237 | -8,518,070,752.620697 |
+| $H^6$ | 2583.411254969 | 2595.411254969 | -1,376,406.303191 |
+| $H^8$ | 145673.793862716 | 153107.523158938 | -126,071,937.938791 |
+| $H^{10}$ | 4353558.577659726 | 5287216.621804237 | -8,518,070,752.620697 |
 
-Relative prediction residuals using \(C_p\) fixed from levels 3 and 4:
+Relative prediction residuals using $C_p$ fixed from levels 3 and 4:
 
 | Moment | Level 5 | Level 6 | Level 7 |
 |---|---:|---:|---:|
-| \(H^6\) | \(3.32\times10^{-14}\) | \(2.53\times10^{-14}\) | \(2.40\times10^{-14}\) |
-| \(H^8\) | 0 at displayed precision | \(3.54\times10^{-15}\) | \(1.18\times10^{-15}\) |
-| \(H^{10}\) | \(2.01\times10^{-15}\) | \(3.36\times10^{-16}\) | \(1.12\times10^{-16}\) |
+| $H^6$ | $3.32\times10^{-14}$ | $2.53\times10^{-14}$ | $2.40\times10^{-14}$ |
+| $H^8$ | 0 at displayed precision | $3.54\times10^{-15}$ | $1.18\times10^{-15}$ |
+| $H^{10}$ | $2.01\times10^{-15}$ | $3.36\times10^{-16}$ | $1.12\times10^{-16}$ |
 
-## Results at \(\theta=\pi\)
+## Results at $\theta=\pi$
 
-| Moment | \(C_{1\to2}\) | \(C_{2\to3}\) and later transitions |
+| Moment | $C_{1\to2}$ | $C_{2\to3}$ and later transitions |
 |---|---:|---:|
-| \(H^6\) | 5256 | 5280 |
-| \(H^8\) | 268960 | 277504 |
-| \(H^{10}\) | 4006040 | 4507520 |
+| $H^6$ | 5256 | 5280 |
+| $H^8$ | 268960 | 277504 |
+| $H^{10}$ | 4006040 | 4507520 |
 
-The level-7 defects at \(\pi\) are \(-3,000,288\), \(-300,230,144\), and \(-22,532,669,440\), respectively.
+The level-7 defects at $\pi$ are $-3,000,288$, $-300,230,144$, and $-22,532,669,440$, respectively.
 
 ## Interpretation and limits
 
-This extends the sparse-matrix-power holdout through level 7 to three additional off-grid angles. At all five tested angles, the recurrence coefficient is fixed from levels 3 and 4 and predictions for levels 5–7 are checked without refitting. The \(1\to2\) transition remains distinct.
+This extends the sparse-matrix-power holdout through level 7 to three additional off-grid angles. At all five tested angles, the recurrence coefficient is fixed from levels 3 and 4 and predictions for levels 5–7 are checked without refitting. The $1\to2$ transition remains distinct.
 
 This does **not** prove the recurrence for every level or angle. The companion [Fourier coefficient candidate report](HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md) gives explicit integer Fourier candidates for the later coefficient and exceptional first transition, reconstructed from a finite sample and validated off-grid. Exact symbolic derivation and a proof of the recurrence remain open.
 
