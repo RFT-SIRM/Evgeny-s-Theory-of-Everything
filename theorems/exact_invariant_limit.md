@@ -6,64 +6,53 @@
 
 For an integer level $m\geq 1$ and a real parameter $\theta$, define the scalar invariant
 
-$$
-
+$
 I_m(\theta)
 =-16\frac{3^{m-1}+1}{3^{m+1}+3}
  \sin^2\!\left(\frac{\theta}{2}\right).
 
-$$
-
+$
 Set
 
-$$
-
+$
 I_\infty(\theta)
 :=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
 
-$$
-
+$
 ## 2. Theorem
 
 For every $\theta\in\mathbb R$,
 
-$$
-
+$
 \boxed{\lim_{m\to\infty} I_m(\theta)=I_\infty(\theta)
 =-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).}
 
-$$
-
+$
 Moreover, for every integer $m\geq1$ and every $\theta\in\mathbb R$, the exact finite-level remainder is
 
-$$
-
+$
 \boxed{
 I_m(\theta)-I_\infty(\theta)
 =-\frac{32}{9(3^m+1)}
  \sin^2\!\left(\frac{\theta}{2}\right).
 }
 
-$$
-
+$
 The remainder identity gives an explicit error term for each finite level; because $3^m+1\to\infty$, the remainder tends to zero.
 
 ## 3. Algebraic derivation
 
 The elementary identities
 
-$$
-
+$
 3^{m-1}+1=\frac{3^m+3}{3},
 \qquad
 3^{m+1}+3=3(3^m+1)
 
-$$
-
+$
 give
 
-$$
-
+$
 \begin{aligned}
 I_m(\theta)
 &=-\frac{16(3^m+3)}{9(3^m+1)}
@@ -76,8 +65,7 @@ I_m(\theta)
   \sin^2\!\left(\frac{\theta}{2}\right).
 \end{aligned}
 
-$$
-
+$
 Subtracting $I_\infty(\theta)$ yields the exact remainder. Its second term tends to zero as $m\to\infty$, proving the stated limit.
 
 ## 4. Formal verification and reproducibility
