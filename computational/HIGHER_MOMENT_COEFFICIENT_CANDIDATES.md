@@ -54,9 +54,9 @@ R_2^{(8)}(\theta)={}&87024+17984\cos\phi+71040\sin\phi\\
 &-17984\cos(3\phi)-23680\sin(3\phi)\\
 &+96\cos(4\phi)+88\sin(4\phi).
 \end{aligned}
-$
+$$
 
-$
+$$
 \begin{aligned}
 R_2^{(10)}(\theta)={}&-1751950+2621560\cos\phi+5497240\sin\phi\\
 &+1660950\cos(2\phi)-103570\sin(2\phi)\\
@@ -69,10 +69,10 @@ $$
 
 ## A factorization pattern for the exceptional transition
 
-Subtracting the candidate later-transition coefficient gives \(R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi)\).
+Subtracting the candidate later-transition coefficient gives $R_2^{(p)}(\theta)-C_p(\theta)=\sin^2\phi\,Q_p(\phi)$.
 The certified quotient functions are:
 
-\(Q_6(\phi)=-24\), and
+$Q_6(\phi)=-24$, and
 
 $$
 \begin{aligned}
