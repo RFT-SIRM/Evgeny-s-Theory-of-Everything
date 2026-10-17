@@ -163,31 +163,14 @@ Failed runs should remain in history as evidence tied to their original commit. 
 
 A separate formalized result concerns the scalar invariant
 
-$$
-I_m(\theta)
-=-16\frac{3^{m-1}+1}{3^{m+1}+3}
-\sin^2\!\left(\frac{\theta}{2}\right),
-\qquad m\geq1.
-$$
+\[
+I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}\sin^2\!\left(\frac{\theta}{2}\right),\quad m\geq1.
+\]
 
-Its exact limit is
-
-$$
-I_\infty(\theta)
-=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
-$$
-
-The exact finite-level remainder is
-
-$$
-I_m(\theta)-I_\infty(\theta)
-=-\frac{32}{9(3^m+1)}
-\sin^2\!\left(\frac{\theta}{2}\right).
-$$
-
-The full statement, algebraic derivation, Lean theorem names, source commit, and CI evidence are kept in [the exact invariant limit theorem dossier](theorems/exact_invariant_limit.md). The source proof is maintained separately in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis); it was merged in PR #3, and the post-merge Lean build passed.
+Its exact limit is \(I_\infty(\theta)=-\frac{16}{9}\sin^2(\theta/2)\), with finite-level remainder \(I_m-I_\infty=-\frac{32}{9(3^m+1)}\sin^2(\theta/2)\). The full statement, algebraic derivation, Lean theorem names, source commit, and CI evidence are kept in [the exact invariant limit theorem dossier](theorems/exact_invariant_limit.md). The source proof is maintained separately in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis); it was merged in PR #3, and the post-merge Lean build passed.
 
 This is recorded as a related formalized scalar result, not as evidence for the open all-level recurrence for \(H^6,H^8,H^{10}\), an observational CMB fit, a physical interaction, or an equivalence among the distinct operator models.
+
 ## 9. Limitations
 
 1. **Finite levels:** the modular certificate covers specified transitions, not infinitely many levels.
