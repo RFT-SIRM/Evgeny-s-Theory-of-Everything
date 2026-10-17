@@ -5,17 +5,21 @@
 ## Question
 
 For each moment power p in {6, 8, 10}, the source project publishes values
-\(d_m = \Delta_m(H^p,\pi/2)\) for levels m = 1, 2, 3, 4 and discusses a recurrence
+$d_m = \Delta_m(H^p,\pi/2)$ for levels m = 1, 2, 3, 4 and discusses a recurrence
 
-\[
+$
+
 d_m = 3d_{m-1} + C.
-\]
+
+$
 
 The constant implied by a particular transition is
 
-\[
+$
+
 C_{m-1\to m} := d_m - 3d_{m-1}.
-\]
+
+$
 
 If one fixed constant applies starting at m = 2, then the first transition 1→2 must agree with later transitions, within a declared numerical tolerance.
 
