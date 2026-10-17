@@ -49,3 +49,4 @@ Determine whether there is a mathematically precise relation between the SU(2)-c
 ## OP-5 — Reproducible formal CI
 
 The synthesis repository has a Lean CI workflow pointed at a pinned source revision. The pinned-source Lean CI has completed successful builds; rerun it after source or toolchain changes and keep formal proof status distinct from numerical CI status. A Python test pass does not establish that a Lean theorem compiles.
+
