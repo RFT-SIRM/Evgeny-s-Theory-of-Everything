@@ -1,22 +1,203 @@
 {
-  "status": "finite exact labelled-graph isomorphism audit; not an all-level proof",
+  "status": "finite exact rooted graph-ball isomorphism audit with degree and face-index edge-class labels; not an operator-labelled isomorphism proof and not an all-level proof",
   "radius": 4,
-  "levels": [3, 4, 5, 6],
-  "corners": [[0.0, 0.0], [1.0, 0.0], [0.0, 1.0]],
+  "levels": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "corners": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
   "models": {
     "noncommuting_SU2": {
-      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
-      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
-      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}}
+      "0": {
+        "corner": [
+          0,
+          0
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      },
+      "1": {
+        "corner": [
+          1,
+          0
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      },
+      "2": {
+        "corner": [
+          0,
+          1
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      }
     },
     "commuting_control": {
-      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
-      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
-      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}}
+      "0": {
+        "corner": [
+          0,
+          0
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      },
+      "1": {
+        "corner": [
+          1,
+          0
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      },
+      "2": {
+        "corner": [
+          0,
+          1
+        ],
+        "levels": {
+          "3": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "4": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "5": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          },
+          "6": {
+            "isomorphic_to_level_3": true,
+            "vertices_in_radius_ball": 15,
+            "edges_in_induced_ball": 27
+          }
+        }
+      }
     }
   },
   "checks": {
     "noncommuting_SU2_radius4_neighbourhoods_match_levels_3_to_6": true,
     "commuting_control_radius4_neighbourhoods_match_levels_3_to_6": true
-  }
+  },
+  "caveat": "The audit does not encode the orientation/conjugate choice of each complex 2x2 connection block in independent_sparse_level7.operator. It establishes finite graph-ball stability for the recorded labels only. A full operator-labelled isomorphism lemma remains open."
 }
