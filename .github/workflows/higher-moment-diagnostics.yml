@@ -24,6 +24,7 @@ on:
       - "computational/data/corner_moment_diagnostic_summary.json"
       - "computational/data/trace_composition_exact_audit.json"
       - "computational/data/corner_neighbourhood_audit.json"
+      - "computational/data/operator_corner_label_audit.json"
       - "computational/data/corner_moment_full_recheck.json"
       - ".github/workflows/higher-moment-diagnostics.yml"
   workflow_dispatch:
