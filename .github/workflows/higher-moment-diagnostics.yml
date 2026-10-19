@@ -1,0 +1,72 @@
+name: Higher-moment diagnostic checks
+
+on:
+  push:
+    paths:
+      - "computational/diagnose_corner_moments.py"
+      - "computational/independent_sparse_level7.py"
+      - "computational/audit_trace_composition_exact.py"
+      - "computational/data/corner_moment_diagnostic_summary.json"
+      - "computational/data/trace_composition_exact_audit.json"
+      - ".github/workflows/higher-moment-diagnostics.yml"
+  pull_request:
+    paths:
+      - "computational/diagnose_corner_moments.py"
+      - "computational/independent_sparse_level7.py"
+      - "computational/audit_trace_composition_exact.py"
+      - "computational/data/corner_moment_diagnostic_summary.json"
+      - "computational/data/trace_composition_exact_audit.json"
+      - ".github/workflows/higher-moment-diagnostics.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install numerical dependencies
+        run: python -m pip install --upgrade numpy scipy sympy
+      - name: Run corner moment diagnostic
+        run: python computational/diagnose_corner_moments.py --output artifacts/corner_moment_diagnostic.json
+      - name: Run exact trace-composition audit
+        run: python computational/audit_trace_composition_exact.py
+      - name: Check exact audit and diagnostic invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          corner = json.loads(Path("artifacts/corner_moment_diagnostic.json").read_text())
+          assert all(corner["checks"].values()), corner["checks"]
+          assert corner["levels"] == [3, 4, 5, 6]
+          assert corner["powers"] == list(range(1, 10))
+          assert len(corner["angles"]) == 10
+
+          exact = json.loads(Path("artifacts/trace_composition_exact_audit.json").read_text())
+          assert exact["commutator_nonzero"] is True
+          assert set(exact["powers"]) == {str(p) for p in range(1, 8)}
+          assert all(exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 8))
+          assert all(exact["powers"][str(p)]["lhs_exact"] == exact["powers"][str(p)]["rhs_exact"] for p in range(1, 8))
+
+          committed_corner = json.loads(Path("computational/data/corner_moment_diagnostic_summary.json").read_text())
+          assert committed_corner["checks"]["diagonal_blocks_identical_in_computed_arrays"] is True
+          assert committed_corner["checks"]["off_diagonal_first_nonzero_power_8"] is True
+
+          committed_exact = json.loads(Path("computational/data/trace_composition_exact_audit.json").read_text())
+          assert all(committed_exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 8))
+          print("All higher-moment diagnostic checks passed.")
+          PY
+      - name: Upload generated diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: higher-moment-diagnostics
+          path: artifacts/*.json
+          if-no-files-found: error
