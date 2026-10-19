@@ -71,3 +71,10 @@ The new [CORNER_LOCALITY_LEMMA.md](CORNER_LOCALITY_LEMMA.md) proves that if root
 For radius $R=4$, this gives corner-block equality for powers $j\le9$, exactly the diagonal range used in the current moment analysis. The Lean development should formalize the finite-matrix closed-walk lemma independently of the graph construction first; then the graph-specific proof only needs to supply the rooted labelled isomorphism and block preservation.
 
 This is a stronger and more modular bridge than separately proving level equality for each power. It does not eliminate the exceptional off-diagonal corner terms at powers 8 and 9 in the degree-10 transition.
+
+
+## F. Prove geometric locality by self-similar induction
+
+The new [CORNER_NEIGHBOURHOOD_INDUCTION.md](CORNER_NEIGHBOURHOOD_INDUCTION.md) gives a recursive proof for the rooted radius-4 graph ball with degree labels and face-index axis classes: for $m\ge3$, the nearest copy junction is at distance $2^m\ge8>4$, so the ball lies wholly inside one corner copy; face-list offsets are multiples of three and preserve the axis index modulo three.
+
+This closes the purely geometric/axis-labelled locality statement on paper. It deliberately does **not** close the global vertex-index orientation/sign issue used by the current sparse operator. That remaining gap must be handled either by proving sign preservation for a recursive map or by a gauge-covariant block formulation. The finite strict directed-label checks through level 10 are useful evidence, not a substitute for this last all-level proof.
