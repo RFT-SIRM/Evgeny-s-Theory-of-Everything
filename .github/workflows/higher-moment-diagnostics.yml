@@ -18,8 +18,11 @@ on:
       - "computational/diagnose_corner_moments.py"
       - "computational/independent_sparse_level7.py"
       - "computational/audit_trace_composition_exact.py"
+      - "computational/audit_corner_neighbourhoods.py"
+      - "computational/audit_operator_corner_labels.py"
       - "computational/data/corner_moment_diagnostic_summary.json"
       - "computational/data/trace_composition_exact_audit.json"
+      - "computational/data/corner_neighbourhood_audit.json"
       - "computational/data/corner_moment_full_recheck.json"
       - ".github/workflows/higher-moment-diagnostics.yml"
   workflow_dispatch:
