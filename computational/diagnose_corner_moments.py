@@ -16,7 +16,14 @@ from independent_sparse_level7 import operator
 
 ANGLES = (("pi_over_2", float(np.pi / 2)),
           ("pi", float(np.pi)),
-          ("theta_0_73", 0.73))
+          ("theta_0_73", 0.73),
+          ("theta_0_137", 0.137),
+          ("theta_0_51", 0.51),
+          ("theta_1_23", 1.23),
+          ("theta_1_87", 1.87),
+          ("theta_2_41", 2.41),
+          ("theta_2_7", 2.7),
+          ("theta_3_03", 3.03))
 LEVELS = (3, 4, 5, 6)
 MAX_POWER = 9
 
