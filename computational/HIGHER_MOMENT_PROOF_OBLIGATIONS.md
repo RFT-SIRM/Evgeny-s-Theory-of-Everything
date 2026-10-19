@@ -197,3 +197,10 @@ The rooted radius-4 directed-label audit now covers levels $3,4,5,6,7,8,9,10$, a
 The CI check was strengthened to compare every generated per-corner/per-level record against the committed JSON, including the isomorphism result and ball sizes, rather than merely checking that two separate summaries contain true values. This guards against stale result files silently surviving a change in the script.
 
 The mathematical boundary remains unchanged: finite level-$3$ through level-$10$ agreement is not the all-level induction. The remaining proof must establish the recursive preservation of the labelled radius-4 ball for arbitrary $m$, and then connect the discrete edge labels to the actual $2\times2$ matrix blocks in the formal operator.
+
+
+## 15. Recursive proof of the geometric locality component
+
+The new [corner-neighbourhood induction note](CORNER_NEIGHBOURHOOD_INDUCTION.md) proves the radius-4 rooted graph-ball stabilization for all levels $m\ge3$, preserving full-graph degrees and face-index axis classes. The key is self-similarity: the nearest junction with another copy is at distance $2^m$, which exceeds the radius, and the number of faces per copy is $3^m\equiv0\pmod3$.
+
+This is a genuine all-level geometric result on paper, not an extrapolation from the finite table. The remaining gap is specific: the implementation's directed sign depends on global vertex-index order. The induction note does not yet prove that this sign is preserved by its recursive map or absorbed by a consistent local gauge. Until that operator-label gap is closed, the all-level matrix corner-block conclusion and higher-moment recurrence remain open.
