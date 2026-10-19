@@ -126,3 +126,16 @@ The composition expansion has $\binom{p-1}{r-1}$ ordered compositions for each n
 | 10 | 512 | 1,023 |
 
 A numerical sanity check with generic noncommuting $3\times3$ matrices confirmed the stated composition identity for $p=1,\ldots,7$ to floating-point roundoff (absolute discrepancies from about $10^{-15}$ to $10^{-11}$ in that test). This is a consistency check only; it is not the symbolic proof required for Lean. The count shows why a direct term-by-term expansion for $p=10$ should be automated or factored into reusable lemmas rather than maintained manually.
+
+
+## 9. Repeated verification and correction log
+
+The first version of `diagnose_corner_moments.py` incorrectly expected `operator()` to return the graph coordinates as well as the matrix. This was caught during source-level reinspection before treating the output as validated. The script was corrected to obtain coordinates from the graph constructor separately (commit `5c49f0f`), and the finite-level calculation was rerun in the analysis environment. The updated [JSON report](data/corner_moment_diagnostic_summary.json) now explicitly records the correction and its caveat.
+
+Separately, [audit_trace_composition_exact.py](audit_trace_composition_exact.py) and [its exact output](data/trace_composition_exact_audit.json) check the trace-composition identity using exact rational arithmetic for a concrete noncommuting pair of $3\times3$ matrices, for powers $p=1,\ldots,7$. Every exact difference is zero. This is stronger than a floating-point check of that example, but remains a single-instance verification, not a proof for arbitrary matrices or $p\le10$.
+
+Before promoting any diagnostic to a theorem, the remaining independent checks are:
+1. run both committed scripts in the repository's documented Python environment;
+2. compare their output to the committed JSON artifacts;
+3. add CI coverage for the scripts and artifact consistency;
+4. prove the generic composition identity symbolically and the corner-locality statement for arbitrary levels.
