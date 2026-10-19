@@ -85,3 +85,10 @@ This closes the purely geometric/axis-labelled locality statement on paper. It d
 The updated [corner-neighbourhood induction](CORNER_NEIGHBOURHOOD_INDUCTION.md) closes the global-index sign gap: in a radius-4 outer-corner ball at levels $m\ge3$, no vertex is a copy junction. Every local vertex therefore survives the recursive `removeAll` filtering of the relevant copy list, and filtering preserves the relative order of surviving vertices. The smaller-index/larger-index orientation rule is consequently preserved on every local edge. Face-axis labels are preserved because copy offsets are $3^m\equiv0\pmod3$.
 
 The next Lean step is now well-scoped: formalize the list-order inheritance lemma, the recursive local copy map and its axis labels, then connect exact block preservation to the already-proved radius-to-moment locality statement. Do not encode the all-level conclusion as an assumption.
+
+
+## H. Lean bridge added; universal hypotheses remain to be formalized
+
+The formalization repository now includes [CornerLocality.lean](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/EvgenyTheorem/CornerLocality.lean), which proves that any map preserving pairwise vertex-index order preserves the forward/reverse orientation branch used by the operator. The root Lean module imports this bridge, and a root-level CI workflow now explicitly runs `lake build EvgenyTheorem`.
+
+This is intentionally a bridge theorem, not the full locality result: the recursive graph proof must still establish the pairwise-order hypothesis for the copy map and prove preservation of the face-axis labels. The new Lean build is currently being checked by GitHub Actions; do not mark it compiled until that run finishes successfully.
