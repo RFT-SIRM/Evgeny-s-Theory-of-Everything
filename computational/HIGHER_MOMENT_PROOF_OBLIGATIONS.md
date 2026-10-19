@@ -29,17 +29,17 @@ The exact finite-level certificate establishes the Fourier coefficients of $R_2^
 
 Evaluating the certified candidate Fourier coefficients at \(\theta=\pi\) gives:
 
-| Power (p) | (R_2^{(p)}(\pi)) | (R_4^{(p)}(\pi)) | (R_4^{(p)}(\pi)-R_2^{(p)}(\pi)) |
+| Power $p$ | $R_2^{(p)}(\pi)$ | $R_4^{(p)}(\pi)$ | $R_4^{(p)}(\pi)-R_2^{(p)}(\pi)$ |
 |---:|---:|---:|---:|
 | 6 | 5,256 | 5,280 | 24 |
 | 8 | 268,960 | 277,504 | 8,544 |
 | 10 | 4,006,040 | 4,507,520 | 501,480 |
 
-These are exact evaluations of the integer Fourier candidates in the modular certificate, not new floating-point matrix computations. They confirm that the first transition cannot be folded into the same constant as the (3\to4) transition. They do not identify the structural cause of the exception.
+These are exact evaluations of the integer Fourier candidates in the modular certificate, not new floating-point matrix computations. They confirm that the first transition cannot be folded into the same constant as the $3\to4$ transition. They do not identify the structural cause of the exception.
 
 ## 3. Algebraic lemma needed for a higher-power gluing proof
 
-The fourth-moment Lean development represents the glued operator using a block-diagonal operator (K_m) on three copies and a gluing matrix (N), with
+The fourth-moment Lean development represents the glued operator using a block-diagonal operator $K_m$ on three copies and a gluing matrix $N$, with
 \[
 \operatorname{Tr}(H_{m+1}^{p})=
 \operatorname{Tr}((K_m+K_mN)^p).
@@ -57,15 +57,15 @@ The inner sum runs over ordered compositions of (p). The factor (p/r) accounts f
 
 The graph-specific lemma must then show which terms vanish and which terms depend only on corner data. Matrix blocks are (2\times2) spin matrices; they must not be treated as scalars until commutation or scalarity is proved.
 
-## 4. Distance cutoff and the special (H^{10}) bridge
+## 4. Distance cutoff and the special $H^{10}$ bridge
 
-A matrix power (K_m^a) has zero ((u,v))-block whenever the graph distance between (u) and (v) exceeds (a). Distinct outer corners of the level-(m) Sierpiński graph are at distance (2^m).
+A matrix power $K_m^a$ has zero $(u,v)$-block whenever the graph distance between $u$ and $v$ exceeds $a$. Distinct outer corners of the level-$m$ Sierpiński graph are at distance $2^m$.
 
 In a nontrivial term of the expansion above, there are $r\ge1$ factors $N$, so each exponent $a_i\le p-r\le p-1\le9$. Consequently, for $p\le10$ and $m\ge4$,
 \[
 2^m\ge16>9\ge a_i,
 \]
-and all off-diagonal corner-to-corner blocks (K_m^{a_i}) vanish. This gives a precise locality cutoff for the gluing expansion from level 4 onward, subject to the exact support properties of the implemented (K_m,N).
+and all off-diagonal corner-to-corner blocks $K_m^{a_i}$ vanish. This gives a precise locality cutoff for the gluing expansion from level 4 onward, subject to the exact support properties of the implemented $K_m,N$.
 
 The transition $3\to4$ is exceptional for the generic argument at $p=10$: level 3 has corner distance $2^3=8$, so an off-diagonal block of $K_3^8$ is not ruled out by distance alone. Therefore, a proof for $H^{10}$ cannot simply apply the $m\ge4$ cutoff to the $3\to4$ transition. A separate exact bridge is needed.
 
@@ -81,7 +81,7 @@ This yields a clean target lemma:
 
 From that lemma, a second open lemma must prove that the diagonal corner blocks of (K_m^j) are invariant under the rooted labelled isomorphism for all $j\le9$. The proof must include the onsite degree terms and the $2\times2$ connection blocks.
 
-For (p=6,8), the distance cutoff also applies at the (3\to4) step because (2^3=8>p-1). For (p=10), the separate finite bridge described above is needed before the cutoff-based induction can start.
+For $p=6,8$, the distance cutoff also applies at the $3\to4$ step because $2^3=8>p-1$. For $p=10$, the separate finite bridge described above is needed before the cutoff-based induction can start.
 
 ## 6. Proof dependency graph
 
@@ -90,7 +90,7 @@ For (p=6,8), the distance cutoff also applies at the (3\to4) step because (2^3=8
 3. **Local geometry lemma:** prove the all-level rooted, labelled radius-4 corner-neighbourhood isomorphism.
 4. **Corner-moment lemma:** deduce equality of diagonal corner blocks through order 9, preserving spin-matrix structure.
 5. **Higher-power gluing lemma:** express each transition residual in terms of those corner blocks and derive its level-independent value for $m\ge4$.
-6. **Base bridge:** establish (R_3^{(p)}=R_4^{(p)}) for (p=6,8), and establish (R_4^{(10)}=R_5^{(10)}) for (p=10), exactly. The existing certificate covers (R_4) itself, not this missing equality.
+6. **Base bridge:** establish $R_3^{(p)}=R_4^{(p)}$ for $p=6,8$, and establish $R_4^{(10)}=R_5^{(10)}$ for $p=10$, exactly. The existing certificate covers $R_4$ itself, not this missing equality.
 7. **Induction and formalization:** combine the bridge and the $m\ge4$ recurrence, then formalize the resulting theorem in Lean.
 
 Each item is a separate proof obligation. Numerical agreement at finitely many levels does not discharge any all-level obligation.
@@ -104,7 +104,7 @@ Before writing a Lean generalization, generate a machine-readable table of the d
 for the three corner roles, at levels (m=3,4,5,6) and several angles. Separately record the off-diagonal corner blocks ((K_3^8)_{cd}) for (c\ne d). This experiment can:
 - identify which corner powers actually vary with level or angle;
 - test the radius-4 locality claim against the implementation;
-- quantify the exceptional (H^{10}) bridge;
+- quantify the exceptional $H^{10}$ bridge;
 - supply small, focused examples for Lean lemmas.
 
 The output must include the source revision, graph construction, angles, matrix convention, and exact/numerical precision. It should be labeled a diagnostic, not a proof. The all-level theorem remains open until the geometry and matrix identities are proved for arbitrary levels.
