@@ -10,20 +10,20 @@ Related records:
 
 ## 1. Keep the indices separate
 
-For (p\in\{6,8,10\}), let
+For $p\in\{6,8,10\}$, let
 \[
 \Delta_m^{(p)}(\theta)=\operatorname{Tr}(H_C(m,\theta)^p)
 -\operatorname{Tr}(H_{C'}(m,\theta)^p),\qquad
 R_m^{(p)}=\Delta_m^{(p)}-3\Delta_{m-1}^{(p)}.
 \]
-Here (p) is the moment power, while the subscript in (R_m^{(p)}) is the graph-level transition. Thus (R_4^{(10)}) means the degree-10 residual for the transition (3\to4); it is not the fourth-moment theorem.
+Here $p$ is the moment power, while the subscript in $R_m^{(p)}$ is the graph-level transition. Thus $R_4^{(10)}$ means the degree-10 residual for the transition $3\to4$; it is not the fourth-moment theorem.
 
 The conjecture under investigation is
 \[
 R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\quad
 \text{for every }m\ge3.
 \]
-The exact finite-level certificate establishes the Fourier coefficients of (R_2^{(p)}) and (R_4^{(p)}), but does not establish this quantified statement.
+The exact finite-level certificate establishes the Fourier coefficients of $R_2^{(p)}$ and $R_4^{(p)}$, but does not establish this quantified statement.
 
 ## 2. Exact base-transition correction at \(\theta=\pi\)
 
@@ -61,37 +61,37 @@ The graph-specific lemma must then show which terms vanish and which terms depen
 
 A matrix power (K_m^a) has zero ((u,v))-block whenever the graph distance between (u) and (v) exceeds (a). Distinct outer corners of the level-(m) Sierpiński graph are at distance (2^m).
 
-In a nontrivial term of the expansion above, there are (r\ge1) factors (N), so each exponent (a_i\le p-r\le p-1\le9). Consequently, for (p\le10) and (m\ge4),
+In a nontrivial term of the expansion above, there are $r\ge1$ factors $N$, so each exponent $a_i\le p-r\le p-1\le9$. Consequently, for $p\le10$ and $m\ge4$,
 \[
 2^m\ge16>9\ge a_i,
 \]
 and all off-diagonal corner-to-corner blocks (K_m^{a_i}) vanish. This gives a precise locality cutoff for the gluing expansion from level 4 onward, subject to the exact support properties of the implemented (K_m,N).
 
-The transition (3\to4) is exceptional for the generic argument at (p=10): level 3 has corner distance (2^3=8), so an off-diagonal block of (K_3^8) is not ruled out by distance alone. Therefore, a proof for (H^{10}) cannot simply apply the (m\ge4) cutoff to the (3\to4) transition. A separate exact bridge is needed.
+The transition $3\to4$ is exceptional for the generic argument at $p=10$: level 3 has corner distance $2^3=8$, so an off-diagonal block of $K_3^8$ is not ruled out by distance alone. Therefore, a proof for $H^{10}$ cannot simply apply the $m\ge4$ cutoff to the $3\to4$ transition. A separate exact bridge is needed.
 
 The cutoff does not itself prove recurrence. It only removes cross-corner terms in the higher-power gluing expansion.
 
 ## 5. Corner moments reduce to a finite local problem
 
-For a closed walk of length (j) beginning and ending at a corner, the maximum graph distance reached is at most \(\lfloor j/2\rfloor\). Thus diagonal corner blocks of powers (K_m^j), for (j\le9), depend only on the rooted, labelled radius-4 neighbourhood of that corner, including degrees, edge labels, and connection blocks.
+For a closed walk of length $j$ beginning and ending at a corner, the maximum graph distance reached is at most \(\lfloor j/2\rfloor\). Thus diagonal corner blocks of powers $K_m^j$, for $j\le9$, depend only on the rooted, labelled radius-4 neighbourhood of that corner, including degrees, edge labels, and connection blocks.
 
 This yields a clean target lemma:
 
-> **All-level corner-locality lemma (open).** For every (m\ge4), the rooted, labelled radius-4 neighbourhood at each designated corner of the level-(m) graph is isomorphic to the corresponding neighbourhood in the reference level, with the operator labels and corner roles preserved.
+> **All-level corner-locality lemma (open).** For every $m\ge4$, the rooted, labelled radius-4 neighbourhood at each designated corner of the level-$m$ graph is isomorphic to the corresponding neighbourhood in the reference level, with the operator labels and corner roles preserved.
 
-From that lemma, a second open lemma must prove that the diagonal corner blocks of (K_m^j) are invariant under the rooted labelled isomorphism for all (j\le9). The proof must include the onsite degree terms and the (2\times2) connection blocks.
+From that lemma, a second open lemma must prove that the diagonal corner blocks of (K_m^j) are invariant under the rooted labelled isomorphism for all $j\le9$. The proof must include the onsite degree terms and the $2\times2$ connection blocks.
 
 For (p=6,8), the distance cutoff also applies at the (3\to4) step because (2^3=8>p-1). For (p=10), the separate finite bridge described above is needed before the cutoff-based induction can start.
 
 ## 6. Proof dependency graph
 
-1. **Generic matrix identity:** prove the composition-sum trace expansion for all (p\le10).
+1. **Generic matrix identity:** prove the composition-sum trace expansion for all $p\le10$.
 2. **Support lemma:** formalize the distance bound for powers of the block operator and identify exactly which corner terms survive.
 3. **Local geometry lemma:** prove the all-level rooted, labelled radius-4 corner-neighbourhood isomorphism.
 4. **Corner-moment lemma:** deduce equality of diagonal corner blocks through order 9, preserving spin-matrix structure.
-5. **Higher-power gluing lemma:** express each transition residual in terms of those corner blocks and derive its level-independent value for (m\ge4).
+5. **Higher-power gluing lemma:** express each transition residual in terms of those corner blocks and derive its level-independent value for $m\ge4$.
 6. **Base bridge:** establish (R_3^{(p)}=R_4^{(p)}) for (p=6,8), and establish (R_4^{(10)}=R_5^{(10)}) for (p=10), exactly. The existing certificate covers (R_4) itself, not this missing equality.
-7. **Induction and formalization:** combine the bridge and the (m\ge4) recurrence, then formalize the resulting theorem in Lean.
+7. **Induction and formalization:** combine the bridge and the $m\ge4$ recurrence, then formalize the resulting theorem in Lean.
 
 Each item is a separate proof obligation. Numerical agreement at finitely many levels does not discharge any all-level obligation.
 
