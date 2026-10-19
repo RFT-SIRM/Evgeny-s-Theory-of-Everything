@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 import sympy as sp
 
-P_MAX = 7
+P_MAX = 10
 
 
 def compositions(n):
