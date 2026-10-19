@@ -161,3 +161,10 @@ The new [audit script](audit_corner_neighbourhoods.py) compares rooted radius-4 
 **Scope limitation:** this is not yet the operator-labelled locality lemma. The graph audit preserves root identity, full-graph vertex degree, distance from the root, and face-index edge class, but it does not encode the orientation/conjugate choice of each complex $2\times2$ connection block used by the sparse operator. Therefore, the result supports the geometric locality hypothesis but cannot by itself prove equality of the matrix corner blocks. The next step is to define a canonical oriented edge label (including the adjoint/reverse rule) and prove that the rooted isomorphisms preserve those labels, then derive matrix-power block equality.
 
 The workflow now includes this finite audit and installs NetworkX. Its latest source is committed, but do not report CI as green until the corresponding GitHub Actions run is observed.
+
+
+## 12. Strict directed operator-label audit added
+
+A second audit, [audit_operator_corner_labels.py](audit_operator_corner_labels.py), now strengthens the earlier graph-only check. It treats each undirected edge as a pair of directed blocks and preserves both the face-index Pauli-axis class and the sign distinguishing the forward block from its adjoint/reverse block. An independent run using NetworkX 3.6.1 found matching radius-4 balls for all three corners, levels 3--6, and both the noncommuting SU(2) model and commuting control. The result is recorded in [operator_corner_label_audit.json](data/operator_corner_label_audit.json).
+
+The workflow now asserts these finite invariants, compares the committed result, and uploads the generated JSON artifact. This is a stricter and more relevant finite check than the undirected graph audit. It still does not prove the result for arbitrary levels, nor does a finite graph isomorphism automatically give the exact matrix conjugacy needed for every corner block. The next mathematical step is to turn the directed labelled isomorphism into an explicit block-preserving map and prove its action on powers $H^j$; only then should the resulting lemma be ported to Lean.
