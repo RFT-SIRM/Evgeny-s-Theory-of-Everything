@@ -152,3 +152,12 @@ A GitHub Actions workflow, [higher-moment-diagnostics.yml](../.github/workflows/
 ### Remaining proof boundary
 
 This closes the general trace-counting derivation on paper, but it does **not** close the research theorem. The remaining difficult obligations are the graph-specific block decomposition, the all-level corner-neighbourhood argument, and the exceptional degree-10 transition where level-3 cross-corner terms occur at powers 8 and 9.
+
+
+## 11. Finite radius-4 graph-ball audit (operator labels still open)
+
+The new [audit script](audit_corner_neighbourhoods.py) compares rooted radius-4 balls at all three outer corners on levels 3, 4, 5, and 6. For the finite graph model and the stored face-index edge classes, all compared balls are isomorphic; each recorded ball has 15 vertices and 27 induced edges. The machine-readable finite result is in [corner_neighbourhood_audit.json](data/corner_neighbourhood_audit.json).
+
+**Scope limitation:** this is not yet the operator-labelled locality lemma. The graph audit preserves root identity, full-graph vertex degree, distance from the root, and face-index edge class, but it does not encode the orientation/conjugate choice of each complex $2\times2$ connection block used by the sparse operator. Therefore, the result supports the geometric locality hypothesis but cannot by itself prove equality of the matrix corner blocks. The next step is to define a canonical oriented edge label (including the adjoint/reverse rule) and prove that the rooted isomorphisms preserve those labels, then derive matrix-power block equality.
+
+The workflow now includes this finite audit and installs NetworkX. Its latest source is committed, but do not report CI as green until the corresponding GitHub Actions run is observed.
