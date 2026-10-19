@@ -107,7 +107,7 @@ jobs:
               assert exact["powers"][str(p)]["composition_terms_by_r"] == committed_exact["powers"][str(p)]["composition_terms_by_r"]
           full_corner = json.loads(Path("computational/data/corner_moment_full_recheck.json").read_text())
           assert full_corner["checks"]["all_diagonal_blocks_identical_across_levels_for_powers_1_to_9"] is True
-          assert full_corner["checks"]["offdiagonal_blocks_first_nonzero_power_8_on_level_3"] is True
+          assert full_corner["checks"]["offdiagonal_blocks_first_nonzero_at_power_8_on_level_3"] is True
           print("All higher-moment diagnostic checks passed.")
           PY
       - name: Upload generated diagnostics
