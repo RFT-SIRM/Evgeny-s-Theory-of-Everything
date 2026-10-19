@@ -1,0 +1,22 @@
+{
+  "status": "finite exact labelled-graph isomorphism audit; not an all-level proof",
+  "radius": 4,
+  "levels": [3, 4, 5, 6],
+  "corners": [[0.0, 0.0], [1.0, 0.0], [0.0, 1.0]],
+  "models": {
+    "noncommuting_SU2": {
+      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
+      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
+      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}}
+    },
+    "commuting_control": {
+      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
+      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}},
+      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "4": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "5": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}, "6": {"isomorphic_to_level_3": true, "vertices_in_radius_ball": 15, "edges_in_induced_ball": 27}}}
+    }
+  },
+  "checks": {
+    "noncommuting_SU2_radius4_neighbourhoods_match_levels_3_to_6": true,
+    "commuting_control_radius4_neighbourhoods_match_levels_3_to_6": true
+  }
+}
