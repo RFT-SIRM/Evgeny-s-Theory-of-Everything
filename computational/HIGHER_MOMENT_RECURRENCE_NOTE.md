@@ -57,7 +57,7 @@ What remains **not** established:
 
 ## 5. Corner-moment diagnostic update
 
-A new floating-point diagnostic, [diagnose_corner_moments.py](diagnose_corner_moments.py), compares diagonal $2\times2$ corner blocks of $H_m^j$ for $j=1,\ldots,9$ at levels 3–6, for both the SU(2) and commuting operators. At $\theta=\pi/2$, $\theta=\pi$, and $\theta=0.73$, the computed diagonal corner blocks agree across all four levels with maximum absolute difference 0. The first nonzero off-diagonal corner block on level 3 occurs at power 8; power 9 is also nonzero. Results are recorded in [corner_moment_diagnostic_summary.json](data/corner_moment_diagnostic_summary.json).
+A new floating-point diagnostic, [diagnose_corner_moments.py](diagnose_corner_moments.py), compares diagonal $2\times2$ corner blocks of $H_m^j$ for $j=1,\ldots,9$ at levels 3–6, for both the SU(2) and commuting operators. At ten angles ($\pi/2$, $\pi$, $0.73$, $0.137$, $0.51$, $1.23$, $1.87$, $2.41$, $2.7$, and $3.03$ radians), the computed diagonal corner blocks agree across all four levels with maximum absolute difference 0. Off-diagonal corner blocks were inspected in detail at $\pi/2$, $\pi$, and $0.73$: the first nonzero level-3 block occurs at power 8, and power 9 is also nonzero. Results are recorded in [corner_moment_diagnostic_summary.json](data/corner_moment_diagnostic_summary.json).
 
 This narrows the computational question: the observed diagonal corner moments are consistent with level-independent local data, while the degree-10 gluing argument genuinely encounters cross-corner terms at powers 8 and 9 on level 3. These observations remain numerical and finite-level; they do not establish the all-level recurrence or a formal statement about the Lean block operator.
 
