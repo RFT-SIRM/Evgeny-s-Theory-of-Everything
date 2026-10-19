@@ -92,3 +92,11 @@ The next Lean step is now well-scoped: formalize the list-order inheritance lemm
 The formalization repository now includes [CornerLocality.lean](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/EvgenyTheorem/CornerLocality.lean), which proves that any map preserving pairwise vertex-index order preserves the forward/reverse orientation branch used by the operator. The root Lean module imports this bridge, and a root-level CI workflow now explicitly runs `lake build EvgenyTheorem`.
 
 This is intentionally a bridge theorem, not the full locality result: the recursive graph proof must still establish the pairwise-order hypothesis for the copy map and prove preservation of the face-axis labels. The new Lean build is currently being checked by GitHub Actions; do not mark it compiled until that run finishes successfully.
+
+
+## I. CI reconciliation and next formal lemma (2026-10-19)
+
+The failed run for commit `8aa0c596` is historical: the proposed generic filter-order proof did not compile and was removed rather than weakened into an assumption. The corrective commit `0cafe409` has a successful Lean formalization workflow and successful Tests workflow. The currently retained `CornerLocality.lean` therefore contains the previously compiled face-axis, orientation-interface, and old-copy index-order lemmas, but **does not yet contain** the general order-preservation theorem for filtered lists.
+
+The next proof obligation is precise. For the B-copy list
+`(vertexOrder m).map (shiftPoint (2^m) 1 0)` and the C-copy list, prove that `removeAll` preserves the relative `idxOf` order of two vertices that both survive the filter. Then establish that the local radius-4 vertices lie in the retained portion and transport the result through `vertexOrder_succ`. Do not claim full recursive order preservation until these lemmas compile and their geometric side conditions are proved.
