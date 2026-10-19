@@ -34,7 +34,8 @@ def corner_indices(vertices):
 
 
 def corner_blocks(level, theta, commuting):
-    H, vertices, _edges, _faces = operator(level, theta, commuting)
+    H = operator(level, theta, commuting)
+    vertices, _edges, _faces = graph(level)
     corners = corner_indices(vertices)
     power_matrix = H.copy()
     blocks = {}
