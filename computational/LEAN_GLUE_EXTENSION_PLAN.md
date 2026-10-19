@@ -62,3 +62,12 @@ The independent finite-level calculation finds nonzero cross-corner blocks at po
 ## Verification boundary
 
 This is a plan based on source inspection of the current `GlueAlg.lean` and `TraceExpand.lean`. No Lean file was changed and no Lean build was run as part of this update. Do not label any higher-moment theorem formalized until a separate Lean change compiles cleanly.
+
+
+## E. Add a radius-to-moment lemma before expanding mixed words
+
+The new [CORNER_LOCALITY_LEMMA.md](CORNER_LOCALITY_LEMMA.md) proves that if rooted radius-$R$ neighbourhoods preserve all directed operator blocks, then the diagonal root blocks of powers agree through degree $2R+1$. The proof expands $(H^j)_{oo}$ over closed walks and uses $d(o,v_t)\le\min(t,j-t)\le\lfloor j/2\rfloor$.
+
+For radius $R=4$, this gives corner-block equality for powers $j\le9$, exactly the diagonal range used in the current moment analysis. The Lean development should formalize the finite-matrix closed-walk lemma independently of the graph construction first; then the graph-specific proof only needs to supply the rooted labelled isomorphism and block preservation.
+
+This is a stronger and more modular bridge than separately proving level equality for each power. It does not eliminate the exceptional off-diagonal corner terms at powers 8 and 9 in the degree-10 transition.
