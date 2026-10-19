@@ -1,0 +1,168 @@
+{
+  "status": "independently rerun locally from the committed graph/operator implementation; floating-point finite-level evidence, not proof",
+  "levels": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "vertex_counts": {
+    "3": 42,
+    "4": 123,
+    "5": 366,
+    "6": 1095
+  },
+  "powers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "models": [
+    "noncommuting_SU2",
+    "commuting_control"
+  ],
+  "angles": {
+    "pi_over_2": {
+      "theta": 1.5707963267948966,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 23.68421398418642,
+        "commuting_control": 24.998839814054
+      }
+    },
+    "pi": {
+      "theta": 3.141592653589793,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 32.2490309931942,
+        "commuting_control": 34.17601498127012
+      }
+    },
+    "theta_0_73": {
+      "theta": 0.73,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000002
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 20.83948447480414,
+        "commuting_control": 21.227174833819298
+      }
+    },
+    "theta_0_137": {
+      "theta": 0.137,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000004
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 20.03001373870985,
+        "commuting_control": 20.044977414790637
+      }
+    },
+    "theta_0_51": {
+      "theta": 0.51,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 20.481762799016106,
+        "commuting_control": 20.61151592947918
+      }
+    },
+    "theta_1_23": {
+      "theta": 1.23,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000002
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 22.318360318718224,
+        "commuting_control": 23.253343690320502
+      }
+    },
+    "theta_1_87": {
+      "theta": 1.87,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000002
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 25.081524075559965,
+        "commuting_control": 26.682343385555907
+      }
+    },
+    "theta_2_41": {
+      "theta": 2.41,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 27.958337056798573,
+        "commuting_control": 29.887986522457783
+      }
+    },
+    "theta_2_7": {
+      "theta": 2.7,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000002
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 29.630090233130442,
+        "commuting_control": 31.61965945914889
+      }
+    },
+    "theta_3_03": {
+      "theta": 3.03,
+      "max_diagonal_corner_difference": 0,
+      "first_nonzero_offdiagonal_power": 8,
+      "offdiagonal_max_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1.0000000000000004
+      },
+      "offdiagonal_max_power9": {
+        "noncommuting_SU2": 31.584311487191545,
+        "commuting_control": 33.54356349631816
+      }
+    }
+  },
+  "checks": {
+    "all_diagonal_blocks_identical_across_levels_for_powers_1_to_9": true,
+    "offdiagonal_blocks_first_nonzero_at_power_8_on_level_3": true
+  },
+  "method": "Copied the repository graph/operator definitions into a clean Python session and reran the sparse matrix-power calculation with NumPy 2.3.5 and SciPy 1.17.0. The source script itself still requires the committed import fix to be exercised in CI.",
+  "caveat": "Finite-level numerical diagnostic only; does not prove all-level locality or the higher-moment recurrence."
+}
