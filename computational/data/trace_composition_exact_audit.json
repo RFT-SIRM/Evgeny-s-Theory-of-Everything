@@ -1,0 +1,91 @@
+{
+  "status": "exact rational-matrix verification on one noncommuting instance; not a general proof",
+  "matrix_dimension": 3,
+  "K": [
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ]
+  ],
+  "N": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "commutator_nonzero": true,
+  "powers": {
+    "1": {
+      "lhs_exact": "7",
+      "rhs_exact": "7",
+      "difference_exact": "0",
+      "composition_count": 1,
+      "binary_word_count_with_gluing": 1
+    },
+    "2": {
+      "lhs_exact": "39",
+      "rhs_exact": "39",
+      "difference_exact": "0",
+      "composition_count": 2,
+      "binary_word_count_with_gluing": 3
+    },
+    "3": {
+      "lhs_exact": "226",
+      "rhs_exact": "226",
+      "difference_exact": "0",
+      "composition_count": 4,
+      "binary_word_count_with_gluing": 7
+    },
+    "4": {
+      "lhs_exact": "1359",
+      "rhs_exact": "1359",
+      "difference_exact": "0",
+      "composition_count": 8,
+      "binary_word_count_with_gluing": 15
+    },
+    "5": {
+      "lhs_exact": "8227",
+      "rhs_exact": "8227",
+      "difference_exact": "0",
+      "composition_count": 16,
+      "binary_word_count_with_gluing": 31
+    },
+    "6": {
+      "lhs_exact": "49890",
+      "rhs_exact": "49890",
+      "difference_exact": "0",
+      "composition_count": 32,
+      "binary_word_count_with_gluing": 63
+    },
+    "7": {
+      "lhs_exact": "302659",
+      "rhs_exact": "302659",
+      "difference_exact": "0",
+      "composition_count": 64,
+      "binary_word_count_with_gluing": 127
+    }
+  },
+  "caveat": "Concrete exact test confirms implementation of the identity for these rational matrices and powers 1..7; general proof still required."
+}
