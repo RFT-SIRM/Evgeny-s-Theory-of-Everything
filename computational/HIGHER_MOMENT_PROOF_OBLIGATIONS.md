@@ -204,3 +204,10 @@ The mathematical boundary remains unchanged: finite level-$3$ through level-$10$
 The new [corner-neighbourhood induction note](CORNER_NEIGHBOURHOOD_INDUCTION.md) proves the radius-4 rooted graph-ball stabilization for all levels $m\ge3$, preserving full-graph degrees and face-index axis classes. The key is self-similarity: the nearest junction with another copy is at distance $2^m$, which exceeds the radius, and the number of faces per copy is $3^m\equiv0\pmod3$.
 
 This is a genuine all-level geometric result on paper, not an extrapolation from the finite table. The remaining gap is specific: the implementation's directed sign depends on global vertex-index order. The induction note does not yet prove that this sign is preserved by its recursive map or absorbed by a consistent local gauge. Until that operator-label gap is closed, the all-level matrix corner-block conclusion and higher-moment recurrence remain open.
+
+
+## 16. All-level directed orientation argument supplied on paper
+
+The earlier sign caveat is resolved at the mathematical level in [CORNER_NEIGHBOURHOOD_INDUCTION.md](CORNER_NEIGHBOURHOOD_INDUCTION.md). Because a radius-4 corner ball at level $m\ge3$ stays at least distance $2^m\ge8$ from copy junctions, none of its vertices is removed as a duplicate when the recursive vertex list is assembled. The order of the ball's vertices is inherited from the copy list, so the implementation's global-index comparison has the same result for every local edge. The face-axis label is inherited because the face-copy offset $3^m$ is divisible by 3.
+
+This supplies the all-level operator-labelled locality argument on paper. It is not yet a Lean theorem. Remaining formal obligations are to encode the recursive copy embedding and list-filter order preservation, prove exact directed block preservation from those facts, and apply the radius-to-moment lemma. The tenth-moment transition still separately needs the nonzero off-diagonal corner terms at powers 8 and 9.
