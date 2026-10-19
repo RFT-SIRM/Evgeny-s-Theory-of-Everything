@@ -19,7 +19,7 @@ import networkx as nx
 
 from independent_sparse_level7 import graph
 
-LEVELS = (3, 4, 5, 6, 7, 8)
+LEVELS = tuple(range(3, 11))
 CORNERS = ((0.0, 0.0), (1.0, 0.0), (0.0, 1.0))
 RADIUS = 4
 
@@ -100,7 +100,7 @@ def main():
                 }
             model_data[str(ci)] = {"corner": list(corner), "levels": levels}
         result["models"][model] = model_data
-        result["checks"][f"{model}_all_corners_levels_3_to_6_match"] = all(
+        result["checks"][f"{model}_all_corners_levels_3_to_10_match"] = all(
             result["models"][model][str(ci)]["levels"][str(level)]["isomorphic_to_level_3"]
             for ci in range(3) for level in LEVELS
         )
