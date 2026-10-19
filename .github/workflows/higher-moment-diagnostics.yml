@@ -9,6 +9,7 @@ on:
       - "computational/audit_corner_neighbourhoods.py"
       - "computational/audit_operator_corner_labels.py"
       - "computational/data/corner_neighbourhood_audit.json"
+      - "computational/data/operator_corner_label_audit.json"
       - "computational/data/corner_moment_diagnostic_summary.json"
       - "computational/data/trace_composition_exact_audit.json"
       - "computational/data/corner_moment_full_recheck.json"
@@ -70,7 +71,10 @@ jobs:
           operator_labels = json.loads(Path("artifacts/operator_corner_label_audit.json").read_text())
           assert operator_labels["levels"] == [3, 4, 5, 6]
           assert operator_labels["radius"] == 4
-          print("Directed operator label audit:", operator_labels["checks"])
+          assert all(operator_labels["checks"].values()), operator_labels["checks"]
+          committed_operator_labels = json.loads(Path("computational/data/operator_corner_label_audit.json").read_text())
+          assert all(committed_operator_labels["checks"].values()), committed_operator_labels["checks"]
+          print("Directed operator label audit passed:", operator_labels["checks"])
 
           neighbourhood = json.loads(Path("artifacts/corner_neighbourhood_audit.json").read_text())
           assert all(neighbourhood["checks"].values()), neighbourhood["checks"]
