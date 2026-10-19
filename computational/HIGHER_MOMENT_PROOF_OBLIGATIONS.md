@@ -99,13 +99,13 @@ Each item is a separate proof obligation. Numerical agreement at finitely many l
 
 The diagnostic script [diagnose_corner_moments.py](diagnose_corner_moments.py) computes the $2\times2$ corner blocks of $H_m^j$, $j=1,\ldots,9$, using the operator builder in [independent_sparse_level7.py](independent_sparse_level7.py). The compact machine-readable results are in [corner_moment_diagnostic_summary.json](data/corner_moment_diagnostic_summary.json).
 
-Tested levels were $m=3,4,5,6$, with vertex counts $42,123,366,1095$. Tested angles were $\theta=\pi/2$, $\theta=\pi$, and $\theta=0.73$. Both the noncommuting SU(2) operator and commuting control were checked.
+Tested levels were $m=3,4,5,6$, with vertex counts $42,123,366,1095$. Diagonal corner-block invariance was checked at ten angles: $\pi/2$, $\pi$, $0.73$, $0.137$, $0.51$, $1.23$, $1.87$, $2.41$, $2.7$, and $3.03$ radians. Off-diagonal block magnitudes are fully summarized for the first three angles in the JSON artifact. Both the noncommuting SU(2) operator and commuting control were checked.
 
 ### Observations
 
 - For each tested angle and each model, all diagonal corner blocks $(H_m^j)_{cc}$ agreed across levels 3, 4, 5, and 6 for every $j=1,\ldots,9$. The maximum absolute difference in the computed arrays was $0$.
 - On level 3, off-diagonal corner blocks vanished for powers $j=1,\ldots,7$ and became nonzero at $j=8$.
-- At $j=8$, the maximum absolute matrix entry was approximately $1$ for both models at all tested angles. At $j=9$, these blocks were also nonzero and had maximum entry magnitudes between about $20.8$ and $34.2$, depending on angle and model.
+- At $j=8$, the maximum absolute matrix entry was approximately $1$ for both models at the three fully reported angles. At $j=9$, these blocks were also nonzero and had maximum entry magnitudes between about $20.8$ and $34.2$ in those three cases, depending on angle and model.
 
 ### What this establishes—and what it does not
 
