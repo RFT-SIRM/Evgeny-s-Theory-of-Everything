@@ -4,7 +4,7 @@
 
 ## Statement
 
-Let $K,N$ be square matrices over a commutative field of characteristic zero (or over a commutative ring in which the denominators $1,ldots,p$ are invertible). For every integer $p\ge1$,
+Let $K,N$ be square matrices over a commutative field of characteristic zero (or over a commutative ring in which the denominators $1,\\ldots,p$ are invertible). For every integer $p\ge1$,
 
 $$
 \operatorname{Tr}((K+KN)^p)
