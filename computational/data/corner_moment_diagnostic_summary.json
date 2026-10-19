@@ -1,30 +1,68 @@
 {
   "status": "floating-point diagnostic; not a proof",
   "source": "computational/diagnose_corner_moments.py using computational/independent_sparse_level7.py::operator",
-  "levels_compared": [3, 4, 5, 6],
-  "vertex_counts": {"3": 42, "4": 123, "5": 366, "6": 1095},
-  "powers": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "levels_compared": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "vertex_counts": {
+    "3": 42,
+    "4": 123,
+    "5": 366,
+    "6": 1095
+  },
+  "powers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
   "angles": {
     "pi_over_2": {
       "theta": 1.5707963267948966,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0.0,
+      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
       "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {"noncommuting_SU2": 1.0, "commuting_control": 1.0},
-      "max_abs_off_diagonal_entry_power9": {"noncommuting_SU2": 23.68421398418642, "commuting_control": 24.998839814054}
+      "max_abs_off_diagonal_entry_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "max_abs_off_diagonal_entry_power9": {
+        "noncommuting_SU2": 23.68421398418642,
+        "commuting_control": 24.998839814054
+      }
     },
     "pi": {
       "theta": 3.141592653589793,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0.0,
+      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
       "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {"noncommuting_SU2": 1.0, "commuting_control": 1.0},
-      "max_abs_off_diagonal_entry_power9": {"noncommuting_SU2": 32.2490309931942, "commuting_control": 34.17601498127012}
+      "max_abs_off_diagonal_entry_power8": {
+        "noncommuting_SU2": 1,
+        "commuting_control": 1
+      },
+      "max_abs_off_diagonal_entry_power9": {
+        "noncommuting_SU2": 32.2490309931942,
+        "commuting_control": 34.17601498127012
+      }
     },
     "theta_0_73": {
       "theta": 0.73,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0.0,
+      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
       "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {"noncommuting_SU2": 1.0000000000000002, "commuting_control": 1.0000000000000002},
-      "max_abs_off_diagonal_entry_power9": {"noncommuting_SU2": 20.83948447480414, "commuting_control": 21.227174833819298}
+      "max_abs_off_diagonal_entry_power8": {
+        "noncommuting_SU2": 1.0000000000000002,
+        "commuting_control": 1.0000000000000002
+      },
+      "max_abs_off_diagonal_entry_power9": {
+        "noncommuting_SU2": 20.83948447480414,
+        "commuting_control": 21.227174833819298
+      }
     }
   },
   "checks": {
@@ -35,6 +73,16 @@
     "For the tested operator construction, diagonal 2x2 corner blocks of H^j agree exactly in the computed floating-point arrays for j=1,...,9 at levels 3,4,5,6 and the three listed angles.",
     "Off-diagonal corner blocks vanish for powers 1,...,7 and are nonzero at powers 8 and 9 on level 3.",
     "This supports the local-corner hypothesis and confirms the distance-8 obstruction for degree-10 gluing, but neither result is an all-level proof.",
-    "The diagnostic concerns the full level-m operator H used in the independent sparse implementation. It is not yet a formalized theorem about the block operator K_m in the Lean gluing development."
+    "The diagnostic concerns the full level-m operator H used in the independent sparse implementation. It is not yet a formalized theorem about the block operator K_m in the Lean gluing development.",
+    "An additional seven angles (0.137, 0.51, 1.23, 1.87, 2.41, 2.7, 3.03 radians) were checked for diagonal-corner invariance only; the off-diagonal corner summaries above remain for the three fully reported angles."
+  ],
+  "diagonal_invariance_additional_angles_tested": [
+    0.137,
+    0.51,
+    1.23,
+    1.87,
+    2.41,
+    2.7,
+    3.03
   ]
 }
