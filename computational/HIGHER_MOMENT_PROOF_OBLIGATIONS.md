@@ -168,3 +168,10 @@ The workflow now includes this finite audit and installs NetworkX. Its latest so
 A second audit, [audit_operator_corner_labels.py](audit_operator_corner_labels.py), now strengthens the earlier graph-only check. It treats each undirected edge as a pair of directed blocks and preserves both the face-index Pauli-axis class and the sign distinguishing the forward block from its adjoint/reverse block. An independent run using NetworkX 3.6.1 found matching radius-4 balls for all three corners, levels 3--6, and both the noncommuting SU(2) model and commuting control. The result is recorded in [operator_corner_label_audit.json](data/operator_corner_label_audit.json).
 
 The workflow now asserts these finite invariants, compares the committed result, and uploads the generated JSON artifact. This is a stricter and more relevant finite check than the undirected graph audit. It still does not prove the result for arbitrary levels, nor does a finite graph isomorphism automatically give the exact matrix conjugacy needed for every corner block. The next mathematical step is to turn the directed labelled isomorphism into an explicit block-preserving map and prove its action on powers $H^j$; only then should the resulting lemma be ported to Lean.
+
+
+### Extended check: levels 7 and 8
+
+The strict directed operator-label audit was extended beyond the original levels 3--6 to levels 7 and 8. The independent run still found all three rooted radius-4 balls isomorphic to the level-3 reference for both operator models; each ball contains 15 vertices and 54 directed edges. The committed audit script and JSON now record levels $3,4,5,6,7,8$, and CI asserts that exact range and the stored checks.
+
+This extends the finite evidence, not the quantifier: the all-level statement remains open. It also does not by itself supply the explicit block map and power-preservation proof required for Lean.
