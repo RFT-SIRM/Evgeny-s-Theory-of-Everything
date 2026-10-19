@@ -16,17 +16,29 @@ The committed recursion lists the faces of the three copies in consecutive block
 
 Together, these facts prove the rooted radius-4 graph-ball statement with root identity, graph distance, full-graph degree, and face-index axis class for all $m\ge3$.
 
-## 3. Remaining orientation/sign issue
+## 3. The orientation/sign issue is closed by order inheritance
 
-The sparse operator implementation chooses the forward $2\times2$ block according to the global vertex-index ordering and uses its adjoint in the reverse direction. That sign is not an intrinsic label of the abstract self-similar graph: a recursive copy embedding need not preserve the relative ordering of every pair of global vertex indices.
+The strict directed-label audit can be promoted from finite evidence to an all-level statement using the actual vertex-list recursion. Let $L_m=\texttt{vertexOrder}(m)$. The construction is the duplicate-free concatenation of the old copy, the translated $B$ copy, and the translated $C$ copy:
+$$
+L_{m+1}=\operatorname{eraseDups}
+\bigl(L_m\; ++\; (L_m+s_B)\; ++\; (L_m+s_C)\bigr).
+$$
+Equivalently, the second and third blocks are filtered by removing points already present in earlier copies.
 
-The finite audit audit_operator_corner_labels.py does find strict directed-label isomorphisms for levels 3--10. However, the recursive argument above proves only the geometric and face-axis parts, not the global-index sign part for arbitrary levels. To close that gap, either:
+Fix an outer-corner ball of radius 4 and $m\ge3$. Its distance to any junction with another copy is at least $2^m\ge8$, so none of its vertices is a shared junction. Under the natural copy translation, all vertices in the ball therefore survive the corresponding `removeAll` filter. Filtering a list can delete other entries but cannot reverse the relative order of surviving entries. Hence for any two vertices $u,v$ in the same copied radius-4 ball,
+$$
+u\text{ precedes }v\text{ in }L_m
+\iff
+\phi(u)\text{ precedes }\phi(v)\text{ in }L_{m+1}.
+$$
+The global index values may shift, but their pairwise order does not. Thus the sign selected by the rule “forward block at the smaller vertex index, adjoint block in the reverse direction” is preserved on every directed edge in the local ball.
 
-1. prove that a recursively chosen isomorphism preserves the index-order sign on every edge in the radius-4 ball; or
-2. establish a gauge-covariant formulation in which local vertex-basis changes absorb sign differences and then prove that the relevant root blocks transform by the corresponding conjugation.
+The face list is concatenated in the same three-copy order. Each copy offset is $3^m$, divisible by 3, so the face-index Pauli-axis label $k\bmod3$ is also preserved. The commuting control uses a constant axis and is immediate. Full-graph degree labels are preserved because the ball contains no junctions.
 
-Until one of these is proved, do not use the finite directed-label audit as an all-level operator-locality theorem.
+Together, the recursive graph map preserves root, distance, full degree, face-axis label, and directed orientation sign. This closes the all-level labelled radius-4 neighbourhood statement for every $m\ge3$ **on paper**, conditional only on the stated recursive list/face definitions used by the implementation. The finite audit through level 10 remains a reproducibility check, not the basis of the universal argument.
 
-## 4. Consequence if the sign gap is closed
+## 4. Consequence for operator powers and the remaining degree-10 boundary
 
-Once the exact directed operator blocks (or a consistent local gauge conjugacy) are shown to be preserved, the radius-to-moment locality lemma implies equality of diagonal corner blocks for powers $j\le9$. The degree-10 transition still requires its separate treatment of nonzero off-diagonal corner blocks at powers 8 and 9.
+Apply the radius-to-moment locality lemma: the exact directed operator blocks agree under the rooted map, so the diagonal root blocks agree for powers $j\le9$. This now has an all-level combinatorial argument, not just a finite-level observation.
+
+The degree-10 transition still requires separate treatment of the nonzero off-diagonal corner blocks at powers 8 and 9. Also, the all-level graph/operator locality argument has not yet been formalized in Lean; the next formalization task is to encode the copy maps, filtered vertex order, face-axis preservation, and the matrix-power locality lemma without assuming the desired conclusion.
