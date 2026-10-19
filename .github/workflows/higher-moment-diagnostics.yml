@@ -53,8 +53,8 @@ jobs:
 
           exact = json.loads(Path("artifacts/trace_composition_exact_audit.json").read_text())
           assert exact["commutator_nonzero"] is True
-          assert set(exact["powers"]) == {str(p) for p in range(1, 8)}
-          assert all(exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 8))
+          assert set(exact["powers"]) == {str(p) for p in range(1, 11)}
+          assert all(exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 11))
           assert all(exact["powers"][str(p)]["lhs_exact"] == exact["powers"][str(p)]["rhs_exact"] for p in range(1, 8))
 
           committed_corner = json.loads(Path("computational/data/corner_moment_diagnostic_summary.json").read_text())
@@ -62,7 +62,14 @@ jobs:
           assert committed_corner["checks"]["off_diagonal_first_nonzero_power_8"] is True
 
           committed_exact = json.loads(Path("computational/data/trace_composition_exact_audit.json").read_text())
-          assert all(committed_exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 8))
+          assert all(committed_exact["powers"][str(p)]["difference_exact"] == "0" for p in range(1, 11))
+          for p in range(1, 11):
+              assert exact["powers"][str(p)]["lhs_exact"] == committed_exact["powers"][str(p)]["lhs_exact"]
+              assert exact["powers"][str(p)]["rhs_exact"] == committed_exact["powers"][str(p)]["rhs_exact"]
+              assert exact["powers"][str(p)]["composition_terms_by_r"] == committed_exact["powers"][str(p)]["composition_terms_by_r"]
+          full_corner = json.loads(Path("computational/data/corner_moment_full_recheck.json").read_text())
+          assert full_corner["checks"]["all_diagonal_blocks_identical_across_levels_for_powers_1_to_9"] is True
+          assert full_corner["checks"]["offdiagonal_blocks_first_nonzero_power_8_on_level_3"] is True
           print("All higher-moment diagnostic checks passed.")
           PY
       - name: Upload generated diagnostics
