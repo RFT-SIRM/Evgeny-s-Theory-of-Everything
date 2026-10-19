@@ -19,7 +19,7 @@ import networkx as nx
 
 from independent_sparse_level7 import graph
 
-LEVELS = (3, 4, 5, 6)
+LEVELS = (3, 4, 5, 6, 7, 8)
 CORNERS = ((0.0, 0.0), (1.0, 0.0), (0.0, 1.0))
 RADIUS = 4
 
