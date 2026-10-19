@@ -1,0 +1,24 @@
+{
+  "status": "finite strict directed operator-block-label isomorphism audit; not an all-level proof",
+  "radius": 4,
+  "levels": [3, 4, 5, 6],
+  "corners": [[0.0, 0.0], [1.0, 0.0], [0.0, 1.0]],
+  "models": {
+    "noncommuting_SU2": {
+      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}},
+      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}},
+      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}}
+    },
+    "commuting_control": {
+      "0": {"corner": [0.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}},
+      "1": {"corner": [1.0, 0.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}},
+      "2": {"corner": [0.0, 1.0], "levels": {"3": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "4": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "5": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}, "6": {"isomorphic_to_level_3": true, "vertices_in_ball": 15, "directed_edges_in_ball": 54}}}
+    }
+  },
+  "checks": {
+    "noncommuting_SU2_all_corners_levels_3_to_6_match": true,
+    "commuting_control_all_corners_levels_3_to_6_match": true
+  },
+  "method": "Independent reimplementation of the committed graph recursion and directed operator edge labels, run with NetworkX 3.6.1. The committed script is also wired into GitHub Actions to reproduce the audit.",
+  "interpretation": "Labels preserve face-index Pauli axis and the directed reverse-block sign induced by canonical vertex-index ordering in the sparse operator. All tested radius-4 balls match for levels 3-6. This is finite evidence only; it does not prove the label-preserving isomorphism for all levels or establish the Lean gluing recurrence."
+}
