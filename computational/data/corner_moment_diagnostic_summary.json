@@ -1,7 +1,7 @@
 {
-  "status": "floating-point diagnostic; not a proof",
-  "source": "computational/diagnose_corner_moments.py using computational/independent_sparse_level7.py::operator",
-  "levels_compared": [
+  "status": "recomputed after correcting diagnostic API call; floating-point evidence, not proof",
+  "source": "computational/diagnose_corner_moments.py using independent_sparse_level7.py::operator and graph",
+  "levels": [
     3,
     4,
     5,
@@ -24,65 +24,87 @@
     8,
     9
   ],
-  "angles": {
+  "angles_radians": {
+    "pi_over_2": 1.5707963267948966,
+    "pi": 3.141592653589793,
+    "theta_0_73": 0.73,
+    "theta_0_137": 0.137,
+    "theta_0_51": 0.51,
+    "theta_1_23": 1.23,
+    "theta_1_87": 1.87,
+    "theta_2_41": 2.41,
+    "theta_2_7": 2.7,
+    "theta_3_03": 3.03
+  },
+  "diagonal_block_max_abs_differences_all_zero": true,
+  "diagonal_block_max_abs_differences_by_model_and_angle": {
     "pi_over_2": {
-      "theta": 1.5707963267948966,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
-      "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {
-        "noncommuting_SU2": 1,
-        "commuting_control": 1
-      },
-      "max_abs_off_diagonal_entry_power9": {
-        "noncommuting_SU2": 23.68421398418642,
-        "commuting_control": 24.998839814054
-      }
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
     },
     "pi": {
-      "theta": 3.141592653589793,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
-      "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {
-        "noncommuting_SU2": 1,
-        "commuting_control": 1
-      },
-      "max_abs_off_diagonal_entry_power9": {
-        "noncommuting_SU2": 32.2490309931942,
-        "commuting_control": 34.17601498127012
-      }
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
     },
     "theta_0_73": {
-      "theta": 0.73,
-      "max_abs_diagonal_corner_difference_level3_vs_levels4_5_6": 0,
-      "first_nonzero_off_diagonal_corner_power_level3": 8,
-      "max_abs_off_diagonal_entry_power8": {
-        "noncommuting_SU2": 1.0000000000000002,
-        "commuting_control": 1.0000000000000002
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_0_137": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_0_51": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_1_23": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_1_87": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_2_41": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_2_7": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    },
+    "theta_3_03": {
+      "noncommuting_SU2": 0,
+      "commuting_control": 0
+    }
+  },
+  "off_diagonal_level3": {
+    "first_nonzero_power": 8,
+    "maxima_by_angle": {
+      "pi_over_2": {
+        "noncommuting_SU2_power8": 1,
+        "noncommuting_SU2_power9": 23.68421398418642,
+        "commuting_control_power8": 1,
+        "commuting_control_power9": 24.998839814054
       },
-      "max_abs_off_diagonal_entry_power9": {
-        "noncommuting_SU2": 20.83948447480414,
-        "commuting_control": 21.227174833819298
+      "pi": {
+        "noncommuting_SU2_power8": 1,
+        "noncommuting_SU2_power9": 32.2490309931942,
+        "commuting_control_power8": 1,
+        "commuting_control_power9": 34.17601498127012
+      },
+      "theta_0_73": {
+        "noncommuting_SU2_power8": 1,
+        "noncommuting_SU2_power9": 20.83948447480414,
+        "commuting_control_power8": 1.0000000000000002,
+        "commuting_control_power9": 21.227174833819298
       }
     }
   },
   "checks": {
-    "diagonal_corner_blocks_invariant_for_powers_1_to_9_across_tested_levels_and_angles": true,
-    "off_diagonal_corner_blocks_first_nonzero_at_power_8_on_level_3": true
+    "diagonal_blocks_identical_in_computed_arrays": true,
+    "off_diagonal_first_nonzero_power_8": true
   },
-  "interpretation": [
-    "For the tested operator construction, diagonal 2x2 corner blocks of H^j agree exactly in the computed floating-point arrays for j=1,...,9 at levels 3,4,5,6 and the three listed angles.",
-    "Off-diagonal corner blocks vanish for powers 1,...,7 and are nonzero at powers 8 and 9 on level 3.",
-    "This supports the local-corner hypothesis and confirms the distance-8 obstruction for degree-10 gluing, but neither result is an all-level proof.",
-    "The diagnostic concerns the full level-m operator H used in the independent sparse implementation. It is not yet a formalized theorem about the block operator K_m in the Lean gluing development.",
-    "An additional seven angles (0.137, 0.51, 1.23, 1.87, 2.41, 2.7, 3.03 radians) were checked for diagonal-corner invariance only; the off-diagonal corner summaries above remain for the three fully reported angles."
-  ],
-  "diagonal_invariance_additional_angles_tested": [
-    0.137,
-    0.51,
-    1.23,
-    1.87,
-    2.41,
-    2.7,
-    3.03
-  ]
+  "caveat": "The initial committed script incorrectly unpacked operator() as if it returned vertices. This was corrected in commit 5c49f0f and the calculations were rerun in the analysis environment using the graph/operator construction. Floating-point finite-level evidence only; not an all-level proof."
 }
