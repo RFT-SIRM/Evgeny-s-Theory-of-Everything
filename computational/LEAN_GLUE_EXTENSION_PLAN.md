@@ -78,3 +78,10 @@ This is a stronger and more modular bridge than separately proving level equalit
 The new [CORNER_NEIGHBOURHOOD_INDUCTION.md](CORNER_NEIGHBOURHOOD_INDUCTION.md) gives a recursive proof for the rooted radius-4 graph ball with degree labels and face-index axis classes: for $m\ge3$, the nearest copy junction is at distance $2^m\ge8>4$, so the ball lies wholly inside one corner copy; face-list offsets are multiples of three and preserve the axis index modulo three.
 
 This closes the purely geometric/axis-labelled locality statement on paper. It deliberately does **not** close the global vertex-index orientation/sign issue used by the current sparse operator. That remaining gap must be handled either by proving sign preservation for a recursive map or by a gauge-covariant block formulation. The finite strict directed-label checks through level 10 are useful evidence, not a substitute for this last all-level proof.
+
+
+## G. Operator orientation is now closed on paper
+
+The updated [corner-neighbourhood induction](CORNER_NEIGHBOURHOOD_INDUCTION.md) closes the global-index sign gap: in a radius-4 outer-corner ball at levels $m\ge3$, no vertex is a copy junction. Every local vertex therefore survives the recursive `removeAll` filtering of the relevant copy list, and filtering preserves the relative order of surviving vertices. The smaller-index/larger-index orientation rule is consequently preserved on every local edge. Face-axis labels are preserved because copy offsets are $3^m\equiv0\pmod3$.
+
+The next Lean step is now well-scoped: formalize the list-order inheritance lemma, the recursive local copy map and its axis labels, then connect exact block preservation to the already-proved radius-to-moment locality statement. Do not encode the all-level conclusion as an assumption.
