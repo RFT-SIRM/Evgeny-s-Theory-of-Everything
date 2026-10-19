@@ -175,3 +175,16 @@ The workflow now asserts these finite invariants, compares the committed result,
 The strict directed operator-label audit was extended beyond the original levels 3--6 to levels 7 and 8. The independent run still found all three rooted radius-4 balls isomorphic to the level-3 reference for both operator models; each ball contains 15 vertices and 54 directed edges. The committed audit script and JSON now record levels $3,4,5,6,7,8$, and CI asserts that exact range and the stored checks.
 
 This extends the finite evidence, not the quantifier: the all-level statement remains open. It also does not by itself supply the explicit block map and power-preservation proof required for Lean.
+
+
+## 13. Radius 4 now has a precise mathematical role
+
+The paper-level [radius-to-moment locality lemma](CORNER_LOCALITY_LEMMA.md) proves that a rooted operator-block-preserving isomorphism of radius-$R$ balls forces equality of root diagonal blocks of powers through $2R+1$. The key observation is that any closed walk of length $j$ stays within distance $\lfloor j/2\rfloor$ of its root. Thus radius 4 is sufficient for diagonal corner powers through 9.
+
+This separates the remaining work cleanly:
+1. prove the general closed-walk locality lemma in Lean;
+2. prove the rooted radius-4 operator-labelled neighbourhood isomorphism uniformly for all levels $m\ge3$;
+3. use the lemma to obtain equality of diagonal corner blocks through power 9;
+4. treat the nonzero off-diagonal corner blocks at powers 8 and 9 separately when handling the degree-10 transition.
+
+Only item 1 has a general paper-level proof written so far; the all-level graph induction and the final higher-moment recurrence remain open.
