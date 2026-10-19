@@ -163,6 +163,6 @@
     "all_diagonal_blocks_identical_across_levels_for_powers_1_to_9": true,
     "offdiagonal_blocks_first_nonzero_at_power_8_on_level_3": true
   },
-  "method": "Copied the repository graph/operator definitions into a clean Python session and reran the sparse matrix-power calculation with NumPy 2.3.5 and SciPy 1.17.0. The source script itself still requires the committed import fix to be exercised in CI.",
+  "method": "The committed graph/operator definitions were independently reimplemented in a clean Python session and the sparse matrix-power calculation was rerun with NumPy 2.3.5 and SciPy 1.17.0. The repository diagnostic's missing graph import was then fixed in commit b8e3160; the new CI workflow is intended to exercise the committed script.",
   "caveat": "Finite-level numerical diagnostic only; does not prove all-level locality or the higher-moment recurrence."
 }
