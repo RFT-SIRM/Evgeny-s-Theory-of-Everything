@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Exact finite audit of rooted labelled corner neighbourhoods.
+"""Finite audit of rooted radius-4 graph neighbourhoods.
 
-This checks graph isomorphism of radius-4 corner balls for levels 3..6.
-Node labels preserve degree and root identity; edge labels reproduce the
-SU(2)-label index used by independent_sparse_level7.operator (or the
-commuting control label). This is finite evidence only, not an all-level proof.
+This checks isomorphism of graph balls for levels 3..6. Node labels preserve
+full-graph degree and root identity; edge labels preserve the face-index class
+used by the sparse operator. The audit does NOT encode the orientation/conjugate
+choice of each complex 2x2 connection block, so it is not yet an operator-labelled
+isomorphism proof. Finite evidence only; not an all-level proof.
 """
 import argparse
 import json
