@@ -12,7 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-from independent_sparse_level7 import operator
+from independent_sparse_level7 import graph, operator
 
 ANGLES = (("pi_over_2", float(np.pi / 2)),
           ("pi", float(np.pi)),
