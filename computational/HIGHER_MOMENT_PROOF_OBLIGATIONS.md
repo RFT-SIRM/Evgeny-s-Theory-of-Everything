@@ -188,3 +188,12 @@ This separates the remaining work cleanly:
 4. treat the nonzero off-diagonal corner blocks at powers 8 and 9 separately when handling the degree-10 transition.
 
 Only item 1 has a general paper-level proof written so far; the all-level graph induction and the final higher-moment recurrence remain open.
+
+
+## 14. Directed corner-label audit extended through level 10
+
+The rooted radius-4 directed-label audit now covers levels $3,4,5,6,7,8,9,10$, all three outer corners, and both operator models. The graph balls were recomputed independently; every tested ball has 15 vertices and 54 directed edges and is isomorphic to the level-3 reference under the recorded node and directed-edge labels. The current committed script constructs each tested level rather than extrapolating missing rows.
+
+The CI check was strengthened to compare every generated per-corner/per-level record against the committed JSON, including the isomorphism result and ball sizes, rather than merely checking that two separate summaries contain true values. This guards against stale result files silently surviving a change in the script.
+
+The mathematical boundary remains unchanged: finite level-$3$ through level-$10$ agreement is not the all-level induction. The remaining proof must establish the recursive preservation of the labelled radius-4 ball for arbitrary $m$, and then connect the discrete edge labels to the actual $2\times2$ matrix blocks in the formal operator.
