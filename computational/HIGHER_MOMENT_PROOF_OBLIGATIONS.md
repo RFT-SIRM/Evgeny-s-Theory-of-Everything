@@ -139,3 +139,16 @@ Before promoting any diagnostic to a theorem, the remaining independent checks a
 2. compare their output to the committed JSON artifacts;
 3. add CI coverage for the scripts and artifact consistency;
 4. prove the generic composition identity symbolically and the corner-locality statement for arbitrary levels.
+
+
+## 10. Trace-composition identity closed at the paper-proof level
+
+The general cyclic trace-counting argument is now written out in [TRACE_COMPOSITION_IDENTITY_PROOF.md](TRACE_COMPOSITION_IDENTITY_PROOF.md). It proves the factor $p/r$ by double-counting pairs consisting of a cyclic word with $r$ selected $KN$ factors and a distinguished selected position. This proof requires only distributivity and cyclicity of trace; it does not assume that $K$ and $N$ commute.
+
+The exact rational-matrix audit was extended from powers $1\ldots7$ to $1\ldots10$. For the fixed noncommuting $3\times3$ test matrices, the exact trace values agree at every power through 10; the exact differences are zero. See [the updated audit script](audit_trace_composition_exact.py) and [stored results](data/trace_composition_exact_audit.json).
+
+A GitHub Actions workflow, [higher-moment-diagnostics.yml](../.github/workflows/higher-moment-diagnostics.yml), now runs the corner diagnostic and exact algebra audit, checks key invariants and compares generated exact results against the committed JSON. Its existence is confirmed; a successful Actions run still must be observed before describing the workflow as green.
+
+### Remaining proof boundary
+
+This closes the general trace-counting derivation on paper, but it does **not** close the research theorem. The remaining difficult obligations are the graph-specific block decomposition, the all-level corner-neighbourhood argument, and the exceptional degree-10 transition where level-3 cross-corner terms occur at powers 8 and 9.
