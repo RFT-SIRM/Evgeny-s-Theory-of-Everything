@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: RFT-SIRM/Evgeny-Theorem
-          ref: 9ed32ae27b4493945624c2911d2815059613a9f5
+          ref: 4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f
           path: Evgeny-Theorem
       - name: Build Lean formalization with pinned toolchain and Mathlib
         uses: leanprover/lean-action@v1

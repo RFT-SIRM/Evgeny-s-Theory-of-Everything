@@ -1,3 +1,5 @@
+> **Current status update — 9 November 2026.** The older status descriptions below are an October 2026 snapshot and are superseded by [../CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md). The present source Lean development has H6/H8 recurrences from level 3 (their finite 2-to-3 bridges remain exact external certificates) and an unconditional H10 recurrence from level 4 with affine form from level 5. H10 radius-four transport through degree 9 is now proved in Lean. The Phi-Genesis Schur/Rayleigh results have also advanced, but remain quadratic-form statements rather than an operator eigenvalue theorem.
+
 # Lean bridge plan for higher-moment gluing
 
 **Purpose:** translate the paper-level trace-composition identity into the existing formalization architecture without changing the Lean repository prematurely.

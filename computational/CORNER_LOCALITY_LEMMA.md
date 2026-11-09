@@ -1,6 +1,6 @@
 # Radius-to-moment locality lemma
 
-**Status:** proved as a general finite-matrix lemma on paper. Its application to every level of the Sierpiński graph still depends on proving the required rooted operator-labelled radius-4 isomorphism uniformly in the level.
+**Status:** the radius-to-moment implication is proved on paper, and the uniform radius-four operator transport needed for H10 is now formalized upstream in CornerLocality.lean, FinalTilde.lean, and FinalClosed10.lean. See [CURRENT_EVIDENCE.md](../CURRENT_EVIDENCE.md) for exact declarations and source pin.
 
 ## Lemma
 
@@ -37,7 +37,7 @@ If $j\le2R+1$, then $\lfloor j/2\rfloor\le R$. Every contributing closed walk th
 
 For $R=4$, exact preservation of the directed operator blocks on a rooted radius-4 neighbourhood implies equality of diagonal corner blocks $(H^j)_{oo}$ for every $j\le9$. This gives a clean explanation for why radius 4 is the relevant locality scale for the sixth-, eighth-, and tenth-moment calculations.
 
-The directed labelled-graph audit currently checks levels 3 through 8 only. Its finite success is evidence, not the uniform hypothesis of the lemma. The remaining graph-theoretic task is an induction or recursive construction proving the labelled radius-4 isomorphism for every level $m\ge3$, followed by connecting the face-index labels to the exact $2\times2$ operator blocks used in the formal model.
+The directed labelled-graph audit remains an independent finite regression check. The all-level operator-level transport is no longer supported solely by that finite audit: it is represented by upstream Lean transport theorems and is used in H10TransportAll_proved. The H10 recurrence still retains its separate exact level-five residual-expression boundary.
 
 ## Degree-10 boundary warning
 

@@ -1,46 +1,34 @@
-# Status of the current research stage
+# Current research status
 
-**Status: exact finite-level Fourier coefficient identities certified; the all-level recurrence remains open.**
+**Status as of 9 November 2026:** the synthesis archive is being updated to reflect formal results added after its October snapshot. H4 is fully Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. The signed-Z2 Schur/Rayleigh results are a separate workstream.
 
-## Repository and verification state
+## Source and verification snapshot
 
-- Current default branch: `main`.
-- Last scientific/code revision whose three principal workflows were checked green before the license/documentation finalization: [`9a3e49672eb2c0a71f6182ec69fd7b175ff559ba`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/9a3e49672eb2c0a71f6182ec69fd7b175ff559ba).
-- Apache 2.0 license added in [`d786e022c4b4b06a1fa20a9f5e60ecd56485f27d`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/d786e022c4b4b06a1fa20a9f5e60ecd56485f27d).
-- Final documentation/hygiene commit: pending CI confirmation; use the Actions links below to verify the resulting head commit.
+- Synthesis repository base: [aa7d3e2efe0a7d7e2a929320a2683d37b11ee8fe](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/aa7d3e2efe0a7d7e2a929320a2683d37b11ee8fe).
+- SU(2) source: [RFT-SIRM/Evgeny-Theorem at 4ccfae17](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f).
+- Latest successful Lean formalization build for the same Lean source state: [run 42481191661](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/runs/42481191661), on a7b732a…; the 14 commits from that build to 4ccfae… change documentation/HTML only.
+- Lean toolchain: leanprover/lean4:v4.33.1; Mathlib: v4.33.1.
+- Signed-flux source: [RFT-SIRM/Phi-Genesis at a80cc8a0](https://github.com/RFT-SIRM/Phi-Genesis/commit/a80cc8a08ce68bb945d0867fbdfcbea74a20c20f).
+- Separate scalar-invariant source: [RFT-SIRM/RFT-Cosmology-Genesis at 2a7782a8](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/commit/2a7782a8a56181313808019202089f167cf09cc2).
 
-Workflows:
-- [Documentation/reference audit](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/documentation-integrity.yml)
-- [Pinned Lean formalization build](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/lean-formalization.yml)
-- [Exact modular/CRT coefficient certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-modular-certificate.yml)
-- [Independent sparse level-7 holdout](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
-- [Fourier coefficient candidates and off-grid validation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
+## Established results
 
-## Related formally checked result
-
-A separate scalar-invariant limit theorem has been merged into [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) via [PR #3](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/3). Its post-merge Lean build passed, and the shared theorem dossier records its exact statement and evidence in [theorems/exact_invariant_limit.md](theorems/exact_invariant_limit.md). This result does not change the open status of the all-level higher-moment recurrence described in this status report.
-
-## What is established
-
-- The Fourier coefficients of the finite-level residuals $R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}$ and $R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}$, for $p=6,8,10$, are certified by exact modular computations over three finite fields plus a CRT uniqueness bound, subject to the stated construction and bounds in the certificate.
-- The finite-level correction $R_2^{(p)}-R_4^{(p)}$ has a certified Fourier expression.
-- Independent sparse-matrix-power checks reproduce recurrence predictions through level 7 at five angles, without using eigenspectra.
-- The synthesis Lean workflow builds a pinned source revision containing the source project's fourth-moment formalization. This does not formalize the higher-moment recurrence.
+1. **H4:** all-angle closed formula for every level m ≥ 1, Lean-checked in Evgeny-Theorem.
+2. **H6:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact Gaussian-integer polynomial certificate, not yet a Lean-kernel theorem.
+3. **H8:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact sparse-polynomial certificate, not yet a Lean-kernel theorem.
+4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. The level-five constant remains an exact trace expression.
+5. **Phi-Genesis:** the Schur and bootstrap programme includes strict pivot positivity, shifted quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the bootstrap window, and convergence of selected roots as Rayleigh minima. It is not yet an operator eigenvalue theorem.
+6. **Scalar invariant:** the separately defined scalar invariant has a Lean-checked exact limit and finite-level remainder in RFT-Cosmology-Genesis.
 
 ## Still open
 
-- Prove $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and all stated angles.
-- Derive level-independence from the recursive graph/operator construction or a closed-walk expansion.
-- Explain structurally why the $1\to2$ transition is exceptional.
-- Formalize the all-level recurrence and base correction in Lean.
-- Close Phi-Genesis Gate A, establish a predictive mass-index law, or prove a bridge between the SU(2) and signed Z₂-flux models.
+- Lean-kernel proofs of the finite H6 and H8 2→3 certificates.
+- An explicit trigonometric/Fourier expansion of the exact H10 level-five trace correction.
+- An all-level path-class explanation for higher-moment cancellation.
+- Phi-Genesis operator eigenvalue identification, proposed quadratic law, and the small-level extension.
+- Complete Gate A exceptional-set characterization.
+- Any proved bridge between the SU(2) and signed-Z2 operator families.
 
-## Repository governance
+## Merge decision
 
-- The synthesis repository's original materials are licensed under Apache-2.0; upstream repositories remain separate works under their own terms.
-- The old failed GitHub Actions runs are historical records tied to earlier commit SHAs. They should not be deleted or treated as the status of the current head.
-- A green CI run validates only the assertions exercised by that workflow; it does not prove an unformalized universal mathematical claim.
-
-## Decision
-
-The defensible milestone is an exact finite-level coefficient certificate plus independent numerical evidence, not a completed mathematical “Theory of Everything.” The next scientific target is a graph-recursive derivation proving that the certified $R_4$ formula governs every transition from level 2 to level 3 onward, followed by formal proof closure.
+This repository can be released as a carefully sourced research synthesis once its PR checks pass on one head commit. It must not be described as a completed universal theory or as proving equivalence between its distinct operator models. The integration PR updates the pinned source reference and evidence ledger; it does not modify either upstream source project.

@@ -2,77 +2,60 @@
 
 ## 1. Trace-moment defects
 
-For a finite-dimensional operator $H$ and a positive integer $k$, the $k$-th trace moment is $\mathrm{Tr}(H^k)$. Given two explicitly defined operators $H_C$ and $H_{C'}$, one may define the trace defect
-
-$$
+For a finite-dimensional operator H, the k-th trace moment is Tr(H^k). Given two explicitly defined operators H_C and H_C', define
+\[
 \Delta_m(H^k,\theta)=\mathrm{Tr}(H_C^k)-\mathrm{Tr}(H_{C'}^k).
-$$
+\]
+The model, graph level, parameter, boundary conditions, and sign convention must be specified. This generic notation does not assert that distinct source projects use the same operator.
 
-The model must specify how the level $m$ and parameter $\theta$ enter the operators. This generic notation does not assert that every operator family has the same formula.
+## 2. SU(2)-connected Sierpiński-gasket model
 
-## 2. Documented fourth-moment result
+For the precise operators in [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the source proves
+\[
+\Delta_m(H^4,\theta)=-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),\qquad m\ge1.
+\]
+The Lean source declaration and formal hypotheses are authoritative.
 
-The source project reports the following formula for its specific SU(2)-connected Sierpiński-gasket model:
+The higher-moment status must be recorded by its actual theorem range:
 
-$$
-\Delta_m(H^4,\theta)=-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),\qquad m\geq1.
-$$
+- H6: Lean recurrence and affine form for m ≥ 3; exact 2→3 bridge certified externally, not in Lean's kernel.
+- H8: Lean recurrence and affine form for m ≥ 3; exact 2→3 bridge certified externally, not in Lean's kernel.
+- H10: unconditional Lean recurrence for m ≥ 4, affine form for m ≥ 5, using proved radius-four transport through degree nine. The level-five residual is exact but not yet expanded into a trigonometric polynomial.
 
-The exact definitions of $H_C$, $H_{C'}$, the graph level, and the connection patterns are those in the [source project](https://github.com/RFT-SIRM/Evgeny-Theorem) and its Lean definitions. This summary does not replace those formal definitions or independently re-prove the theorem.
+The exact declarations and finite-certificate files are listed in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md). The fourth-moment theorem does not imply higher-moment recurrences; each moment requires its own proof.
 
-## 3. Higher moments are not yet unified laws
+## 3. Signed-Z2-flux model
 
-Numerical patterns for $k=6,8,10$ may suggest recurrences, but each proposed recurrence needs its own:
+The signed-flux model in [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) uses its own signed Laplacian, gauge conventions, and spectral-decimation boundary data. Its Schur/Rayleigh results are separate from the SU(2) trace-moment results. The current formalized bootstrap statements concern a shifted quadratic form and Rayleigh minima; do not relabel them as an operator eigenvalue theorem without a proof.
 
-- exact statement and range of validity;
-- proof, or explicitly bounded numerical evidence;
-- base-case analysis;
-- independent verification;
-- list of exceptional cases.
+Gate A's full exceptional-value criterion, the proposed quadratic spectral law, and the predictive interpretation of the mass-index fit remain unestablished.
 
-Agreement at finitely many levels or angles cannot establish a universal statement.
+## 4. Exact limit of a separately defined scalar invariant
 
-## 4. Distinct spectral models
-
-The signed $Z_2$-flux model studied in [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) must not be silently identified with the SU(2)-connection model. Before transferring a result between them, one must compare the graph, edge weights or connections, boundary conditions, and operator definitions explicitly.
-
-## 5. Exact limit of a separately defined scalar invariant
-
-A separate source project defines, for $m\geq1$, the scalar invariant
-
-$$
+A separate source project defines
+\[
 I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}\sin^2\left(\frac{\theta}{2}\right).
-$$
-
+\]
 Its exact decomposition is
+\[
+I_m(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right)
+-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+\]
+Consequently,
+\[
+I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),\qquad
+I_m-I_\infty=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+\]
+The limit and exact remainder are machine-checked in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis). This scalar theorem does not establish a physical cosmological law or an equivalence with either operator model above.
 
-$$
-I_m(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right)-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
-$$
+## 5. What a unified theorem must contain
 
-Consequently, the limit is
+Any future cross-model theorem must state:
+1. the exact mathematical objects and admissible parameters;
+2. all hypotheses, quantifiers, and exceptional cases;
+3. the map between operator families;
+4. the invariant or identity being transferred;
+5. a proof that handles boundary and orientation effects;
+6. the formal or independent computational evidence and its limitations.
 
-$$
-I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-$$
-
-The exact finite-level remainder is
-
-$$
-I_m(\theta)-I_\infty(\theta)=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
-$$
-
-The machine-checked Lean proof is maintained in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis). The statement, algebraic derivation, theorem names, source commit, and CI evidence are collected in the [exact invariant limit theorem dossier](theorems/exact_invariant_limit.md).
-
-This scalar theorem has its own definitions and proof boundary. It does not establish a cosmological interaction, agreement with observations, or an equivalence with either the SU(2)-connection or signed-flux operator model.
-
-## 6. What a unified theorem must contain
-
-A proposed general theorem must specify:
-
-1. the mathematical objects and admissible parameters;
-2. all hypotheses and quantifiers;
-3. the exact invariant or identity;
-4. a proof that handles exceptional cases;
-5. a formalization or independent computational check, where practical;
-6. an explicit account of what the theorem does not imply.
+Similarity of graph geometry or numerical behaviour is not a proof of operator equivalence.
