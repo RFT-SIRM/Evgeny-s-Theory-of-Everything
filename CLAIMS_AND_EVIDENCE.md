@@ -1,29 +1,25 @@
 # Claims and evidence ledger
 
-This ledger is deliberately conservative. Status should be updated only with evidence and a source link or reproducible artifact.
+The canonical, commit-pinned detail is in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md). This ledger is the at-a-glance status; it must not be read more broadly than the stated objects and hypotheses.
 
-| Claim | Current status | Evidence boundary | Next verification |
+| Claim | Current status | Evidence boundary | Remaining work |
 |---|---|---|---|
-| Fourth-moment closed trace-defect formula in the SU(2) Sierpiński-gasket model | Reported as formally proved in source project | Applies only to the exact definitions and hypotheses in the source formalization; the synthesis CI builds the pinned source revision | Preserve source theorem statement, assumptions, toolchain, and successful Lean build |
-| Exact limit and finite-level remainder for the defined scalar invariant | FORMALIZED in the separate RFT-Cosmology-Genesis project | Lean theorem rftInvariant_tendsto plus exact remainder/decomposition lemmas; post-merge Lean CI passed. No physical or observational claim follows | Keep the theorem dossier, source commit, toolchain, and CI links synchronized |
-| Higher-moment H⁶ recurrence | Numerically supported conjecture from transition 2→3 onward; finite-level Fourier coefficients certified | Thirteen angles through level 5, $0,\pi/2,\pi$ through level 6, and independent sparse traces through level 7 at five angles. Exact modular/CRT verification certifies $R_2^{(6)}$ and $R_4^{(6)}$ at the finite transitions 1→2 and 3→4. It does not prove $R_m=R_4$ for all $m\ge3$. | Work through [the structural proof obligations](computational/HIGHER_MOMENT_PROOF_OBLIGATIONS.md): prove the all-level corner-locality and higher-power gluing lemmas, then certify the missing transition bridge. Explain the base exception. |
-| Higher-moment H⁸ recurrence | Numerically supported conjecture from transition 2→3 onward; finite-level Fourier coefficients certified | Thirteen angles through level 5, $0,\pi/2,\pi$ through level 6, and independent sparse traces through level 7 at five angles. Exact modular/CRT verification certifies $R_2^{(8)}$ and $R_4^{(8)}$ at the finite transitions 1→2 and 3→4. It does not prove $R_m=R_4$ for all $m\ge3$. | Prove level independence from the recursive operator structure and explain the base exception |
-| Higher-moment H¹⁰ recurrence | Numerically supported conjecture from transition 2→3 onward; finite-level Fourier coefficients certified | Thirteen angles through level 5, $0,\pi/2,\pi$ through level 6, and independent sparse traces through level 7 at five angles. Exact modular/CRT verification certifies $R_2^{(10)}$ and $R_4^{(10)}$ at the finite transitions 1→2 and 3→4. It does not prove $R_m=R_4$ for all $m\ge3$. | Prove level independence from the recursive operator structure and explain the base exception |
-| Gate A spectral-decimation matching is completely closed | OPEN / not established | Reported matching rates remain below 100% under simple exclusions; the full exceptional set is not characterized | Derive and independently test a complete exceptional-value criterion |
-| Mass-index rule is a predictive physical law | NOT ESTABLISHED | Index selection and a numerical fit do not derive a predictive selection rule | Preregister a selection protocol and test held-out cases |
-| A structural bridge between the SU(2) and signed Z₂-flux models exists | OPEN | Different operator constructions; resemblance is not proof | State a precise mapping and prove which properties it preserves |
+| SU(2) fourth-moment trace-defect formula | **LEAN-CHECKED** for every m ≥ 1 and theta in R | Source declaration traceDefect_closed in Evgeny-Theorem; exact source revision and CI provenance are pinned in CURRENT_EVIDENCE.md. | No remaining gap for this stated theorem. |
+| SU(2) H6 recurrence | **LEAN-CHECKED** for every m ≥ 3, with affine form from level 3 | defectO6_num_growth_recurrence and defectO6_num_affine_growth; exact 2→3 bridge is a Gaussian-integer polynomial certificate, not a Lean-kernel theorem. | Formalize the finite bridge in Lean if feasible. |
+| SU(2) H8 recurrence | **LEAN-CHECKED** for every m ≥ 3, with affine form from level 3 | defectO8_succ_num_level4_constant_boundary and defectO8_num_affine_closed_form_from_level3; exact 2→3 bridge is a sparse-polynomial certificate, not a Lean-kernel theorem. | Formalize the finite bridge in Lean if feasible. |
+| SU(2) H10 recurrence | **LEAN-CHECKED** unconditionally for every m ≥ 4; affine form for every m ≥ 5 | H10TransportAll_proved establishes radius-four diagonal transport through degree 9; defectO10_num_residual_constant is an exact level-five trace expression. | Expand the level-five constant into an explicit trigonometric/Fourier polynomial if desired. |
+| Phi-Genesis Schur bootstrap | **FORMALIZED** within the quadratic-form/Rayleigh-minimum scope | Merged Schur and inertia PRs; A1-root uniqueness and selected-root convergence. This is not yet an operator eigenvalue theorem. | Prove eigenvalue identification, explicit closed form, quadratic law, and handle levels N < 6. |
+| Phi-Genesis Gate A is completely closed | **OPEN** | Full exceptional-value characterization is not established. | Derive and independently verify a complete criterion. |
+| Mass-index fit is a predictive physical law | **NOT ESTABLISHED** | A numerical fit does not derive a predictive selection rule. | Preregister and test a derived selection rule on held-out cases. |
+| Exact limit of the separately defined scalar invariant | **LEAN-CHECKED** in RFT-Cosmology-Genesis | rftInvariant_tendsto, exact decomposition and remainder; separate source project and CI. | No physical-cosmology claim follows. |
+| A theorem identifies the SU(2) and signed-Z2 operator families | **OPEN / NOT ESTABLISHED** | The models have distinct definitions; no proved map preserving the required quantities is recorded. | State and prove a precise inter-model map, if one exists. |
 
-## Status definitions
+## Status vocabulary
 
-- **FORMALIZED:** machine-checked in a specified proof assistant and build configuration.
-- **PROVED:** complete written proof with assumptions and quantifiers.
-- **NUMERICALLY REPRODUCED:** rerunnable computation with code, parameters, and outputs.
-- **OBSERVED:** pattern reported but not yet independently reproduced or fully scoped.
-- **CONJECTURE:** precise statement awaiting proof or refutation.
-- **OPEN:** unresolved.
-- **NOT ESTABLISHED:** available evidence does not justify the stronger claim.
-- **NOT REPRODUCED / REFUTED:** use only with a documented protocol or explicit counterexample.
+- **LEAN-CHECKED:** the exact proposition compiles in the pinned Lean/Mathlib environment under its stated hypotheses.
+- **EXACT EXTERNAL CERTIFICATE:** finite algebraic identity verified by exact code, but not checked by Lean's kernel.
+- **NUMERICALLY REPRODUCED:** rerunnable finite computation with parameters and outputs.
+- **OPEN:** no sufficient proof/certificate is recorded.
+- **NOT ESTABLISHED:** current evidence does not justify the stronger claim.
 
-## Update protocol
-
-For every change, include the prior wording, revised wording, reason for the change, and evidence. Do not erase negative results. Do not cite a passing test as evidence for a broader statement than the test exercises.
+A successful test or CI run validates only the assertion exercised by that workflow. A finite exact certificate is stronger than floating-point agreement but is not automatically a Lean theorem.

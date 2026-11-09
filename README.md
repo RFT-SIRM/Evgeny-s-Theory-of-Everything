@@ -12,11 +12,11 @@ This repository's original synthesis documentation, scripts, and configuration a
 
 ## Research dissertation
 
-The standalone research dissertation by **Evgeny Zaprudnov** consolidates the definitions, exact finite-level modular/CRT certificates, numerical evidence, open conjectures, and reproducibility requirements: [DISSERTATION.md](DISSERTATION.md). It explicitly distinguishes certified finite-level identities from the still-open all-level recurrence.
+The standalone research dissertation by **Evgeny Zaprudnov** consolidates the programme. The current theorem-by-theorem status, source revisions, Lean declarations, and remaining proof boundaries are maintained in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
 
 ## Current milestone
 
-The current milestone is a reproducible research package: a pinned Lean build for the source project's fourth-moment result, expanded numerical holdouts for the sixth, eighth, and tenth trace moments, versioned machine-readable outputs, and explicit evidence boundaries.
+The current milestone is a reproducible synthesis of the current formal results: Lean-checked H4; H6/H8 recurrences with exact external base-transition certificates; an unconditional H10 recurrence and affine form; and the separate Schur/Rayleigh results from Phi-Genesis. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) for exact ranges and boundaries.
 
 ### Higher-moment holdouts
 
@@ -38,7 +38,7 @@ For $H^6,H^8,H^{10}$, the recurrence coefficient is fixed from levels 3 and 4 an
 - [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
 - [Fourier coefficient candidate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
 
-The recurrence candidate appears stable from transition $2\to3$ onward on the tested finite set. Exact modular/CRT checks certify the Fourier coefficients of the finite-level residuals $R_2^{(p)}=\Delta_2^{(p)}-3\Delta_1^{(p)}$ and $R_4^{(p)}=\Delta_4^{(p)}-3\Delta_3^{(p)}$, for $p\in\{6,8,10\}$. Thus the finite-level coefficient formulas are certified; what remains open is proving that $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and every stated angle, and deriving this identity from the recursive graph/operator structure.
+**Updated proof status.** This is no longer only a finite numerical conjecture. Lean proves the all-angle H6 and H8 recurrences from level 3 onward, while exact Gaussian-integer/sparse-polynomial certificates supply their finite 2-to-3 transitions outside the Lean kernel. For H10, Lean proves radius-four diagonal transport through degree nine and an unconditional affine recurrence from level 5 onward; the exact level-five correction remains a trace expression. The earlier modular/CRT and sparse holdouts remain independent regression evidence. Exact scope and declaration names are in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
 
 ## Research strands
 
@@ -46,14 +46,14 @@ The recurrence candidate appears stable from transition $2\to3$ onward on the te
 
 Source: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
 
-The source project reports the fourth-moment trace-defect identity $\Delta_m(H^4,\theta)=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)=-16(3^{m-1}+1)\sin^2(\theta/2)$ for $m\ge1$
+The source project formally proves the fourth-moment trace-defect identity $\Delta_m(H^4,\theta)=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)=-16(3^{m-1}+1)\sin^2(\theta/2)$ for $m\ge1$
 for its specified operator definitions and assumptions, with a Lean 4 formalization. The synthesis CI builds a pinned source revision. Higher moments $H^6,H^8,H^{10}$ are a separate research program and are not covered by that theorem.
 
 ### Signed Z₂-flux and spectral decimation
 
 Source: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis).
 
-This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Gate A remains open while residual mismatches and the full exceptional set remain unexplained. The proposed mass-index rule is not established as a predictive law.
+This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Its merged Schur work proves the corner-response recursion, pivot positivity in the bootstrap window, quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the window, and convergence of selected roots as Rayleigh minima. The operator eigenvalue formulation, explicit closed form, proposed quadratic law, levels below 6, and Gate A's complete exceptional-set criterion remain open. The mass-index rule is not established as predictive.
 
 No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplacians is assumed. A bridge between them remains an open research question.
 
@@ -73,6 +73,7 @@ A related, separately sourced result is the exact limit and finite-level remaind
 
 ## Repository map
 
+- CURRENT_EVIDENCE.md — authoritative current proof/evidence matrix and pinned source revisions.
 - FOUNDATIONS.md — scope, terminology, and evidence standards.
 - RESEARCH_PROGRAM.md — workstreams and research questions.
 - CLAIMS_AND_EVIDENCE.md — claim ledger.

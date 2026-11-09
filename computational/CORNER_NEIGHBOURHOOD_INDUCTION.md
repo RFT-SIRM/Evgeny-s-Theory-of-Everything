@@ -35,10 +35,12 @@ The global index values may shift, but their pairwise order does not. Thus the s
 
 The face list is concatenated in the same three-copy order. Each copy offset is $3^m$, divisible by 3, so the face-index Pauli-axis label $k\bmod3$ is also preserved. The commuting control uses a constant axis and is immediate. Full-graph degree labels are preserved because the ball contains no junctions.
 
-Together, the recursive graph map preserves root, distance, full degree, face-axis label, and directed orientation sign. This closes the all-level labelled radius-4 neighbourhood statement for every $m\ge3$ **on paper**, conditional only on the stated recursive list/face definitions used by the implementation. The finite audit through level 10 remains a reproducibility check, not the basis of the universal argument.
+Together, the recursive graph map preserves root, distance, full degree, face-axis label, and directed orientation sign. This closes the all-level labelled radius-4 neighbourhood statement for every m ≥ 3 at the paper level; the subsequent Lean modules now formalize the relevant recursive order/orientation and matrix-power transport. The finite audit through level 10 remains a reproducibility check, not the basis of the universal argument.
 
 ## 4. Consequence for operator powers and the remaining degree-10 boundary
 
+**Current formal status:** the recursive order/orientation and diagonal-power transport argument has since been formalized upstream. FinalTilde.lean contains sgK_glued_state_diag_one_to_nine_transport; FinalClosed10.lean combines it in H10TransportAll_proved. The remaining H10 limitation is the exact level-five residual presentation, not the radius-four transport hypothesis.
+
 Apply the radius-to-moment locality lemma: the exact directed operator blocks agree under the rooted map, so the diagonal root blocks agree for powers $j\le9$. This now has an all-level combinatorial argument, not just a finite-level observation.
 
-The degree-10 transition still requires separate treatment of the nonzero off-diagonal corner blocks at powers 8 and 9. Also, the all-level graph/operator locality argument has not yet been formalized in Lean; the next formalization task is to encode the copy maps, filtered vertex order, face-axis preservation, and the matrix-power locality lemma without assuming the desired conclusion.
+The degree-10 transition still requires separate treatment of the nonzero off-diagonal corner blocks at powers 8 and 9. The all-level graph/operator locality argument has since been formalized in the source Lean development. The remaining H10 presentation task is to expand the exact level-five correction from its trace-expression definition if an explicit trigonometric polynomial is required.

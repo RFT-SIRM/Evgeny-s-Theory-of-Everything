@@ -51,3 +51,16 @@ The following later commits extend the initial milestone table:
 - [`d786e022c4b4b06a1fa20a9f5e60ecd56485f27d`](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/d786e022c4b4b06a1fa20a9f5e60ecd56485f27d) — added the Apache License 2.0 file.
 
 This addendum records repository changes and CI scope; it does not elevate the higher-moment conjecture to a theorem.
+
+
+## Addendum — current source reconciliation (9 November 2026)
+
+The October chronology above is a historical snapshot and has been superseded by the following source developments:
+
+- RFT-SIRM/Evgeny-Theorem current source pin: [4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f). Lean CI succeeded on a7b732a04d1b4e619cd050b2b643daf491e86fa2 ([run 42481191661](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/runs/42481191661)); the 14 later commits in the compare to 4ccfae modify documentation/HTML only.
+- H6 and H8 now have all-angle Lean recurrences and affine forms from level 3. Their exceptional finite 2→3 transitions have exact polynomial certificates outside the Lean kernel.
+- H10 now has a Lean proof of H10TransportAll_proved, an unconditional recurrence for m ≥ 4, and an unconditional affine form for m ≥ 5. The exact level-five correction remains an unevaluated trace expression.
+- RFT-SIRM/Phi-Genesis current source pin: [a80cc8a08ce68bb945d0867fbdfcbea74a20c20f](https://github.com/RFT-SIRM/Phi-Genesis/commit/a80cc8a08ce68bb945d0867fbdfcbea74a20c20f). The merged Schur/Rayleigh PRs #25–#29 prove quadratic-form and Rayleigh-minimum statements, not yet the operator eigenvalue law.
+- The exact scalar-invariant limit remains a separate result in RFT-Cosmology-Genesis, source commit 2a7782a8a56181313808019202089f167cf09cc2.
+
+The [current evidence snapshot](CURRENT_EVIDENCE.md) is the authoritative status matrix. This addendum updates the chronology; it does not merge the mathematical models or upgrade external certificates to Lean-kernel theorems.

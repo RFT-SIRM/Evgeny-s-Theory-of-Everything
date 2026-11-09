@@ -1,46 +1,42 @@
-# Research milestone and closure checklist
+# Research milestone and release checklist
 
-## Current milestone: exact finite-level coefficients plus reproducible holdouts
+## Current milestone: formally proved recurrences with explicit evidence boundaries
 
-**Status: finite-level coefficient certificate and numerical validation achieved; analytical all-level closure remains open.**
+**Status:** H4 is fully Lean-checked; H6/H8 recurrences are Lean-proved from level 3 with exact external finite base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5; the Phi-Genesis Schur/Rayleigh results are separately formalized within their quadratic-form scope.
 
-This milestone includes:
-- pinned source code from RFT-SIRM/Evgeny-Theorem;
-- H⁶/H⁸/H¹⁰ level-5 holdouts at 13 predeclared angles;
-- level-6 holdouts at 0, $\pi/2$, and $\pi$;
-- independent sparse-matrix-power holdouts through level 7 at five angles;
-- exact modular/CRT certificates for the Fourier coefficients of $R_2^{(p)}$ and $R_4^{(p)}$, $p=6,8,10$;
-- seven off-grid floating-point validations of the reconstructed coefficient expressions;
-- direct matrix-power versus eigenvalue-power cross-checks at levels 1–4;
-- machine-readable JSON outputs and a successful pinned-source Lean build for the source project's fourth-moment formalization;
-- a claims ledger that separates formalized H⁴ from the still-open all-level higher-moment recurrence.
+## Established and verified
 
-## Current evidence boundary
+- [x] H4 all-angle closed form for every level m ≥ 1 in Lean.
+- [x] H6 all-angle Lean recurrence and affine form for m ≥ 3.
+- [x] Exact H6 2→3 Gaussian-integer polynomial certificate.
+- [x] H8 all-angle Lean recurrence and affine form for m ≥ 3.
+- [x] Exact H8 2→3 sparse-polynomial certificate.
+- [x] H10 radius-four glued-state diagonal transport through degree nine, both axis configurations, all m ≥ 4.
+- [x] H10 unconditional Lean recurrence for m ≥ 4 and affine formula for m ≥ 5.
+- [x] Phi-Genesis Schur bridge, strict pivot positivity, shifted quadratic-form bootstrap, A1 root uniqueness, and Rayleigh-minimum root convergence within their stated scope.
+- [x] Separate scalar-invariant limit and exact remainder theorem in RFT-Cosmology-Genesis.
+- [x] Existing numerical holdouts, sparse trace checks, and exact modular/CRT finite-level certificates retained as independent regression evidence.
 
-The all-level higher-moment recurrence remains a **conjecture**, not a proved theorem. The exact finite-level Fourier coefficients for $R_2$ and $R_4$ are certified by modular arithmetic and CRT, and the recurrence passes numerical holdouts through level 7 at five angles. This does not prove $R_m=R_4$ for every $m\ge3$ or every angle.
+## Remaining mathematical work
 
-## Completion checklist for the higher-moment recurrence
+- [ ] Formalize the finite H6 2→3 bridge in Lean.
+- [ ] Formalize the finite H8 2→3 bridge in Lean.
+- [ ] Expand the H10 level-five exact residual into an explicit trigonometric/Fourier polynomial, if that stronger presentation is required.
+- [ ] Extend H6 path-class cancellation beyond the finite first-level calculation.
+- [ ] Prove the Phi-Genesis operator eigenvalue identification and establish/refute the proposed quadratic law.
+- [ ] Complete the Phi-Genesis Gate A exceptional-set characterization.
+- [ ] Prove any proposed SU(2)/signed-Z2 cross-model bridge.
 
-- [x] Recover and certify exact Fourier coefficients for the finite-level residuals $R_2^{(p)}$ and $R_4^{(p)}$, $p=6,8,10$, using the modular/CRT certificate.
-- [x] Independently validate the coefficient candidates at seven off-grid angles and recurrence predictions through level 7 at five angles.
-- [ ] Derive the recurrence from the recursive graph/operator construction, not from finite-level coefficient identities alone.
-- [ ] Prove $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and all stated angles.
-- [ ] Prove the exact starting level and explain the exceptional base transition structurally.
-- [ ] State all hypotheses and exceptional parameter values explicitly.
-- [ ] Formalize the all-level recurrence in Lean if the proof can be expressed and maintained cleanly.
-- [ ] Add regression tests for each proved special case and retain the current holdouts.
-- [ ] Update the claims ledger again only after reviewing the all-level proof and formal build.
+## Integration PR acceptance checklist
 
-## Completion checklist for the broader unified program
-
-- [ ] Preserve exact provenance and evidence boundaries for both source projects.
-- [ ] Resolve or explicitly leave open the full exceptional set in Phi-Genesis spectral decimation.
-- [ ] Do not present the mass-index fit as a predictive law without a derived selection rule and held-out validation.
-- [ ] State and prove any proposed bridge between the SU(2)-connected operators and signed Z₂-flux Laplacians before claiming unification.
-- [ ] Review the complete README, mathematical framework, claims ledger, open problems, reproducibility notes, and historical record.
-- [ ] Run all computational and Lean workflows from the final commit.
-- [ ] Tag a release only when its name describes the evidence actually delivered.
+- [ ] Pin the source Evgeny-Theorem revision to 4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f.
+- [ ] Ensure all summary documents agree with [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
+- [ ] Pass documentation/reference audit.
+- [ ] Pass exact modular/CRT certificate workflow.
+- [ ] Pass arithmetic audit and its regression tests.
+- [ ] Pass the pinned Lean build on the exact PR head.
+- [ ] Review the full diff for obsolete claims and broken links.
 
 ## Release policy
 
-Do not tag the current state as a completed “Theory of Everything” or as a proven higher-moment law. The defensible milestone is an exact finite-level coefficient certificate plus reproducible higher-moment holdouts, with the universal recurrence and its structural explanation still open. A future release can mark the recurrence as proved only after the all-level derivation and verification criteria above are satisfied.
+The archive may be released as a rigorously sourced research synthesis after its PR checks pass. It must not be tagged as a completed universal Theory of Everything, and it must not claim equivalence between the SU(2) and signed-Z2 operator models.

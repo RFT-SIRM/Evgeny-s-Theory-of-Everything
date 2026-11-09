@@ -1,38 +1,39 @@
 # Source repositories and provenance
 
-## 1. Evgeny-Theorem
+## 1. SU(2)-connected graph operators
 
-URL: https://github.com/RFT-SIRM/Evgeny-Theorem
+URL: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem)  
+Pinned revision: [4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f)
 
-Research area: SU(2)-connected operators on Sierpiński-gasket approximation graphs, fourth-moment trace-defect formula, Lean 4 formalization, and numerical exploration of higher moments.
+Current evidence boundary:
+- H4 all-angle closed formula is Lean-checked for every m ≥ 1.
+- H6 and H8 recurrences/affine forms are Lean-checked from m ≥ 3; finite 2→3 bridges are exact polynomial certificates outside Lean's kernel.
+- H10 radius-four transport through degree nine and unconditional affine recurrence/form are Lean-checked for m ≥ 4/m ≥ 5; the level-five residual remains a trace expression.
+- Successful source Lean build [run 42481191661](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/runs/42481191661) is on a7b732a; the 14 later commits to the pinned revision changed documentation/HTML only.
+- H6 finite-bridge formalization is discussed in [PR #11](https://github.com/RFT-SIRM/Evgeny-Theorem/pull/11); do not conflate an exact external certificate with a Lean proof.
 
-Boundary: the source project documents the fourth-moment result as formalized. H⁶/H⁸/H¹⁰ claims must retain their numerical/open status unless a separate exact proof is available.
+## 2. Signed-Z2-flux spectral decimation
 
-## 2. Phi-Genesis
+URL: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis)  
+Pinned revision: [a80cc8a08ce68bb945d0867fbdfcbea74a20c20f](https://github.com/RFT-SIRM/Phi-Genesis/commit/a80cc8a08ce68bb945d0867fbdfcbea74a20c20f)
 
-URL: https://github.com/RFT-SIRM/Phi-Genesis
+Current evidence boundary:
+- Schur corner-response and matrix-to-Schur bridge are recorded in merged PRs #21–#26.
+- Strict pivot positivity in the bootstrap window was merged in PR #27.
+- Shifted quadratic-form interval/nonnegativity results for levels at least 6 were merged in PR #28.
+- A1-root uniqueness and convergence of selected roots as Rayleigh minima of the shifted quadratic form were merged in PR #29.
+- These statements do not yet prove the operator eigenvalue formulation, the proposed quadratic law, or the cases below level 6.
+- Gate A's full exceptional-set criterion remains open; the mass-index fit is not an established predictive law.
 
-Research area: signed Z₂-flux Laplacians, spectral decimation with boundary/corner corrections, numerical inertia and spectral convergence, and exploratory mass-index hypotheses.
+## 3. Exact scalar-invariant limit
 
-Boundary: incomplete Gate A closure and exploratory fitted patterns must not be represented as completed theorems.
+URL: [RFT-SIRM/RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)  
+Source commit: [2a7782a8a56181313808019202089f167cf09cc2](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/commit/2a7782a8a56181313808019202089f167cf09cc2)
 
-## 3. RFT-Cosmology-Genesis
+Formal result: PR #3 merged on 16 October 2026. Lean theorem rftInvariant_tendsto, exact remainder rftInvariant_remainder, and exact decomposition rftInvariant_exact_decomposition; post-merge Lean CI [run 38904548580](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/actions/runs/38904548580).
 
-URL: https://github.com/RFT-SIRM/RFT-Cosmology-Genesis
-
-Research area: a reduced phenomenological cosmology workflow together with an exact scalar-invariant remainder identity and a Lean formalization of its limit.
-
-Formal result: PR #3, “formalize convergence of the invariant to its exact limit,” was merged on 16 October 2026. The merged source commit is [2a7782a8a56181313808019202089f167cf09cc2](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/commit/2a7782a56181313808019202089f167cf09cc2). The named Lean theorem is **rftInvariant_tendsto**; the exact remainder and decomposition are also machine-checked.
-
-Boundary: this result proves a limit for the specified scalar formula only. It does not establish an observational fit, physical cosmological interaction, or a bridge to either of the two operator families above. The synthesis archive records the theorem and provenance; the proof remains in its source repository.
+Boundary: this result proves the limit and exact finite-level remainder for the defined scalar formula only. It does not establish an observational fit, physical cosmological interaction, or bridge to either operator family above.
 
 ## Provenance requirements
 
-For every imported result, record:
-- source path and URL;
-- source commit or release tag;
-- exact statement and definitions;
-- whether the result was copied, independently reproduced, or formally rechecked;
-- any differences between the source and this synthesis.
-
-Do not claim that a result was independently reproduced merely because it appears in a source repository.
+For every imported result, record the source path and URL, exact source commit, theorem names and assumptions, whether it was copied or rechecked, successful CI evidence, and any difference between source and synthesis statements. Do not claim independent reproduction merely because a theorem or file appears in a source repository.
