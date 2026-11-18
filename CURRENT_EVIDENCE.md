@@ -12,6 +12,8 @@
 
 The synthesis Lean workflow checks out the pinned Evgeny-Theorem source and runs its library build. It does not compile Phi-Genesis or RFT-Cosmology-Genesis as part of the same Lean package.
 
+**Pin check, 18 November 2026.** The three source projects have moved since the pins above, but their Lean sources have not. Comparing each pin with the current `main` shows: Evgeny-Theorem at `35dcd3e` differs from `4ccfae17` only in two documentation files (no `.lean`, `lakefile`, `lean-toolchain` or `lake-manifest.json` change); Phi-Genesis at `b8fa4a1` has no `.lean`, `lakefile.lean`, `lean-toolchain` or `lake-manifest.json` change since `a80cc8a0` (documentation, workflows and numerical records only); RFT-Cosmology-Genesis at `86be521` has no change under `formalization/` since `2a7782a8` (documentation, Python diagnostics and Planck/CAMB records only). The pins therefore still identify the Lean source state of each theorem. They were not moved, because a newer pin would assert a Lean build of a revision that this archive's workflow has not built.
+
 ## 2. SU(2) trace-moment results
 
 The authoritative definitions of the graph, operators, edge connections, orientations, and trace defects are in the pinned Evgeny-Theorem source. The declarations below are source Lean declarations; this archive records their scope rather than duplicating their proofs.
