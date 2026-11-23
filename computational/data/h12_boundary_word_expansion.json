@@ -1,0 +1,512 @@
+{
+  "even_r_composition_count": 1024,
+  "generic_even_r_terms_only_if_N_is_a_disjoint_pairing": 1024,
+  "level3": {
+    "by_number_of_gluing_factors": [
+      {
+        "coefficient": "12/1",
+        "composition_count": 1,
+        "diagonal_only_count": 0,
+        "expected_composition_count": 1,
+        "possible_off_diagonal_count": 1,
+        "possible_off_diagonal_words": [
+          [
+            12
+          ]
+        ],
+        "r": 1
+      },
+      {
+        "coefficient": "6/1",
+        "composition_count": 11,
+        "diagonal_only_count": 3,
+        "expected_composition_count": 11,
+        "possible_off_diagonal_count": 8,
+        "possible_off_diagonal_words": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "r": 2
+      },
+      {
+        "coefficient": "4/1",
+        "composition_count": 55,
+        "diagonal_only_count": 37,
+        "expected_composition_count": 55,
+        "possible_off_diagonal_count": 18,
+        "possible_off_diagonal_words": [
+          [
+            1,
+            1,
+            10
+          ],
+          [
+            1,
+            2,
+            9
+          ],
+          [
+            1,
+            3,
+            8
+          ],
+          [
+            1,
+            8,
+            3
+          ],
+          [
+            1,
+            9,
+            2
+          ],
+          [
+            1,
+            10,
+            1
+          ],
+          [
+            2,
+            1,
+            9
+          ],
+          [
+            2,
+            2,
+            8
+          ],
+          [
+            2,
+            8,
+            2
+          ],
+          [
+            2,
+            9,
+            1
+          ],
+          [
+            3,
+            1,
+            8
+          ],
+          [
+            3,
+            8,
+            1
+          ],
+          [
+            8,
+            1,
+            3
+          ],
+          [
+            8,
+            2,
+            2
+          ],
+          [
+            8,
+            3,
+            1
+          ],
+          [
+            9,
+            1,
+            2
+          ],
+          [
+            9,
+            2,
+            1
+          ],
+          [
+            10,
+            1,
+            1
+          ]
+        ],
+        "r": 3
+      },
+      {
+        "coefficient": "3/1",
+        "composition_count": 165,
+        "diagonal_only_count": 149,
+        "expected_composition_count": 165,
+        "possible_off_diagonal_count": 16,
+        "possible_off_diagonal_words": [
+          [
+            1,
+            1,
+            1,
+            9
+          ],
+          [
+            1,
+            1,
+            2,
+            8
+          ],
+          [
+            1,
+            1,
+            8,
+            2
+          ],
+          [
+            1,
+            1,
+            9,
+            1
+          ],
+          [
+            1,
+            2,
+            1,
+            8
+          ],
+          [
+            1,
+            2,
+            8,
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            2
+          ],
+          [
+            1,
+            8,
+            2,
+            1
+          ],
+          [
+            1,
+            9,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            8
+          ],
+          [
+            2,
+            1,
+            8,
+            1
+          ],
+          [
+            2,
+            8,
+            1,
+            1
+          ],
+          [
+            8,
+            1,
+            1,
+            2
+          ],
+          [
+            8,
+            1,
+            2,
+            1
+          ],
+          [
+            8,
+            2,
+            1,
+            1
+          ],
+          [
+            9,
+            1,
+            1,
+            1
+          ]
+        ],
+        "r": 4
+      },
+      {
+        "coefficient": "12/5",
+        "composition_count": 330,
+        "diagonal_only_count": 325,
+        "expected_composition_count": 330,
+        "possible_off_diagonal_count": 5,
+        "possible_off_diagonal_words": [
+          [
+            1,
+            1,
+            1,
+            1,
+            8
+          ],
+          [
+            1,
+            1,
+            1,
+            8,
+            1
+          ],
+          [
+            1,
+            1,
+            8,
+            1,
+            1
+          ],
+          [
+            1,
+            8,
+            1,
+            1,
+            1
+          ],
+          [
+            8,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "r": 5
+      },
+      {
+        "coefficient": "2/1",
+        "composition_count": 462,
+        "diagonal_only_count": 462,
+        "expected_composition_count": 462,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 6
+      },
+      {
+        "coefficient": "12/7",
+        "composition_count": 462,
+        "diagonal_only_count": 462,
+        "expected_composition_count": 462,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 7
+      },
+      {
+        "coefficient": "3/2",
+        "composition_count": 330,
+        "diagonal_only_count": 330,
+        "expected_composition_count": 330,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 8
+      },
+      {
+        "coefficient": "4/3",
+        "composition_count": 165,
+        "diagonal_only_count": 165,
+        "expected_composition_count": 165,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 9
+      },
+      {
+        "coefficient": "6/5",
+        "composition_count": 55,
+        "diagonal_only_count": 55,
+        "expected_composition_count": 55,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 10
+      },
+      {
+        "coefficient": "12/11",
+        "composition_count": 11,
+        "diagonal_only_count": 11,
+        "expected_composition_count": 11,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 11
+      },
+      {
+        "coefficient": "1/1",
+        "composition_count": 1,
+        "diagonal_only_count": 1,
+        "expected_composition_count": 1,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 12
+      }
+    ],
+    "corner_distance": 8,
+    "exceptional_even_r_count": 24,
+    "exceptional_odd_r_count": 24,
+    "ordered_compositions_diagonal_only_by_distance_cutoff": 2000,
+    "ordered_compositions_total": 2048,
+    "ordered_compositions_with_possible_off_diagonal_corner_factor": 48,
+    "power": 12,
+    "weighted_composition_count": "4095",
+    "weighted_exceptional_count": "192"
+  },
+  "level3_corner_distance": 8,
+  "level4_and_later": {
+    "by_number_of_gluing_factors": [
+      {
+        "coefficient": "12/1",
+        "composition_count": 1,
+        "diagonal_only_count": 1,
+        "expected_composition_count": 1,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 1
+      },
+      {
+        "coefficient": "6/1",
+        "composition_count": 11,
+        "diagonal_only_count": 11,
+        "expected_composition_count": 11,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 2
+      },
+      {
+        "coefficient": "4/1",
+        "composition_count": 55,
+        "diagonal_only_count": 55,
+        "expected_composition_count": 55,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 3
+      },
+      {
+        "coefficient": "3/1",
+        "composition_count": 165,
+        "diagonal_only_count": 165,
+        "expected_composition_count": 165,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 4
+      },
+      {
+        "coefficient": "12/5",
+        "composition_count": 330,
+        "diagonal_only_count": 330,
+        "expected_composition_count": 330,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 5
+      },
+      {
+        "coefficient": "2/1",
+        "composition_count": 462,
+        "diagonal_only_count": 462,
+        "expected_composition_count": 462,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 6
+      },
+      {
+        "coefficient": "12/7",
+        "composition_count": 462,
+        "diagonal_only_count": 462,
+        "expected_composition_count": 462,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 7
+      },
+      {
+        "coefficient": "3/2",
+        "composition_count": 330,
+        "diagonal_only_count": 330,
+        "expected_composition_count": 330,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 8
+      },
+      {
+        "coefficient": "4/3",
+        "composition_count": 165,
+        "diagonal_only_count": 165,
+        "expected_composition_count": 165,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 9
+      },
+      {
+        "coefficient": "6/5",
+        "composition_count": 55,
+        "diagonal_only_count": 55,
+        "expected_composition_count": 55,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 10
+      },
+      {
+        "coefficient": "12/11",
+        "composition_count": 11,
+        "diagonal_only_count": 11,
+        "expected_composition_count": 11,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 11
+      },
+      {
+        "coefficient": "1/1",
+        "composition_count": 1,
+        "diagonal_only_count": 1,
+        "expected_composition_count": 1,
+        "possible_off_diagonal_count": 0,
+        "possible_off_diagonal_words": [],
+        "r": 12
+      }
+    ],
+    "corner_distance": 16,
+    "exceptional_even_r_count": 0,
+    "exceptional_odd_r_count": 0,
+    "ordered_compositions_diagonal_only_by_distance_cutoff": 2048,
+    "ordered_compositions_total": 2048,
+    "ordered_compositions_with_possible_off_diagonal_corner_factor": 0,
+    "power": 12,
+    "weighted_composition_count": "4095",
+    "weighted_exceptional_count": "0"
+  },
+  "level4_and_later_corner_distance": 16,
+  "maximum_exponent_in_a_nontrivial_composition": 11,
+  "moment": 12,
+  "odd_r_composition_count": 1024
+}

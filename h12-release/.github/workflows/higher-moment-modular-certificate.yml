@@ -1,0 +1,51 @@
+name: Exact modular certificate for higher-moment coefficients
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  modular-certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependencies
+        run: python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
+      - name: Verify existing higher-moment modular certificate
+        run: |
+          python -m py_compile computational/verify_higher_moment_coefficients_modular.py
+          python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
+      - name: Extract H10 source engine and verifier
+        run: tar -xzf computational/h10_level5_source_reconstruction.tar.gz -C .
+      - name: Rebuild H10 finite traces from pinned source definitions and CRT
+        run: |
+          python -m py_compile computational/h10_level5_residual_certificate.py computational/test_h10_level5_residual_certificate.py
+          python -m computational.h10_level5_residual_certificate --output artifacts/h10_level5_residual_certificate.json
+      - name: Require regenerated H10 artifact to match committed certificate
+        run: cmp artifacts/h10_level5_residual_certificate.json computational/data/h10_level5_residual_certificate.json
+      - name: Run H10 source-reconstruction regression tests
+        run: python -m unittest computational.test_h10_level5_residual_certificate -v
+      - name: Rebuild H12 finite transition residuals from source mirror and CRT
+        run: |
+          python -m py_compile computational/h12_residual_certificate.py computational/test_h12_residual_certificate.py
+          python -m computational.h12_residual_certificate --output artifacts/h12_residual_certificate.json
+      - name: Require regenerated H12 artifact to match committed certificate
+        run: cmp artifacts/h12_residual_certificate.json computational/data/h12_residual_certificate.json
+      - name: Run H12 finite transition regression tests
+        run: python -m unittest computational.test_h12_residual_certificate -v
+      - name: Upload exact certificates
+        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json', 'artifacts/h10_level5_residual_certificate.json', 'artifacts/h12_residual_certificate.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: higher-moment-exact-certificates
+          path: |
+            artifacts/higher_moment_modular_certificate.json
+            artifacts/h10_level5_residual_certificate.json
+            artifacts/h12_residual_certificate.json

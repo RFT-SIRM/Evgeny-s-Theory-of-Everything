@@ -1,0 +1,812 @@
+{
+  "angles": {
+    "pi": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 694.6653870749572,
+            "11": 10903.675893935952,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 34.17601498127012
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 611.6796547213255,
+            "11": 8937.61601323306,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 32.2490309931942
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 3.141592653589793
+    },
+    "pi_over_2": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 386.7763010121248,
+            "11": 4800.979897550085,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 24.998839814054
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 336.39961623774764,
+            "11": 3760.8364674814416,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 23.68421398418642
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 1.5707963267948966
+    },
+    "theta_0_137": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 237.3719755263205,
+            "11": 2170.8465373609642,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000004,
+            "9": 20.044977414790637
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 236.78233825911585,
+            "11": 2158.1454441671654,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 20.03001373870985
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 0.137
+    },
+    "theta_0_51": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 254.5519727860689,
+            "11": 2477.586762073105,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 20.61151592947918
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 251.98747164247172,
+            "11": 2367.4017505593406,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 20.481762799016106
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 0.51
+    },
+    "theta_0_73": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 273.07139778103743,
+            "11": 2802.481156498521,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000002,
+            "9": 21.227174833819298
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 258.09410231853514,
+            "11": 2491.488816594388,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 20.83948447480414
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 0.73
+    },
+    "theta_1_23": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 333.7926472248002,
+            "11": 3860.478940366262,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000002,
+            "9": 23.253343690320502
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 298.09767821268446,
+            "11": 3130.025903028765,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 22.318360318718224
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 1.23
+    },
+    "theta_1_87": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 439.1253929798755,
+            "11": 5758.422379307016,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000002,
+            "9": 26.682343385555907
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 377.05487899527594,
+            "11": 4453.781098247934,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 25.081524075559965
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 1.87
+    },
+    "theta_2_41": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 543.4567479952086,
+            "11": 7776.759092653562,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 29.887986522457783
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 465.80552873845846,
+            "11": 6053.673762006999,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 27.958337056798573
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 2.41
+    },
+    "theta_2_7": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 603.2634922994738,
+            "11": 8982.736381648776,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000002,
+            "9": 31.61965945914889
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 520.6681426525015,
+            "11": 7102.079644689048,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 29.630090233130442
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 2.7
+    },
+    "theta_3_03": {
+      "models": {
+        "commuting_control": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 671.6885312200753,
+            "11": 10403.788774661683,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0000000000000004,
+            "9": 33.54356349631816
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        },
+        "noncommuting_SU2": {
+          "first_nonzero_spatial_off_diagonal_corner_power_on_level_3": 8,
+          "max_abs_diagonal_corner_block_difference_vs_level_3_by_power": {
+            "1": 0.0,
+            "10": 0.0,
+            "11": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "9": 0.0
+          },
+          "max_abs_spatial_off_diagonal_corner_block_entry_on_level_3_by_power": {
+            "1": 0.0,
+            "10": 587.9851083790766,
+            "11": 8448.451560873003,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.0,
+            "8": 1.0,
+            "9": 31.584311487191545
+          },
+          "vertex_counts": {
+            "3": 42,
+            "4": 123,
+            "5": 366,
+            "6": 1095
+          }
+        }
+      },
+      "theta_radians": 3.03
+    }
+  },
+  "checks": {
+    "diagonal_corner_blocks_invariant_across_levels_3_to_6_through_power_11": true,
+    "off_diagonal_level3_corner_blocks_nonzero_at_power_8": true,
+    "off_diagonal_level3_corner_blocks_vanish_below_power_8": true
+  },
+  "corner_coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "levels": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "operator_source": "computational/independent_sparse_level7.py::operator",
+  "powers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "status": "finite floating-point sparse-matrix diagnostic; not a proof",
+  "summary": {
+    "first_nonzero_spatial_off_diagonal_level3_corner_power": 8,
+    "maximum_diagonal_block_error_all_models_angles_levels_powers": 0.0,
+    "maximum_spatial_off_diagonal_level3_corner_block_entry_by_power": {
+      "1": 0.0,
+      "10": 694.6653870749572,
+      "11": 10903.675893935952,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 1.0000000000000004,
+      "9": 34.17601498127012
+    }
+  },
+  "tolerance": 1e-09
+}

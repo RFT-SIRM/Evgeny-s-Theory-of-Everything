@@ -32,11 +32,39 @@ jobs:
         run: cmp artifacts/h10_level5_residual_certificate.json computational/data/h10_level5_residual_certificate.json
       - name: Run H10 source-reconstruction regression tests
         run: python -m unittest computational.test_h10_level5_residual_certificate -v
+      - name: Rebuild H12 finite transition residuals from source mirror and CRT
+        run: |
+          python -m py_compile computational/h12_residual_certificate.py computational/test_h12_residual_certificate.py
+          python -m computational.h12_residual_certificate --output artifacts/h12_residual_certificate.json
+      - name: Require regenerated H12 artifact to match committed certificate
+        run: cmp artifacts/h12_residual_certificate.json computational/data/h12_residual_certificate.json
+      - name: Run H12 finite transition regression tests
+        run: python -m unittest computational.test_h12_residual_certificate -v
+      - name: Rebuild H12 diagonal boundary contraction inventory
+        run: |
+          python -m py_compile computational/h12_boundary_diagonal_contraction.py computational/test_h12_boundary_diagonal_contraction.py computational/audit_operator_corner_labels_radius5.py computational/diagnose_corner_moments_h12.py computational/compare_h12_corner_moments_diagnostic.py
+          python -m computational.h12_boundary_diagonal_contraction --output artifacts/h12_boundary_diagonal_contraction.json
+      - name: Require regenerated H12 boundary contraction to match its certificate
+        run: cmp artifacts/h12_boundary_diagonal_contraction.json computational/data/h12_boundary_diagonal_contraction.json
+      - name: Run exact H12 diagonal boundary contraction tests
+        run: python -m unittest computational.test_h12_boundary_diagonal_contraction -v
+      - name: Audit radius-five directed corner labels
+        run: python -m computational.audit_operator_corner_labels_radius5 --output artifacts/h12_operator_corner_label_radius5_audit.json
+      - name: Require radius-five operator-label audit to match
+        run: cmp artifacts/h12_operator_corner_label_radius5_audit.json computational/data/h12_operator_corner_label_radius5_audit.json
+      - name: Diagnose diagonal corner moments through power eleven
+        run: python computational/diagnose_corner_moments_h12.py --output artifacts/h12_corner_moments_order11_diagnostic.json
+      - name: Require order-eleven corner diagnostic to match
+        run: python computational/compare_h12_corner_moments_diagnostic.py artifacts/h12_corner_moments_order11_diagnostic.json computational/data/h12_corner_moments_order11_diagnostic.json
       - name: Upload exact certificates
-        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json', 'artifacts/h10_level5_residual_certificate.json') != ''
+        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json', 'artifacts/h10_level5_residual_certificate.json', 'artifacts/h12_residual_certificate.json', 'artifacts/h12_boundary_diagonal_contraction.json', 'artifacts/h12_operator_corner_label_radius5_audit.json', 'artifacts/h12_corner_moments_order11_diagnostic.json') != ''
         uses: actions/upload-artifact@v4
         with:
           name: higher-moment-exact-certificates
           path: |
             artifacts/higher_moment_modular_certificate.json
             artifacts/h10_level5_residual_certificate.json
+            artifacts/h12_residual_certificate.json
+            artifacts/h12_corner_moments_order11_diagnostic.json
+            artifacts/h12_operator_corner_label_radius5_audit.json
+            artifacts/h12_boundary_diagonal_contraction.json

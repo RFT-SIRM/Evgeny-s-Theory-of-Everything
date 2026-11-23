@@ -1,0 +1,353 @@
+{
+  "D_m_at_theta_pi": {
+    "3": -18026705824,
+    "4": -54714191008,
+    "5": -164776646560,
+    "6": -494964013216,
+    "7": -1485526113184,
+    "8": -4457212413088
+  },
+  "canonical_coefficient_bound_by_transition": {
+    "3": 63744000000000000,
+    "4": 188160000000000000,
+    "5": 561408000000000000,
+    "6": 1681152000000000000,
+    "7": 5040384000000000000
+  },
+  "canonical_reduction_factor": 64,
+  "common_fourier": {
+    "constant": -434210735,
+    "cos(1u)": 296469408,
+    "cos(2u)": 421363848,
+    "cos(3u)": -296337816,
+    "cos(4u)": 12864588,
+    "cos(5u)": -131832,
+    "cos(6u)": -17704,
+    "cos(7u)": 240,
+    "cos(8u)": 3,
+    "sin(1u)": 156460488,
+    "sin(2u)": -9154878,
+    "sin(3u)": -52155792,
+    "sin(4u)": 4570026,
+    "sin(5u)": 2016,
+    "sin(6u)": 4938,
+    "sin(7u)": -456,
+    "sin(8u)": 3
+  },
+  "common_reduced_polynomial": {
+    "c^0s^2": -945325824,
+    "c^0s^3": 208608384,
+    "c^0s^4": 102067392,
+    "c^0s^5": -18816,
+    "c^0s^6": 565760,
+    "c^0s^7": 29184,
+    "c^0s^8": 384,
+    "c^1s^2": 1186927488,
+    "c^1s^3": -36718464,
+    "c^1s^4": -2090112,
+    "c^1s^5": 158592,
+    "c^1s^6": -15360,
+    "c^1s^7": -384
+  },
+  "comparisons": {
+    "C12_3_equals_C12_4": true,
+    "C12_4_equals_C12_5": true,
+    "C12_5_equals_C12_6": true,
+    "C12_6_equals_C12_7": true,
+    "all_five_finite_transitions_equal": true
+  },
+  "crt_modulus_product": 6000596319075658215133,
+  "crt_uniqueness_margin_ratio": 595,
+  "evidence_boundary": "This certificate proves exact equality of five finite transition residuals, m=3,4,5,6,7, from the pinned source-mirrored graph/operator matrices. The level-7-to-8 extension was reconstructed over three prime fields and joined to the verified level-3--7 certificate. It does not prove the recurrence for every graph level, and it is not a Lean-kernel theorem. A uniform radius-five corner-transport argument and degree-12 boundary expansion remain open.",
+  "graph_counts": {
+    "3": {
+      "edges": 81,
+      "faces": 27,
+      "vertices": 42
+    },
+    "4": {
+      "edges": 243,
+      "faces": 81,
+      "vertices": 123
+    },
+    "5": {
+      "edges": 729,
+      "faces": 243,
+      "vertices": 366
+    },
+    "6": {
+      "edges": 2187,
+      "faces": 729,
+      "vertices": 1095
+    },
+    "7": {
+      "edges": 6561,
+      "faces": 2187,
+      "vertices": 3282
+    },
+    "8": {
+      "edges": 19683,
+      "faces": 6561,
+      "vertices": 9843
+    }
+  },
+  "incremental_extension": {
+    "base_certificate": "computational/data/h12_level7_residual_certificate.json",
+    "base_certificate_sha256": "57a91fba36ae14dad80b52b97ec7844cbcf38ba2dbc3d5d25e52c9b5c6af57a7",
+    "engine_sha256": "e6c85ae166070b0499cd3232fae8a94fc7b2e219de2c578a5b74886f374a506f",
+    "new_levels_computed_from_source": [
+      7,
+      8
+    ],
+    "new_transition": "C12^(7)=D8^(12)-3*D7^(12)",
+    "raw_modular_data": {
+      "10000453": "computational/data/h12_level8_raw_modular/prime_10000453.json",
+      "20000569": "computational/data/h12_level8_raw_modular/prime_20000569.json",
+      "30000769": "computational/data/h12_level8_raw_modular/prime_30000769.json"
+    }
+  },
+  "independent_integer_endpoint_crosscheck": {
+    "D7_pi": -1485526113184,
+    "imaginary_part": 0,
+    "level": 7,
+    "source": "h12_level7_pi_crosscheck.cpp"
+  },
+  "levels_computed": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "max_graph_degree": 4,
+  "max_row_coefficient_l1": 10,
+  "moment": 12,
+  "primes": [
+    10000453,
+    20000569,
+    30000769
+  ],
+  "raw_path_l1_bound_by_transition": {
+    "3": 996000000000000,
+    "4": 2940000000000000,
+    "5": 8772000000000000,
+    "6": 26268000000000000,
+    "7": 78756000000000000
+  },
+  "residuals": {
+    "3": {
+      "at_theta_pi": -634073536,
+      "at_theta_zero": 0,
+      "fourier": {
+        "constant": -434210735,
+        "cos(1u)": 296469408,
+        "cos(2u)": 421363848,
+        "cos(3u)": -296337816,
+        "cos(4u)": 12864588,
+        "cos(5u)": -131832,
+        "cos(6u)": -17704,
+        "cos(7u)": 240,
+        "cos(8u)": 3,
+        "sin(1u)": 156460488,
+        "sin(2u)": -9154878,
+        "sin(3u)": -52155792,
+        "sin(4u)": 4570026,
+        "sin(5u)": 2016,
+        "sin(6u)": 4938,
+        "sin(7u)": -456,
+        "sin(8u)": 3
+      },
+      "reduced_polynomial": {
+        "c^0s^2": -945325824,
+        "c^0s^3": 208608384,
+        "c^0s^4": 102067392,
+        "c^0s^5": -18816,
+        "c^0s^6": 565760,
+        "c^0s^7": 29184,
+        "c^0s^8": 384,
+        "c^1s^2": 1186927488,
+        "c^1s^3": -36718464,
+        "c^1s^4": -2090112,
+        "c^1s^5": 158592,
+        "c^1s^6": -15360,
+        "c^1s^7": -384
+      }
+    },
+    "4": {
+      "at_theta_pi": -634073536,
+      "at_theta_zero": 0,
+      "fourier": {
+        "constant": -434210735,
+        "cos(1u)": 296469408,
+        "cos(2u)": 421363848,
+        "cos(3u)": -296337816,
+        "cos(4u)": 12864588,
+        "cos(5u)": -131832,
+        "cos(6u)": -17704,
+        "cos(7u)": 240,
+        "cos(8u)": 3,
+        "sin(1u)": 156460488,
+        "sin(2u)": -9154878,
+        "sin(3u)": -52155792,
+        "sin(4u)": 4570026,
+        "sin(5u)": 2016,
+        "sin(6u)": 4938,
+        "sin(7u)": -456,
+        "sin(8u)": 3
+      },
+      "reduced_polynomial": {
+        "c^0s^2": -945325824,
+        "c^0s^3": 208608384,
+        "c^0s^4": 102067392,
+        "c^0s^5": -18816,
+        "c^0s^6": 565760,
+        "c^0s^7": 29184,
+        "c^0s^8": 384,
+        "c^1s^2": 1186927488,
+        "c^1s^3": -36718464,
+        "c^1s^4": -2090112,
+        "c^1s^5": 158592,
+        "c^1s^6": -15360,
+        "c^1s^7": -384
+      }
+    },
+    "5": {
+      "at_theta_pi": -634073536,
+      "at_theta_zero": 0,
+      "fourier": {
+        "constant": -434210735,
+        "cos(1u)": 296469408,
+        "cos(2u)": 421363848,
+        "cos(3u)": -296337816,
+        "cos(4u)": 12864588,
+        "cos(5u)": -131832,
+        "cos(6u)": -17704,
+        "cos(7u)": 240,
+        "cos(8u)": 3,
+        "sin(1u)": 156460488,
+        "sin(2u)": -9154878,
+        "sin(3u)": -52155792,
+        "sin(4u)": 4570026,
+        "sin(5u)": 2016,
+        "sin(6u)": 4938,
+        "sin(7u)": -456,
+        "sin(8u)": 3
+      },
+      "reduced_polynomial": {
+        "c^0s^2": -945325824,
+        "c^0s^3": 208608384,
+        "c^0s^4": 102067392,
+        "c^0s^5": -18816,
+        "c^0s^6": 565760,
+        "c^0s^7": 29184,
+        "c^0s^8": 384,
+        "c^1s^2": 1186927488,
+        "c^1s^3": -36718464,
+        "c^1s^4": -2090112,
+        "c^1s^5": 158592,
+        "c^1s^6": -15360,
+        "c^1s^7": -384
+      }
+    },
+    "6": {
+      "at_theta_pi": -634073536,
+      "at_theta_zero": 0,
+      "fourier": {
+        "constant": -434210735,
+        "cos(1u)": 296469408,
+        "cos(2u)": 421363848,
+        "cos(3u)": -296337816,
+        "cos(4u)": 12864588,
+        "cos(5u)": -131832,
+        "cos(6u)": -17704,
+        "cos(7u)": 240,
+        "cos(8u)": 3,
+        "sin(1u)": 156460488,
+        "sin(2u)": -9154878,
+        "sin(3u)": -52155792,
+        "sin(4u)": 4570026,
+        "sin(5u)": 2016,
+        "sin(6u)": 4938,
+        "sin(7u)": -456,
+        "sin(8u)": 3
+      },
+      "reduced_polynomial": {
+        "c^0s^2": -945325824,
+        "c^0s^3": 208608384,
+        "c^0s^4": 102067392,
+        "c^0s^5": -18816,
+        "c^0s^6": 565760,
+        "c^0s^7": 29184,
+        "c^0s^8": 384,
+        "c^1s^2": 1186927488,
+        "c^1s^3": -36718464,
+        "c^1s^4": -2090112,
+        "c^1s^5": 158592,
+        "c^1s^6": -15360,
+        "c^1s^7": -384
+      }
+    },
+    "7": {
+      "at_theta_pi": -634073536,
+      "at_theta_zero": 0,
+      "fourier": {
+        "constant": -434210735,
+        "cos(1u)": 296469408,
+        "cos(2u)": 421363848,
+        "cos(3u)": -296337816,
+        "cos(4u)": 12864588,
+        "cos(5u)": -131832,
+        "cos(6u)": -17704,
+        "cos(7u)": 240,
+        "cos(8u)": 3,
+        "sin(1u)": 156460488,
+        "sin(2u)": -9154878,
+        "sin(3u)": -52155792,
+        "sin(4u)": 4570026,
+        "sin(5u)": 2016,
+        "sin(6u)": 4938,
+        "sin(7u)": -456,
+        "sin(8u)": 3
+      },
+      "reduced_polynomial": {
+        "c^0s^2": -945325824,
+        "c^0s^3": 208608384,
+        "c^0s^4": 102067392,
+        "c^0s^5": -18816,
+        "c^0s^6": 565760,
+        "c^0s^7": 29184,
+        "c^0s^8": 384,
+        "c^1s^2": 1186927488,
+        "c^1s^3": -36718464,
+        "c^1s^4": -2090112,
+        "c^1s^5": 158592,
+        "c^1s^6": -15360,
+        "c^1s^7": -384
+      }
+    }
+  },
+  "source": {
+    "commit": "4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f",
+    "definition": "D_m^(12) = Tr(H_face(m)^12) - Tr(H_Z(m)^12)",
+    "files": [
+      "formalization/EvgenyTheorem/Graph/Sierpinski.lean",
+      "formalization/EvgenyTheorem/Orientation.lean",
+      "formalization/EvgenyTheorem/Graph/Faces.lean",
+      "formalization/EvgenyTheorem/Operator.lean",
+      "formalization/EvgenyTheorem/OpSplit1.lean",
+      "formalization/EvgenyTheorem/SU2.lean"
+    ],
+    "finite_identity": "C12^(m) = D_(m+1)^(12) - 3*D_m^(12)",
+    "repository": "https://github.com/RFT-SIRM/Evgeny-Theorem"
+  },
+  "status": "EXACT_EXTERNAL_CRT_FINITE_LEVEL_H12_RESIDUALS",
+  "transitions_compared": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "twice_max_canonical_coefficient_bound": 10080768000000000000
+}
