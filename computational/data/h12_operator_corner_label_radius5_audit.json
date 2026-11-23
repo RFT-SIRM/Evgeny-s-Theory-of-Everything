@@ -1,0 +1,338 @@
+{
+  "checks": {
+    "commuting_control_all_corners_levels_3_to_10_match": true,
+    "noncommuting_SU2_all_corners_levels_3_to_10_match": true
+  },
+  "corners": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "expected_reference_ball": {
+    "directed_edges": 66,
+    "vertices": 19
+  },
+  "interpretation": "Every tested radius-five ball matches its own level-three reference. This is finite exact graph-label evidence; the recursive induction in H12_BOUNDARY_DIAGONAL_CONTRACTION_2026-11-23.md supplies the universal argument.",
+  "labels": [
+    "root identity",
+    "distance from root",
+    "full-graph vertex degree (onsite coefficient)",
+    "face-index Pauli-axis class modulo 3 (or constant Z control)",
+    "directed vertex-order sign selecting U versus U^H"
+  ],
+  "levels": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "models": {
+    "commuting_control": {
+      "0": {
+        "corner": [
+          0.0,
+          0.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      },
+      "1": {
+        "corner": [
+          1.0,
+          0.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      },
+      "2": {
+        "corner": [
+          0.0,
+          1.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      }
+    },
+    "noncommuting_SU2": {
+      "0": {
+        "corner": [
+          0.0,
+          0.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      },
+      "1": {
+        "corner": [
+          1.0,
+          0.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      },
+      "2": {
+        "corner": [
+          0.0,
+          1.0
+        ],
+        "levels": {
+          "10": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "3": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "4": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "5": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "6": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "7": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "8": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          },
+          "9": {
+            "directed_edges_in_induced_ball": 66,
+            "isomorphic_to_same_corner_at_level_3": true,
+            "vertices_in_ball": 19
+          }
+        }
+      }
+    }
+  },
+  "radius": 5,
+  "status": "finite exact strict directed operator-label audit; not an all-level proof"
+}

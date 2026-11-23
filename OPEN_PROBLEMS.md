@@ -44,3 +44,18 @@ Determine whether there is a precise map between the SU(2)-connected operators a
 ## OP-7 — Reproducible source verification
 
 Keep the source-reconstruction C++ engine, Python CRT verifier, committed JSON, and CI workflow synchronized with the pinned Evgeny-Theorem SHA in CURRENT_EVIDENCE.md. The workflow must rebuild the finite traces, verify the CRT bound, and compare the generated artifact. Do not describe the external exact H6/H8/H10 certificates as Lean-kernel proofs.
+
+## OP-8 — All-level H12 transition recurrence
+
+An exact source-mirrored three-prime signed CRT computation reconstructs the degree-12 transition residuals for levels m=3,4,5,6,7 and establishes the finite identities C12^(3)=C12^(4)=C12^(5)=C12^(6)=C12^(7). The common polynomial, Fourier form, level-8 graph counts, canonical coefficient bounds, and reproduction commands are recorded in [H12_FINITE_RESIDUAL_2026-11-23.md](computational/H12_FINITE_RESIDUAL_2026-11-23.md), with the machine-readable result in [h12_residual_certificate.json](computational/data/h12_residual_certificate.json).
+
+This is finite-level external exact evidence, not an all-level recurrence and not a Lean-kernel theorem. The remaining task is to prove the radius-five corner transport and degree-12 boundary expansion uniformly in m, derive the all-level recurrence with explicit starting index, and formalize the result in Lean.
+
+
+### H12 degree-12 boundary-word reduction
+
+The 12th-power noncommutative trace expansion has 2,048 ordered composition terms. At the exceptional level-3 corner distance 8, exactly 48 terms can contain an off-diagonal corner-power block (24 with odd and 24 with even numbers of gluing factors). From level 4 onward the corner distance is 16, exceeding every exponent 1 through 11, so all terms reduce to diagonal 2x2 corner moments. The exact inventory and boundary-projection formula are in [H12_BOUNDARY_WORD_EXPANSION_2026-11-23.md](computational/H12_BOUNDARY_WORD_EXPANSION_2026-11-23.md). Still required: instantiate and verify the exact boundary matrix blocks, prove radius-five operator-labelled transport uniformly, and formalize the contraction.
+
+## OP-8 progress — degree-12 boundary contraction (23 November 2026)
+
+The trace-word reduction for H12 is now closed conditionally on the source gluing/locality hypotheses: odd numbers of N factors vanish, and even strata reduce to 2×2 diagonal corner-block products. The apparent 48 long-gap cases at the level-3 transition do not create off-diagonal trace terms. Radius-five locality has a paper-level recursive argument and independent finite audits, but has not yet been formalized in Lean. Remaining work: complete the H12 copy-A/B/C transfer bookkeeping, deduce the all-level constant boundary correction for every m ≥ 3, and formalize the radius-five and degree-12 trace-word arguments in Lean. The finite CRT certificate through level 8 remains external evidence, not a kernel theorem. See [H12 boundary-contraction report](computational/H12_BOUNDARY_DIAGONAL_CONTRACTION_2026-11-23.md).

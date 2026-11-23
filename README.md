@@ -35,6 +35,8 @@ For $H^6,H^8,H^{10}$, the recurrence coefficient is fixed from levels 3 and 4 an
 - [Higher-moment Fourier coefficient candidates](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md)
 - [Exact finite-level modular/CRT coefficient certificate](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md)
 - [H10 level-five source-reconstructed exact CRT certificate](computational/H10_EXACT_RESIDUAL_2026-11-23.md)
+- [H12 finite transition-residual CRT certificate through level 8](computational/H12_FINITE_RESIDUAL_2026-11-23.md)
+- [H12 degree-12 boundary-word expansion and distance classification](computational/H12_BOUNDARY_WORD_EXPANSION_2026-11-23.md)
 - [H10 source-reconstruction bundle: C++ finite-trace engine and Python CRT verifier](computational/h10_level5_source_reconstruction.tar.gz)
 - [Exact modular certificate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-modular-certificate.yml)
 - [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
@@ -107,3 +109,7 @@ A related, separately sourced result is the exact limit and finite-level remaind
 6. Treat passing CI as evidence only for the assertions the workflow actually runs.
 
 Every result should state its definitions, assumptions, proof or algorithm, commands and versions, known exceptions, and evidence label.
+
+## H12 boundary contraction update — 23 November 2026
+
+The degree-12 gluing expansion now has an exact combinatorial boundary-word contraction: all 1,024 odd-pairing strata vanish and all 1,024 even-pairing strata reduce to ordered products of diagonal 2×2 spin blocks. A cyclic matching argument removes the apparent 48 level-three long-gap cases from the trace; no off-diagonal corner block is needed in the final contraction. The radius-five locality argument and finite audits through levels 3–10 are documented in [the H12 boundary-contraction report](computational/H12_BOUNDARY_DIAGONAL_CONTRACTION_2026-11-23.md). This is not yet a Lean-kernel H12 recurrence: copy-transfer synthesis and the Lean formalization remain open.
