@@ -1,6 +1,6 @@
 # Current research status
 
-**Status as of 23 November 2026:** H4 is Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. A proposed H10 polynomial/Fourier expression is recorded; its checker validates mutual equivalence of the supplied forms and endpoint arithmetic, not equality to the pinned Lean residual definition. The signed-Z2 Schur/Rayleigh results are separate.
+**Status as of 23 November 2026:** H4 is Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4, affine form from level 5, and an exact source-reconstructed external CRT certificate for its level-five coefficient. The finite coefficient expansion is not a Lean-kernel theorem. The signed-Z2 results are a separate operator family.
 
 ## Source and verification snapshot
 
@@ -16,14 +16,14 @@
 1. **H4:** all-angle closed formula for every level m ≥ 1, Lean-checked in Evgeny-Theorem.
 2. **H6:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact Gaussian-integer polynomial certificate, not yet a Lean-kernel theorem.
 3. **H8:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact sparse-polynomial certificate, not yet a Lean-kernel theorem.
-4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. Proposed polynomial/Fourier forms for the level-five coefficient have an external mutual-equivalence checker; equality to `defectO10_num_residual_constant` is not yet established.
+4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. The level-five correction is reconstructed from the pinned finite graph/operator definitions by a three-prime modular computation and signed CRT, with a uniqueness bound. The finite coefficient expansion is an exact external certificate, not a Lean-kernel theorem.
 5. **Phi-Genesis:** Lean identifies the selected A1 root with the least eigenvalue of the internally defined `Q_{6+n}`, proves convergence of the least-eigenvalue sequence, and transfers it to the signed matrix by gauge conjugacy. This does not prove equivalence with the external theta=2π local-face operator.
 6. **Scalar invariant:** the separately defined scalar invariant has a Lean-checked exact limit and finite-level remainder in RFT-Cosmology-Genesis.
 
 ## Still open
 
 - Lean-kernel proofs of the finite H6 and H8 2→3 certificates.
-- Derive and verify that the proposed H10 polynomial equals the pinned Lean definition `defectO10_num_residual_constant` for all real angles.
+- A Lean-kernel formalization of the finite H10 coefficient expansion, if a maintainable proof is feasible.
 - An all-level path-class explanation for higher-moment cancellation.
 - Phi-Genesis quantitative uniform tail bound, explicit limiting-constant identification, proposed quadratic root-shift law, Gate A exceptional-set characterization, and small-level extension.
 - Complete Gate A exceptional-set characterization.
@@ -31,4 +31,4 @@
 
 ## Merge decision
 
-This repository can be released as a carefully sourced research synthesis once its PR checks pass on one head commit. It must not be described as a completed universal theory or as proving equivalence between its distinct operator models. The integration PR #5 is merged and its required checks passed on the merge commit. This repository remains a research synthesis, not a completed universal theory; no upstream source project is modified by this documentation update.
+This repository is maintained as a carefully sourced research synthesis, not as a completed universal theory and not as a claim of equivalence between the distinct operator models. The H10 source-reconstruction files, report, exact artifact, and CI workflow are published together on main.

@@ -20,7 +20,7 @@ The higher-moment status must be recorded by its actual theorem range:
 
 - H6: Lean recurrence and affine form for m ≥ 3; exact 2→3 bridge certified externally, not in Lean's kernel.
 - H8: Lean recurrence and affine form for m ≥ 3; exact 2→3 bridge certified externally, not in Lean's kernel.
-- H10: unconditional Lean recurrence for m ≥ 4 and affine form for m ≥ 5, using proved radius-four transport through degree nine. The report records proposed polynomial/Fourier forms for the finite level-five residual D6-3D5; the external checker proves only mutual equivalence and endpoint arithmetic, not equality to the pinned Lean definition `defectO10_num_residual_constant`. That link remains open; see [the calculation report](computational/H10_EXACT_RESIDUAL_2026-11-23.md).
+- H10: unconditional Lean recurrence for m ≥ 4 and affine form for m ≥ 5, using proved radius-four transport through degree nine. The level-five correction D6−3D5 is reconstructed from the pinned graph/operator definitions by a three-prime exact modular computation and signed CRT under an explicit coefficient bound. Its polynomial/Fourier expansion is an exact external certificate; the coefficient expansion is not yet a Lean-kernel theorem. See the calculation report in computational/H10_EXACT_RESIDUAL_2026-11-23.md.
 
 The exact declarations and finite-certificate files are listed in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md). The fourth-moment theorem does not imply higher-moment recurrences; each moment requires its own proof.
 

@@ -1,25 +1,30 @@
-# H10 level-five residual: proposed coefficient expression and internal identity check
+# H10 level-five residual: source-reconstructed exact coefficient certificate
 
 Date: 23 November 2026
 
-The H10 recurrence proved in the pinned Lean source has an unconditional
-level-five affine form. Its finite correction is represented by the trace
-difference (C_{10}^{(5)}=D_6-3D_5).
+## Result
 
-A proposed coefficient expression for this correction is recorded as
+The pinned Lean source defines the H10 level-five recurrence residual and proves the unconditional recurrence
+[
+D_{m+1}^{(10)}(\theta)=3D_m^{(10)}(\theta)+C_{10}^{(5)}(\theta),\qquad m\ge4.
+]
+In particular, its exact finite correction is
+[
+C_{10}^{(5)}(\theta)=D_6^{(10)}(\theta)-3D_5^{(10)}(\theta).
+]
 
-\[
+The level-five and level-six trace matrices have now been reconstructed from the graph, orientation, flux, and SU(2) definitions at the pinned source revision. A three-prime modular computation and coefficient-wise signed CRT recover the following exact polynomial:
+[
 \begin{aligned}
 C_{10}^{(5)}(\theta)={}&-748240s^2+11036800cs^2+4927360s^3\\
 &-261920cs^3+330960s^4+1920cs^4\\
 &-3200s^5+320cs^5+640s^6,
-\quad c=\cos(\theta/2),\ s=\sin(\theta/2).
+\qquad c=\cos(\theta/2),\quad s=\sin(\theta/2).
 \end{aligned}
-\]
+]
 
 Equivalently, with (u=\theta/2),
-
-\[
+[
 \begin{aligned}
 C_{10}^{(5)}(\theta)={}&-249810+2759440\cos u+3693520\sin u\\
 &+208340\cos 2u-65430\sin 2u\\
@@ -27,31 +32,62 @@ C_{10}^{(5)}(\theta)={}&-249810+2759440\cos u+3693520\sin u\\
 &+41490\cos 4u+32700\sin 4u\\
 &+120\cos 5u-200\sin 5u-20\cos 6u+10\sin 6u.
 \end{aligned}
-\]
+]
 
-The script verifies the equivalence of the supplied polynomial and Fourier forms exactly in the quotient ring
-\(\mathbb Z[c,s]/(c^2+s^2-1)\), using integer binomial coefficients. It also
-evaluates the polynomial at \((c,s)=(1,0)\) and \((0,1)\), and checks
-agreement at \(\theta=\pi\) with the supplied trace endpoint values.
-The endpoint arithmetic recorded for the trace calculation is
-\(D_5(\pi)=-2,505,633,280\),
-\(D_6(\pi)=-7,512,392,320\), hence
-\(C_{10}^{(5)}(\pi)=4,507,520\).
+## Exact source reconstruction
 
-**Evidence boundary.** This repository-side script checks only the internal
-identity between the supplied polynomial and Fourier forms and the stated
-endpoint arithmetic. It does not derive the candidate polynomial from the
-pinned Lean definition `defectO10_num_residual_constant`, nor does it
-reconstruct the level-five and level-six graph trace matrices from scratch.
-The trace values and candidate coefficients are inputs to this checker,
-not outputs independently derived by it. Therefore equality of the proposed
-polynomial to the source residual for all real angles remains open. The
-all-level recurrence and affine form remain Lean results in the pinned
-upstream source; the candidate-form check is not a Lean-kernel theorem.
+The C++17 engine is stored in `computational/h10_level5_source_reconstruction.tar.gz` together with the Python CRT verifier. It mirrors the pinned declarations:
 
-Run:
+- `Graph/Sierpinski.lean`: recursive Sierpiński-gasket graph edges;
+- `Orientation.lean`: first-occurrence vertex order in `A ++ B ++ C`;
+- `Graph/Faces.lean`: `facesExact`, `fluxEdge`, and `fluxEdges`;
+- `Operator.lean` and `OpSplit1.lean`: degree diagonal, edge connections, and orientation-dependent `-U` / `-Uᴴ` entries;
+- `SU2.lean`: the three Pauli-axis rotations;
+- `FinalClosed10.lean`: the Lean-checked recurrence identifying the residual with `D6 - 3*D5`.
+
+For each prime, the program expands the sparse length-ten closed-walk sums coefficient by coefficient. The maximum matrix-row coefficient l1-norm is 10. The signed coefficient bound is
+[
+(2\cdot2190+6\cdot732)\,10^{10}=87,720,000,000,000.
+]
+The CRT modulus product is
+[
+6,000,596,319,075,658,215,133,
+]
+which is greater than twice the bound. Thus each recovered integer coefficient is unique.
+
+The source graph counts checked by the program are:
+
+| Level | Vertices | Edges | Faces |
+|---|---:|---:|---:|
+| 5 | 366 | 729 | 243 |
+| 6 | 1095 | 2187 | 729 |
+
+The same matrix builder reproduces the Lean H4 controls at levels 1–6:
+[
+-32,-64,-160,-448,-1312,-3904.
+]
+At \(\theta=\pi\), it obtains
+[
+D_5^{(10)}(\pi)=-2,505,633,280,\quad
+D_6^{(10)}(\pi)=-7,512,392,320,
+]
+and hence
+[
+C_{10}^{(5)}(\pi)=D_6^{(10)}(\pi)-3D_5^{(10)}(\pi)=4,507,520.
+]
+
+## Reproduction
+
+From the repository root, extract the two source files from the committed source bundle, then run:
 
 ```sh
-python -m computational.h10_level5_residual_certificate
-python -m unittest computational.test_h10_level5_residual_certificate -v
+tar -xzf computational/h10_level5_source_reconstruction.tar.gz -C .
+python3 -m computational.h10_level5_residual_certificate --output computational/data/h10_level5_residual_certificate.json
+python3 -m unittest computational.test_h10_level5_residual_certificate -v
 ```
+
+The GitHub Actions workflow performs these steps, compares the regenerated JSON with the committed artifact, and uploads the exact certificate.
+
+## Evidence boundary
+
+The identity (C_{10}^{(5)}=D_6-3D_5), the all-angle recurrence, and its affine form are Lean-checked in the pinned source project. The finite coefficient expansion is an **exact external modular/CRT certificate** derived from a direct executable mirror of the pinned graph/operator definitions. It is not a Lean-kernel coefficient theorem, and the report does not claim that the C++ implementation itself is verified by Lean. This closes the finite computational derivation while preserving the formalization boundary.

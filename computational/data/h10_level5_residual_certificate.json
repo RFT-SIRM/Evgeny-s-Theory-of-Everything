@@ -1,24 +1,22 @@
 {
-  "formula": "C10^(5)=D6-3D5",
-  "polynomial": {
-    "s^2": -748240,
-    "c*s^2": 11036800,
-    "s^3": 4927360,
-    "c*s^3": -261920,
-    "s^4": 330960,
-    "c*s^4": 1920,
-    "s^5": -3200,
-    "c*s^5": 320,
-    "s^6": 640
+  "C10_pi": 4507520,
+  "D5_pi": -2505633280,
+  "D6_pi": -7512392320,
+  "H4_source_controls": {
+    "1": -32,
+    "2": -64,
+    "3": -160,
+    "4": -448,
+    "5": -1312,
+    "6": -3904
   },
+  "coefficient_absolute_bound": 87720000000000,
+  "crt_modulus_product": 6000596319075658215133,
+  "evidence_scope": "The finite level-five/six trace expansion is reconstructed from the pinned graph, orientation, flux, and SU(2) definitions by an exact external modular/CRT computation. The all-angle recurrence identifying the level-five residual with D6-3D5 is Lean-checked. The coefficient expansion itself is not a Lean-kernel theorem.",
   "fourier": {
     "1": [
       -249810,
       0
-    ],
-    "cos(u),sin(u)": [
-      2759440,
-      3693520
     ],
     "cos(2u),sin(2u)": [
       208340,
@@ -39,13 +37,80 @@
     "cos(6u),sin(6u)": [
       -20,
       10
+    ],
+    "cos(u),sin(u)": [
+      2759440,
+      3693520
     ]
   },
-  "endpoint": {
-    "D5_pi": -2505633280,
-    "D6_pi": -7512392320,
-    "C10_pi": 4507520
+  "graph_counts": {
+    "edges_m5": 729,
+    "edges_m6": 2187,
+    "faces_m5": 243,
+    "faces_m6": 729,
+    "vertices_m5": 366,
+    "vertices_m6": 1095
   },
-  "evidence_scope": "Mutual equivalence of supplied polynomial/Fourier candidate forms and supplied endpoint arithmetic only; equality to defectO10_num_residual_constant is not checked.",
-  "candidate_expression_status": "NOT_VERIFIED_AGAINST_LEAN_RESIDUAL"
+  "max_row_l1": 10,
+  "max_vertex_degree": 4,
+  "method": "sparse exact polynomial path expansion modulo three primes, followed by coefficient-wise signed CRT",
+  "polynomial": {
+    "c*s^2": 11036800,
+    "c*s^3": -261920,
+    "c*s^4": 1920,
+    "c*s^5": 320,
+    "s^2": -748240,
+    "s^3": 4927360,
+    "s^4": 330960,
+    "s^5": -3200,
+    "s^6": 640
+  },
+  "primes": [
+    10000453,
+    20000569,
+    30000769
+  ],
+  "raw_C10_polynomial": {
+    "c^0*s^2": 1506080,
+    "c^0*s^3": 4342400,
+    "c^0*s^4": -1751360,
+    "c^0*s^5": 570880,
+    "c^0*s^6": -170240,
+    "c^0*s^7": 10880,
+    "c^0*s^8": -1120,
+    "c^1*s^2": 9668160,
+    "c^1*s^3": -258400,
+    "c^1*s^4": 1344000,
+    "c^1*s^5": -3200,
+    "c^1*s^6": 26560,
+    "c^2*s^2": -2079040,
+    "c^2*s^3": 574080,
+    "c^2*s^4": -345040,
+    "c^2*s^5": 21760,
+    "c^2*s^6": -3360,
+    "c^3*s^2": 1342080,
+    "c^3*s^3": -3520,
+    "c^3*s^4": 53120,
+    "c^4*s^2": -174160,
+    "c^4*s^3": 10880,
+    "c^4*s^4": -3360,
+    "c^5*s^2": 26560,
+    "c^6*s^2": -1120
+  },
+  "source": {
+    "commit": "4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f",
+    "files": [
+      "formalization/EvgenyTheorem/Graph/Sierpinski.lean",
+      "formalization/EvgenyTheorem/Orientation.lean",
+      "formalization/EvgenyTheorem/Graph/Faces.lean",
+      "formalization/EvgenyTheorem/Operator.lean",
+      "formalization/EvgenyTheorem/OpSplit1.lean",
+      "formalization/EvgenyTheorem/SU2.lean",
+      "formalization/EvgenyTheorem/FinalClosed10.lean"
+    ],
+    "finite_identity": "C10^(5)(theta) = D6(theta) - 3*D5(theta)",
+    "recurrence_theorem": "defectO10_succ_num_level5_constant_boundary_unconditional",
+    "repository": "https://github.com/RFT-SIRM/Evgeny-Theorem"
+  },
+  "status": "SOURCE_RECONSTRUCTED_EXACT_EXTERNAL_CRT_CERTIFICATE"
 }

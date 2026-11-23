@@ -1,4 +1,4 @@
-> **Current status update — 23 November 2026.** This snapshot supersedes older historical descriptions below. The pinned source Lean development proves the H6/H8 recurrences from level 3, with their finite 2-to-3 bridges supplied by exact external certificates, and proves the unconditional H10 recurrence from level 4 with affine form from level 5. H10 radius-four transport through degree 9 is proved in Lean. A proposed polynomial/Fourier expression for the finite H10 recurrence constant is recorded with an external checker that verifies only equivalence of the two supplied forms and endpoint arithmetic; equality to the pinned Lean residual definition remains open. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) for exact scope. The Phi-Genesis Schur/Rayleigh results remain separate quadratic-form results.
+> **Current status update — 23 November 2026.** The pinned source Lean development proves the H6/H8 recurrences from level 3, with exact external certificates for their finite 2-to-3 bridges, and proves the unconditional H10 recurrence from level 4 with affine form from level 5. H10 radius-four transport through degree 9 is Lean-checked. Its level-five correction is now source-reconstructed from the pinned graph/operator definitions by a direct C++ sparse-polynomial engine, a three-prime modular expansion, and signed coefficient-wise CRT under an explicit path-count bound. The coefficient expansion is an exact external certificate, not a Lean-kernel theorem. See CURRENT_EVIDENCE.md for exact scope.
 
 # Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence
 
@@ -13,11 +13,11 @@
 
 This dissertation consolidates a research programme concerning trace defects of recursively constructed graph operators, focusing on Sierpinski-gasket approximations, SU(2)-connected operators, higher even trace moments, and a separate programme on signed Z2-flux Laplacians and spectral decimation. It distinguishes Lean-checked all-level recurrences within their stated ranges, exact external finite-level coefficient certificates, and numerical holdouts. It keeps these evidence categories separate and records the remaining formalization and structural questions.
 
-For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. The pinned source Lean project proves the H6/H8 all-angle recurrences from $m\geq3$, with exact external certificates for their finite $2\to3$ transitions; it proves the H10 all-angle recurrence for $m\geq4$ and its affine form for $m\geq5$. For H10, the level-five recurrence constant is $C_{10}^{(5)}=D_6-3D_5$ and is defined in the pinned Lean source by `defectO10_num_residual_constant`. The report records a proposed polynomial and Fourier representation; its checker verifies only that these supplied forms are mutually equivalent, not that either equals the Lean definition. That equality remains open. The separate modular/CRT certificate covers specified finite-level Fourier coefficients, and sparse-matrix-power calculations provide numerical holdouts through level 7 at five angles. Each evidence type has its own boundary.
+For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. The pinned source Lean project proves the H6/H8 all-angle recurrences from $m\geq3$, with exact external certificates for their finite $2\to3$ transitions; it proves the H10 all-angle recurrence for $m\geq4$ and its affine form for $m\geq5$. For H10, the level-five recurrence constant is $C_{10}^{(5)}=D_6-3D_5$. The finite traces at levels 5 and 6 are reconstructed from the pinned graph, orientation, flux, and SU(2) definitions by a sparse exact polynomial path expansion over three primes, followed by signed coefficient-wise CRT. The CRT product exceeds twice the proven coefficient bound, so the integer coefficients are uniquely recovered. This is an exact external certificate; the coefficient expansion itself is not a Lean-kernel theorem. Sparse-matrix-power calculations separately provide numerical holdouts through level 7 at five angles.
 
 A separate, cross-project result now recorded in this synthesis archive proves the exact limit and finite-level remainder for a defined scalar invariant; its source proof is maintained in RFT-Cosmology-Genesis. This result is documented independently and is not presented as an all-level higher-moment recurrence or as a physical cosmological law.
 
-A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The remaining SU(2) tasks include Lean-kernel closure of the finite H6/H8 base transitions, verification of the proposed H10 polynomial against its source residual definition, and further path-class analysis. Any cross-model bridge still requires a precise mapping and proof.
+A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The remaining SU(2) tasks include Lean-kernel closure of the finite H6/H8 base transitions, optional Lean-kernel formalization of the exact external H10 coefficient reconstruction, and further path-class analysis. Any cross-model bridge still requires a precise mapping and proof.
 
 **Keywords:** spectral graph theory; trace moments; Sierpinski graphs; SU(2) connections; Fourier coefficients; modular arithmetic; CRT; Lean; spectral decimation; reproducible computation.
 
@@ -25,7 +25,7 @@ A second research strand studies signed Z2-flux Laplacians and spectral decimati
 
 The repository name “Theory of Everything” denotes a long-term research programme, not a claim that a universal theory has been completed. This document is a research dissertation/monograph, not a claim of award of an academic degree.
 
-The strongest current milestone includes the pinned Lean proofs of the stated H6/H8 and H10 recurrence ranges, exact external finite base-transition certificates for H6/H8, a proposed H10 level-five polynomial/Fourier expression whose two supplied forms are checked for equivalence but not yet linked to the source residual definition, and reproducible numerical holdouts through level 7 at finite angles. These are distinct forms of evidence; none establishes a universal cross-model theory. A passing workflow validates only the assertions it actually executes.
+The strongest current milestone includes the pinned Lean proofs of the stated H6/H8 and H10 recurrence ranges, exact external finite base-transition certificates for H6/H8, and an exact source-reconstructed H10 level-five polynomial/Fourier coefficient obtained from the pinned graph/operator definitions by three-prime modular computation and signed CRT. The coefficient expansion is external to the Lean kernel. Reproducible numerical holdouts through level 7 at finite angles provide a separate evidence category. None establishes a universal cross-model theory.
 
 The work has five goals:
 1. State the trace-defect notation consistently.
@@ -79,7 +79,7 @@ for its specified operator definitions and hypotheses, with a Lean 4 formalizati
 The fourth-moment theorem does not automatically imply a recurrence for $H^6$, $H^8$, or $H^{10}$. Higher moments contain additional operator products and possible cancellations, so they require their own derivations. The evidence boundary is therefore explicit:
 - H^4: reported as formally proved upstream and checked by the pinned Lean build.
 - H^6 and H^8: Lean recurrences for $m\ge3$, with exact external $2\to3$ base-transition certificates not yet formalized in Lean.
-- H^10: unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Proposed polynomial/Fourier forms for the level-five recurrence constant are recorded and checked against each other, but their equality to the pinned Lean residual definition remains unproved.
+- H^10: unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Its level-five correction is now reconstructed from the pinned finite graph/operator definitions by exact three-prime modular expansion and signed CRT. The coefficient expansion is an exact external certificate, not a Lean-kernel theorem.
 
 ## 4. Exact finite-level modular/CRT certificate
 
@@ -108,6 +108,10 @@ This certifies the specified finite-level coefficients under the graph/operator,
 for p = 6, 8, 10.
 
 The exact coefficient tables and bounds are kept in the companion certificate report to avoid duplicating a second, potentially inconsistent transcription here.
+
+### H10 source-reconstruction certificate
+
+In addition to the earlier H6/H8 finite-transition certificates, the level-five H10 correction is now rebuilt directly from the pinned SU(2) graph/operator source. The C++17 engine mirrors the recursive graph edges, first-occurrence vertex order, face-flux edges, orientation-dependent matrix entries, and Pauli-axis rotations. It expands the length-ten trace sums modulo three primes, recovers all integer coefficients with signed CRT, verifies the row l1-norm and path-count coefficient bound, checks H4 source controls at levels 1–6, and reproduces the exact theta=pi endpoints. The modulus product exceeds twice the coefficient bound. The full result, commands, source pin, and evidence boundary are in [H10_EXACT_RESIDUAL_2026-11-23.md](computational/H10_EXACT_RESIDUAL_2026-11-23.md). This is an exact external certificate, not a Lean-kernel coefficient theorem.
 
 ## 5. Numerical validation
 
@@ -157,7 +161,7 @@ The repository distinguishes:
 - **CONJECTURE / OPEN:** unresolved;
 - **NOT ESTABLISHED:** evidence does not warrant the stronger claim.
 
-A reproducible computational record should identify commit SHA, command, runtime and dependencies, graph level and parameters, precision/tolerance, raw output, and known limitations. A passing workflow proves only the assertions it executes. The pinned Lean workflow builds the source library containing the stated H4, H6/H8, and H10 declarations; the H10 Python checker added here validates only mutual equivalence of the supplied candidate polynomial and Fourier forms plus endpoint arithmetic; it does not verify equality to the Lean residual definition.
+A reproducible computational record should identify commit SHA, command, runtime and dependencies, graph level and parameters, precision/tolerance, raw output, and known limitations. A passing workflow proves only the assertions it executes. The pinned Lean workflow builds the source library containing the stated H4, H6/H8, and H10 declarations; the H10 source-reconstruction workflow recompiles the C++ engine, reconstructs the finite level-five/six traces modulo three primes, applies signed CRT under an explicit coefficient bound, and compares the generated JSON with the committed artifact. That expansion is exact external evidence, not a Lean-kernel theorem.
 
 Failed runs should remain in history as evidence tied to their original commit. A later successful run on a fixed commit does not rewrite the old result; both records have distinct meanings.
 
@@ -196,7 +200,7 @@ This is recorded as a related formalized scalar result, not as evidence for the 
 2. **Finite angles:** numerical checks cover a finite set and do not prove a universal identity over the angle domain.
 3. **Implementation dependence:** the certificate depends on the implemented graph/operator construction and its mode, denominator, and norm arguments.
 4. **Shared assumptions:** independent numerical implementations can share the same mathematical or modelling mistake.
-5. **Lean scope:** the pinned build compiles the source library containing the stated H4, H6/H8, and H10 declarations. The finite H6/H8 bridge certificates and the proposed H10 residual expression remain external to the Lean kernel.
+5. **Lean scope:** the pinned build compiles the source library containing the stated H4, H6/H8, and H10 declarations. The finite H6/H8 bridge certificates and the finite H10 coefficient expansion are exact external certificates, not Lean-kernel theorems.
 6. **Cross-model gap:** the SU(2) and signed-flux models remain distinct until a precise bridge is proved.
 7. **Licensing:** this repository's original material is under Apache-2.0 subject to its LICENSE and NOTICE; upstream projects remain separate works under their own terms. This document is not legal advice.
 
@@ -204,7 +208,7 @@ This is recorded as a related formalized scalar result, not as evidence for the 
 
 ### Priority 1: close the remaining finite Lean bridges
 
-The H6/H8 recurrences are Lean-proved for $m\ge3$, and their finite $2\to3$ transitions have exact external certificates. The next formalization target is to prove these two finite transition identities in Lean where maintainable. The H10 recurrence is already Lean-proved for $m\ge4$. A candidate polynomial/Fourier form for its level-five correction is recorded, but the external checker does not establish equality to `defectO10_num_residual_constant`; that derivation remains open.
+The H6/H8 recurrences are Lean-proved for $m\ge3$, and their finite $2\to3$ transitions have exact external certificates. The next formalization target is to prove these two finite transition identities in Lean where maintainable. The H10 recurrence is Lean-proved for $m\ge4$, with affine form from $m\ge5$. Its finite level-five coefficient is now reconstructed exactly from the pinned graph/operator definitions by the external three-prime CRT engine; a kernel-level formalization of that finite computation remains optional future work.
 
 ### Priority 2: extend the path-class explanation
 
@@ -230,8 +234,8 @@ Start with a precise map preserving one clearly defined quantity. Only broaden t
 
 The status of each higher moment must be stated with its own theorem range and evidence boundary:
 1. H6/H8: Lean recurrence for every $m\ge3$, with the finite $2\to3$ transition currently supported by exact external certificates.
-2. H10: Lean recurrence for every $m\ge4$ and affine form for every $m\ge5$. The proposed polynomial/Fourier forms are mutually checked externally, but equality to the pinned Lean residual definition remains open.
-3. Do not present the proposed H10 coefficient forms as an expansion of the Lean residual until their equality to `defectO10_num_residual_constant` is established.
+2. H10: Lean recurrence for every $m\ge4$ and affine form for every $m\ge5$; its level-five correction has an exact external source-reconstructed CRT certificate. The coefficient expansion is not a Lean-kernel theorem.
+3. Do not present the exact external H10 coefficient expansion as a Lean-kernel theorem; preserve the distinction between source-reconstructed CRT evidence and formal proof.
 4. Preserve the assumptions, parameter domain, orientation, graph indexing, and exceptional cases of the pinned source.
 5. Keep regression tests and the claims ledger aligned with the source theorem and the external certificate.
 
@@ -239,9 +243,9 @@ The broader programme should be called unified only after a precise, proved brid
 
 ## 11. Conclusion
 
-The current milestone is neither merely a numerical fit nor a completed universal theory. It comprises the pinned Lean recurrence results for H4, H6/H8, and H10 within their stated ranges; exact external finite base-transition certificates for H6/H8; a proposed H10 polynomial/Fourier expression whose internal equivalence is checked but whose equality to the Lean residual remains open; and numerical holdouts through level 7 at finite angles. These components provide different forms of evidence and must remain distinct.
+The current milestone is neither merely a numerical fit nor a completed universal theory. It comprises the pinned Lean recurrence results for H4, H6/H8, and H10 within their stated ranges; exact external finite base-transition certificates for H6/H8; an exact source-reconstructed H10 level-five polynomial/Fourier coefficient obtained by modular computation and signed CRT; and numerical holdouts through level 7 at finite angles. These components provide different forms of evidence and must remain distinct.
 
-The modular/CRT calculation certifies only its stated finite-level coefficients under explicit arithmetic and norm bounds. The sparse-matrix-power holdout adds a separate numerical route. The H10 candidate polynomial and Fourier forms have been shown equivalent to each other, but their equality to the pinned Lean residual definition remains unproved; the H6/H8 finite base-transition identities likewise remain external certificates. The structural explanation of path-class cancellation and the separate cross-model questions remain open.
+The modular/CRT calculations certify their stated finite-level coefficients under explicit arithmetic and norm bounds. The new H10 engine independently rebuilds the level-five and level-six operator traces from the pinned source definitions and recovers the exact integer coefficient expansion using a CRT modulus larger than twice the coefficient bound. This closes the finite H10 coefficient derivation as an exact external certificate, but not as a Lean-kernel theorem. The H6/H8 finite base-transition identities likewise remain external certificates. The structural explanation of path-class cancellation and the separate cross-model questions remain open.
 
 The next steps are to formalize the H6/H8 finite base-transition certificates in Lean where feasible, extend the H6 path-class analysis, and continue the independent signed-flux questions. The signed-flux questions should remain separate until their exceptional cases are resolved and a precise bridge is proved. A defensible scientific record states both what has been established and what remains unknown.
 
@@ -269,7 +273,7 @@ This checks finite predictions through level 7 at the stated angles; it is a num
 python scripts/check_docs.py
 ~~~
 
-This checks repository structure and provenance references, not mathematical validity. Use the pinned Lean workflow for the source Lean library. The H10 script checks mutual equivalence of the supplied candidate forms and endpoint arithmetic only; it does not prove equality to the Lean residual definition.
+This checks repository structure and provenance references, not mathematical validity. Use the pinned Lean workflow for the source Lean library. The H10 verifier recompiles the source-mirroring C++ engine, reconstructs the level-five/six traces modulo three primes, applies signed coefficient-wise CRT under an explicit bound, and verifies the generated JSON against the committed artifact. The resulting coefficient expansion is an exact external certificate, not a Lean-kernel theorem.
 
 ## Appendix B. Claim-status table
 
@@ -282,7 +286,7 @@ This checks repository structure and provenance references, not mathematical val
 | Predictions through level 7 at five angles | Numerically reproduced | Finite sparse-matrix-power holdout |
 | H6/H8 recurrence for m >= 3 | LEAN-CHECKED | Their finite 2-to-3 transitions are exact external certificates, not yet Lean-kernel theorems |
 | H10 recurrence for m >= 4 and affine form for m >= 5 | LEAN-CHECKED | Radius-four transport and recurrence are proved in the pinned Lean source |
-| H10 level-five recurrence constant | OPEN — CANDIDATE FORMS RECORDED | The checker verifies only that the supplied polynomial and Fourier forms are equivalent; equality to `defectO10_num_residual_constant` remains to be proved |
+| H10 level-five recurrence constant | EXACT EXTERNAL SOURCE-RECONSTRUCTED CRT CERTIFICATE | Direct finite graph/operator reconstruction at levels 5 and 6; three-prime modular expansion and signed CRT under an explicit coefficient bound; not a Lean-kernel coefficient theorem |
 | Structural explanation of 1→2 exception | Open | Correction is certified; recursive cause is not derived |
 | Complete Gate A exceptional-value criterion | Open / not established | Existing diagnostic does not close all cases |
 | Predictive mass-index law | Not established | Needs a derived mechanism and prospective held-out tests |

@@ -12,9 +12,9 @@ The current formal status is no longer merely numerical:
 
 - **H6:** Lean proves the recurrence and affine form from level 3 onward. The exceptional finite 2→3 identity has an exact Gaussian-integer polynomial certificate outside the Lean kernel.
 - **H8:** Lean proves the recurrence and affine form from level 3 onward. The exceptional finite 2→3 identity has an exact sparse-polynomial certificate outside the Lean kernel.
-- **H10:** Lean proves radius-four corner transport through degree 9, an unconditional recurrence from level 4, and an unconditional affine form from level 5. Proposed polynomial/Fourier forms for the finite level-five correction D6-3D5 are recorded; the checker verifies only mutual equivalence and endpoint arithmetic, not equality to the pinned Lean definition `defectO10_num_residual_constant`. That derivation remains open. See [the calculation report](computational/H10_EXACT_RESIDUAL_2026-11-23.md).
+- **H10:** Lean proves radius-four corner transport through degree 9, an unconditional recurrence from level 4, and an unconditional affine form from level 5. The finite level-five correction is reconstructed from the pinned source graph/operator definitions by a three-prime modular C++ engine and signed coefficient-wise CRT under an explicit path-count bound. This closes the finite coefficient derivation as an exact external certificate; it is not a Lean-kernel coefficient theorem. See the H10 calculation report.
 
-The next mathematical tasks are narrowly scoped: formalize the H6/H8 finite base identities in Lean where maintainable; establish the proposed H10 polynomial's equality to its pinned Lean residual definition; extend the H6 path-class analysis; and continue the separate Phi-Genesis questions. Numerical holdouts and modular/CRT certificates remain independent regression evidence, not substitutes for Lean proofs.
+The next mathematical tasks are narrowly scoped: formalize the H6/H8 finite base identities in Lean where maintainable; consider Lean-kernel formalization of the finite H10 coefficient expansion; extend the H6 path-class analysis; and continue the separate Phi-Genesis questions. The H10 source-reconstruction certificate is an exact external result, not a substitute for kernel formalization.
 
 ## Workstream C — Signed-Z2-flux spectral decimation
 
@@ -39,6 +39,6 @@ The separately defined scalar invariant has an exact finite-level remainder and 
 1. Keep the current evidence matrix and source SHA pins synchronized.
 2. Finish the synthesis PR by passing documentation, exact arithmetic, modular/CRT, and pinned Lean CI on the same head.
 3. Consider Lean-kernel formalization of the H6/H8 finite base bridges.
-4. Preserve the candidate-form identity check in CI, and derive the proposed H10 polynomial from the pinned Lean residual definition before claiming the coefficient expansion is complete.
+4. Keep the source-reconstructed H10 coefficient certificate reproducible in CI; consider a Lean-kernel proof of the finite expansion without overstating the external certificate.
 5. Continue the remaining Phi-Genesis spectral questions without upgrading quadratic-form statements to eigenvalue theorems.
 6. Attempt a cross-model theorem only after a precise candidate map has been stated and tested.

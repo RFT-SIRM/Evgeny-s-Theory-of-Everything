@@ -2,7 +2,7 @@
 
 ## Current milestone: formally proved recurrences with explicit evidence boundaries
 
-**Status:** H4 is fully Lean-checked; H6/H8 recurrences are Lean-proved from level 3 with exact external finite base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. Proposed polynomial/Fourier forms for its finite level-five coefficient are recorded and mutually checked, but equality to the Lean residual definition remains open; Phi-Genesis additionally has Lean-checked least-eigenvalue identification and convergence for its internal graph matrices; this remains distinct from the SU(2) operator family.
+**Status:** H4 is fully Lean-checked; H6/H8 recurrences are Lean-proved from level 3 with exact external finite base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5, and its finite level-five coefficient has now been reconstructed exactly from the pinned source graph/operator definitions by modular arithmetic and signed CRT. The H10 coefficient expansion remains external to the Lean kernel. Phi-Genesis additionally has Lean-checked least-eigenvalue identification and convergence for its internal graph matrices; this remains distinct from the SU(2) operator family.
 
 ## Established and verified
 
@@ -13,7 +13,8 @@
 - [x] Exact H8 2→3 sparse-polynomial certificate.
 - [x] H10 radius-four glued-state diagonal transport through degree nine, both axis configurations, all m ≥ 4.
 - [x] H10 unconditional Lean recurrence for m ≥ 4 and affine formula for m ≥ 5.
-- [ ] Establish that the proposed H10 polynomial/Fourier forms equal `defectO10_num_residual_constant`; the current checker tests only mutual equivalence and supplied endpoint arithmetic.
+- [x] Reconstruct the H10 level-five coefficient from the pinned source graph/operator definitions by exact three-prime modular computation and signed CRT; compare the generated JSON with the committed certificate in CI.
+- [ ] Formalize the finite H10 coefficient reconstruction in Lean, if a maintainable kernel-level proof is feasible.
 - [x] Phi-Genesis Schur bridge, strict pivot positivity, shifted quadratic-form bootstrap, A1 root uniqueness, least-eigenvalue identification, and convergence of least eigenvalues for its internal graph matrices.
 - [x] Separate scalar-invariant limit and exact remainder theorem in RFT-Cosmology-Genesis.
 - [x] Existing numerical holdouts, sparse trace checks, and exact modular/CRT finite-level certificates retained as independent regression evidence.
