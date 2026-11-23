@@ -22,9 +22,17 @@ jobs:
         run: python -m py_compile computational/verify_higher_moment_coefficients_modular.py
       - name: Verify Fourier coefficients over three finite fields and CRT bounds
         run: python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
-      - name: Upload exact modular certificate report
-        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json') != ''
+      - name: Check H10 certificate Python syntax
+        run: python -m py_compile computational/h10_level5_residual_certificate.py computational/test_h10_level5_residual_certificate.py
+      - name: Check supplied H10 candidate identity and endpoints
+        run: python -m computational.h10_level5_residual_certificate --output artifacts/h10_level5_residual_certificate.json
+      - name: Run exact H10 regression tests
+        run: python -m unittest computational.test_h10_level5_residual_certificate -v
+      - name: Upload exact higher-moment certificates
+        if: always() && hashFiles('artifacts/higher_moment_modular_certificate.json', 'artifacts/h10_level5_residual_certificate.json') != ''
         uses: actions/upload-artifact@v4
         with:
-          name: higher-moment-modular-coefficient-certificate
-          path: artifacts/higher_moment_modular_certificate.json
+          name: higher-moment-exact-certificates
+          path: |
+            artifacts/higher_moment_modular_certificate.json
+            artifacts/h10_level5_residual_certificate.json

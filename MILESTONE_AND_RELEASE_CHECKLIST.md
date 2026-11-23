@@ -2,7 +2,7 @@
 
 ## Current milestone: formally proved recurrences with explicit evidence boundaries
 
-**Status:** H4 is fully Lean-checked; H6/H8 recurrences are Lean-proved from level 3 with exact external finite base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5; the Phi-Genesis Schur/Rayleigh results are separately formalized within their quadratic-form scope.
+**Status:** H4 is fully Lean-checked; H6/H8 recurrences are Lean-proved from level 3 with exact external finite base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. Proposed polynomial/Fourier forms for its finite level-five coefficient are recorded and mutually checked, but equality to the Lean residual definition remains open; the Phi-Genesis Schur/Rayleigh results are separately formalized within their quadratic-form scope.
 
 ## Established and verified
 
@@ -13,6 +13,7 @@
 - [x] Exact H8 2→3 sparse-polynomial certificate.
 - [x] H10 radius-four glued-state diagonal transport through degree nine, both axis configurations, all m ≥ 4.
 - [x] H10 unconditional Lean recurrence for m ≥ 4 and affine formula for m ≥ 5.
+- [ ] Establish that the proposed H10 polynomial/Fourier forms equal `defectO10_num_residual_constant`; the current checker tests only mutual equivalence and supplied endpoint arithmetic.
 - [x] Phi-Genesis Schur bridge, strict pivot positivity, shifted quadratic-form bootstrap, A1 root uniqueness, and Rayleigh-minimum root convergence within their stated scope.
 - [x] Separate scalar-invariant limit and exact remainder theorem in RFT-Cosmology-Genesis.
 - [x] Existing numerical holdouts, sparse trace checks, and exact modular/CRT finite-level certificates retained as independent regression evidence.
@@ -21,7 +22,6 @@
 
 - [ ] Formalize the finite H6 2→3 bridge in Lean.
 - [ ] Formalize the finite H8 2→3 bridge in Lean.
-- [ ] Expand the H10 level-five exact residual into an explicit trigonometric/Fourier polynomial, if that stronger presentation is required.
 - [ ] Extend H6 path-class cancellation beyond the finite first-level calculation.
 - [ ] Prove the Phi-Genesis operator eigenvalue identification and establish/refute the proposed quadratic law.
 - [ ] Complete the Phi-Genesis Gate A exceptional-set characterization.

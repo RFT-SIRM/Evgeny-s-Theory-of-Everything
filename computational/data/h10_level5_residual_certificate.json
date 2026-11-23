@@ -1,0 +1,51 @@
+{
+  "formula": "C10^(5)=D6-3D5",
+  "polynomial": {
+    "s^2": -748240,
+    "c*s^2": 11036800,
+    "s^3": 4927360,
+    "c*s^3": -261920,
+    "s^4": 330960,
+    "c*s^4": 1920,
+    "s^5": -3200,
+    "c*s^5": 320,
+    "s^6": 640
+  },
+  "fourier": {
+    "1": [
+      -249810,
+      0
+    ],
+    "cos(u),sin(u)": [
+      2759440,
+      3693520
+    ],
+    "cos(2u),sin(2u)": [
+      208340,
+      -65430
+    ],
+    "cos(3u),sin(3u)": [
+      -2759560,
+      -1230840
+    ],
+    "cos(4u),sin(4u)": [
+      41490,
+      32700
+    ],
+    "cos(5u),sin(5u)": [
+      120,
+      -200
+    ],
+    "cos(6u),sin(6u)": [
+      -20,
+      10
+    ]
+  },
+  "endpoint": {
+    "D5_pi": -2505633280,
+    "D6_pi": -7512392320,
+    "C10_pi": 4507520
+  },
+  "evidence_scope": "Mutual equivalence of supplied polynomial/Fourier candidate forms and supplied endpoint arithmetic only; equality to defectO10_num_residual_constant is not checked.",
+  "candidate_expression_status": "NOT_VERIFIED_AGAINST_LEAN_RESIDUAL"
+}

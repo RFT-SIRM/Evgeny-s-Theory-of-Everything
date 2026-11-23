@@ -1,4 +1,4 @@
-> **Current status update — 9 November 2026.** The older status descriptions below are an October 2026 snapshot and are superseded by [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md). The present source Lean development has H6/H8 recurrences from level 3 (their finite 2-to-3 bridges remain exact external certificates) and an unconditional H10 recurrence from level 4 with affine form from level 5. H10 radius-four transport through degree 9 is now proved in Lean. The Phi-Genesis Schur/Rayleigh results have also advanced, but remain quadratic-form statements rather than an operator eigenvalue theorem.
+> **Current status update — 23 November 2026.** This snapshot supersedes older historical descriptions below. The pinned source Lean development proves the H6/H8 recurrences from level 3, with their finite 2-to-3 bridges supplied by exact external certificates, and proves the unconditional H10 recurrence from level 4 with affine form from level 5. H10 radius-four transport through degree 9 is proved in Lean. A proposed polynomial/Fourier expression for the finite H10 recurrence constant is recorded with an external checker that verifies only equivalence of the two supplied forms and endpoint arithmetic; equality to the pinned Lean residual definition remains open. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) for exact scope. The Phi-Genesis Schur/Rayleigh results remain separate quadratic-form results.
 
 # Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence
 
@@ -11,13 +11,13 @@
 
 ## Abstract
 
-This dissertation consolidates a research programme concerning trace defects of recursively constructed graph operators, focusing on Sierpinski-gasket approximations, SU(2)-connected operators, higher even trace moments, and a separate programme on signed Z2-flux Laplacians and spectral decimation. It distinguishes four kinds of claims: an upstream fourth-moment result reported as Lean-formalized; exact finite-level Fourier-coefficient certificates for selected higher-moment residuals; numerical recurrence checks at finitely many levels and angles; and universal recurrence statements that remain conjectural.
+This dissertation consolidates a research programme concerning trace defects of recursively constructed graph operators, focusing on Sierpinski-gasket approximations, SU(2)-connected operators, higher even trace moments, and a separate programme on signed Z2-flux Laplacians and spectral decimation. It distinguishes Lean-checked all-level recurrences within their stated ranges, exact external finite-level coefficient certificates, and numerical holdouts. It keeps these evidence categories separate and records the remaining formalization and structural questions.
 
-For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. Define the residual by $R_m^{(p)}(\theta)=\Delta_m^{(p)}(\theta)-3\Delta_{m-1}^{(p)}(\theta)$. The candidate recurrence asserts that $R_m^{(p)}(\theta)$ is independent of $m$ for $m\geq3$, while the first transition $m=2$ is exceptional. A modular calculation over three finite fields, together with Fourier-mode and denominator bounds, an operator-norm estimate, and a Chinese-remainder-theorem uniqueness argument, certifies the stated Fourier coefficients of $R_2^{(p)}$ and $R_4^{(p)}$ for these moments. Independent sparse-matrix-power calculations check predictions through level 7 at five angles. These results are finite-level evidence; they do not establish the all-level recurrence.
+For moments $p\in\{6,8,10\}$, let $\Delta_m^{(p)}(\theta)$ denote the trace defect between the specified SU(2)-connected operator and its commuting control at graph level $m$. The pinned source Lean project proves the H6/H8 all-angle recurrences from $m\geq3$, with exact external certificates for their finite $2\to3$ transitions; it proves the H10 all-angle recurrence for $m\geq4$ and its affine form for $m\geq5$. For H10, the level-five recurrence constant is $C_{10}^{(5)}=D_6-3D_5$ and is defined in the pinned Lean source by `defectO10_num_residual_constant`. The report records a proposed polynomial and Fourier representation; its checker verifies only that these supplied forms are mutually equivalent, not that either equals the Lean definition. That equality remains open. The separate modular/CRT certificate covers specified finite-level Fourier coefficients, and sparse-matrix-power calculations provide numerical holdouts through level 7 at five angles. Each evidence type has its own boundary.
 
 A separate, cross-project result now recorded in this synthesis archive proves the exact limit and finite-level remainder for a defined scalar invariant; its source proof is maintained in RFT-Cosmology-Genesis. This result is documented independently and is not presented as an all-level higher-moment recurrence or as a physical cosmological law.
 
-A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The dissertation concludes with a proof-oriented agenda: derive the recurrence from graph/operator recursion, explain the exceptional base transition, formalize the all-level result where feasible, and establish any cross-model bridge only after defining and proving a precise mapping.
+A second research strand studies signed Z2-flux Laplacians and spectral decimation. Its exceptional-value criterion remains open, exploratory mass-index patterns are not established predictive laws, and no equivalence with the SU(2) operators is assumed. The remaining SU(2) tasks include Lean-kernel closure of the finite H6/H8 base transitions, verification of the proposed H10 polynomial against its source residual definition, and further path-class analysis. Any cross-model bridge still requires a precise mapping and proof.
 
 **Keywords:** spectral graph theory; trace moments; Sierpinski graphs; SU(2) connections; Fourier coefficients; modular arithmetic; CRT; Lean; spectral decimation; reproducible computation.
 
@@ -25,7 +25,7 @@ A second research strand studies signed Z2-flux Laplacians and spectral decimati
 
 The repository name “Theory of Everything” denotes a long-term research programme, not a claim that a universal theory has been completed. This document is a research dissertation/monograph, not a claim of award of an academic degree.
 
-The strongest current milestone is: exact finite-level Fourier coefficients, reproducible numerical predictions through level 7 at a finite set of angles, and a pinned Lean build for an upstream fourth-moment result. The all-level higher-moment recurrence remains open. A passing workflow validates only the assertions it actually executes.
+The strongest current milestone includes the pinned Lean proofs of the stated H6/H8 and H10 recurrence ranges, exact external finite base-transition certificates for H6/H8, a proposed H10 level-five polynomial/Fourier expression whose two supplied forms are checked for equivalence but not yet linked to the source residual definition, and reproducible numerical holdouts through level 7 at finite angles. These are distinct forms of evidence; none establishes a universal cross-model theory. A passing workflow validates only the assertions it actually executes.
 
 The work has five goals:
 1. State the trace-defect notation consistently.
@@ -78,8 +78,8 @@ for its specified operator definitions and hypotheses, with a Lean 4 formalizati
 
 The fourth-moment theorem does not automatically imply a recurrence for $H^6$, $H^8$, or $H^{10}$. Higher moments contain additional operator products and possible cancellations, so they require their own derivations. The evidence boundary is therefore explicit:
 - H^4: reported as formally proved upstream and checked by the pinned Lean build.
-- H^6, H^8, H^10: exact finite-level coefficient certificates and numerical recurrence evidence.
-- The all-level higher-moment recurrence: open.
+- H^6 and H^8: Lean recurrences for $m\ge3$, with exact external $2\to3$ base-transition certificates not yet formalized in Lean.
+- H^10: unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Proposed polynomial/Fourier forms for the level-five recurrence constant are recorded and checked against each other, but their equality to the pinned Lean residual definition remains unproved.
 
 ## 4. Exact finite-level modular/CRT certificate
 
@@ -157,7 +157,7 @@ The repository distinguishes:
 - **CONJECTURE / OPEN:** unresolved;
 - **NOT ESTABLISHED:** evidence does not warrant the stronger claim.
 
-A reproducible computational record should identify commit SHA, command, runtime and dependencies, graph level and parameters, precision/tolerance, raw output, and known limitations. A passing workflow proves only the assertions it executes. The pinned Lean build concerns the upstream fourth-moment formalization, not the higher-moment recurrence.
+A reproducible computational record should identify commit SHA, command, runtime and dependencies, graph level and parameters, precision/tolerance, raw output, and known limitations. A passing workflow proves only the assertions it executes. The pinned Lean workflow builds the source library containing the stated H4, H6/H8, and H10 declarations; the H10 Python checker added here validates only mutual equivalence of the supplied candidate polynomial and Fourier forms plus endpoint arithmetic; it does not verify equality to the Lean residual definition.
 
 Failed runs should remain in history as evidence tied to their original commit. A later successful run on a fixed commit does not rewrite the old result; both records have distinct meanings.
 
@@ -189,26 +189,26 @@ $$
 
 The full statement, algebraic derivation, Lean theorem names, source commit, and CI evidence are kept in [the exact invariant limit theorem dossier](theorems/exact_invariant_limit.md). The source proof is maintained separately in [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis); it was merged in PR #3, and the post-merge Lean build passed.
 
-This is recorded as a related formalized scalar result, not as evidence for the open all-level recurrence for $H^6,H^8,H^{10}$, an observational CMB fit, a physical interaction, or an equivalence among the distinct operator models.
+This is recorded as a related formalized scalar result, not as evidence for the higher-moment theorem ranges beyond their stated assumptions, an observational CMB fit, a physical interaction, or an equivalence among the distinct operator models.
 ## 9. Limitations
 
 1. **Finite levels:** the modular certificate covers specified transitions, not infinitely many levels.
 2. **Finite angles:** numerical checks cover a finite set and do not prove a universal identity over the angle domain.
 3. **Implementation dependence:** the certificate depends on the implemented graph/operator construction and its mode, denominator, and norm arguments.
 4. **Shared assumptions:** independent numerical implementations can share the same mathematical or modelling mistake.
-5. **Lean scope:** the build covers the pinned upstream fourth-moment result only.
+5. **Lean scope:** the pinned build compiles the source library containing the stated H4, H6/H8, and H10 declarations. The finite H6/H8 bridge certificates and the proposed H10 residual expression remain external to the Lean kernel.
 6. **Cross-model gap:** the SU(2) and signed-flux models remain distinct until a precise bridge is proved.
 7. **Licensing:** this repository's original material is under Apache-2.0 subject to its LICENSE and NOTICE; upstream projects remain separate works under their own terms. This document is not legal advice.
 
 ## 10. Research agenda and closure criteria
 
-### Priority 1: prove the all-level recurrence
+### Priority 1: close the remaining finite Lean bridges
 
-Prove $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\geq3$, $p\in\{6,8,10\}$, and every stated admissible angle. Candidate approaches include closed-walk expansions, block-operator recursion, cancellation of connection-dependent path classes, and representation-theoretic identities. These are research directions, not established results.
+The H6/H8 recurrences are Lean-proved for $m\ge3$, and their finite $2\to3$ transitions have exact external certificates. The next formalization target is to prove these two finite transition identities in Lean where maintainable. The H10 recurrence is already Lean-proved for $m\ge4$. A candidate polynomial/Fourier form for its level-five correction is recorded, but the external checker does not establish equality to `defectO10_num_residual_constant`; that derivation remains open.
 
-### Priority 2: derive the base correction
+### Priority 2: extend the path-class explanation
 
-Explain R_2 - R_4 from the recursive construction, including the factorization and the reason the correction is absent at later transitions.
+Extend the finite first-gasket H6 closed-walk cancellation classification to higher levels, or establish precisely where its cancellation pattern fails.
 
 ### Priority 3: formalize the proof
 
@@ -228,23 +228,22 @@ Start with a precise map preserving one clearly defined quantity. Only broaden t
 
 ### Mathematical closure checklist
 
-The higher-moment recurrence should be called proved only when:
-1. a complete derivation from recursive graph/operator structure is available;
-2. the same coefficient is proved for every m >= 3 and the base transition is handled separately;
-3. hypotheses, parameter domain, and exceptions are explicit;
-4. intermediate identities agree with the finite-level certificate;
-5. a machine-checked proof is supplied where feasible, without unverified placeholders;
-6. the claims ledger and documentation are updated to match the theorem.
+The status of each higher moment must be stated with its own theorem range and evidence boundary:
+1. H6/H8: Lean recurrence for every $m\ge3$, with the finite $2\to3$ transition currently supported by exact external certificates.
+2. H10: Lean recurrence for every $m\ge4$ and affine form for every $m\ge5$. The proposed polynomial/Fourier forms are mutually checked externally, but equality to the pinned Lean residual definition remains open.
+3. Do not present the proposed H10 coefficient forms as an expansion of the Lean residual until their equality to `defectO10_num_residual_constant` is established.
+4. Preserve the assumptions, parameter domain, orientation, graph indexing, and exceptional cases of the pinned source.
+5. Keep regression tests and the claims ledger aligned with the source theorem and the external certificate.
 
 The broader programme should be called unified only after a precise, proved bridge between the SU(2) and signed-flux models exists.
 
 ## 11. Conclusion
 
-The current milestone is neither merely a numerical fit nor a completed universal theorem. It comprises exact finite-level Fourier-coefficient certificates, numerical predictions checked through level 7 at a finite set of angles, and a pinned Lean build for an upstream fourth-moment result. These components provide different forms of evidence and must remain distinct.
+The current milestone is neither merely a numerical fit nor a completed universal theory. It comprises the pinned Lean recurrence results for H4, H6/H8, and H10 within their stated ranges; exact external finite base-transition certificates for H6/H8; a proposed H10 polynomial/Fourier expression whose internal equivalence is checked but whose equality to the Lean residual remains open; and numerical holdouts through level 7 at finite angles. These components provide different forms of evidence and must remain distinct.
 
-The modular/CRT calculation replaces approximate coefficient recovery with an exact finite-level statement under explicit arithmetic and norm bounds. The sparse-matrix-power holdout adds a separate numerical route. The first-transition correction gives a precise target for structural explanation. Yet the central question—whether the later residual is independent of every level and every admissible angle—remains open.
+The modular/CRT calculation certifies only its stated finite-level coefficients under explicit arithmetic and norm bounds. The sparse-matrix-power holdout adds a separate numerical route. The H10 candidate polynomial and Fourier forms have been shown equivalent to each other, but their equality to the pinned Lean residual definition remains unproved; the H6/H8 finite base-transition identities likewise remain external certificates. The structural explanation of path-class cancellation and the separate cross-model questions remain open.
 
-The next step is mathematical, not cosmetic: derive the all-level recurrence, explain the exceptional base transition, and formalize the result where feasible. The signed-flux questions should remain separate until their exceptional cases are resolved and a precise bridge is proved. A defensible scientific record states both what has been established and what remains unknown.
+The next steps are to formalize the H6/H8 finite base-transition certificates in Lean where feasible, extend the H6 path-class analysis, and continue the independent signed-flux questions. The signed-flux questions should remain separate until their exceptional cases are resolved and a precise bridge is proved. A defensible scientific record states both what has been established and what remains unknown.
 
 ## Appendix A. Reproduction commands
 
@@ -253,6 +252,8 @@ Run from a clean checkout at the commit being evaluated.
 ~~~sh
 python -m pip install "numpy>=1.24,<3" "scipy>=1.10,<2"
 python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
+python -m computational.h10_level5_residual_certificate --output artifacts/h10_level5_residual_certificate.json
+python -m unittest computational.test_h10_level5_residual_certificate -v
 ~~~
 
 This verifies the finite-level Fourier coefficients within the verifier's stated assumptions and bounds. It does not prove the all-level recurrence.
@@ -268,7 +269,7 @@ This checks finite predictions through level 7 at the stated angles; it is a num
 python scripts/check_docs.py
 ~~~
 
-This checks repository structure and provenance references, not mathematical validity. Use the pinned Lean workflow for the upstream fourth-moment formalization only.
+This checks repository structure and provenance references, not mathematical validity. Use the pinned Lean workflow for the source Lean library. The H10 script checks mutual equivalence of the supplied candidate forms and endpoint arithmetic only; it does not prove equality to the Lean residual definition.
 
 ## Appendix B. Claim-status table
 
@@ -279,7 +280,9 @@ This checks repository structure and provenance references, not mathematical val
 | R_2^(p) coefficients for p = 6, 8, 10 | Exact finite-level certificate | First transition only |
 | R_4^(p) coefficients for p = 6, 8, 10 | Exact finite-level certificate | Level-3-to-4 transition only |
 | Predictions through level 7 at five angles | Numerically reproduced | Finite sparse-matrix-power holdout |
-| R_m^(p) = R_4^(p) for all m >= 3 and all stated angles | Open conjecture | Requires structural all-level proof |
+| H6/H8 recurrence for m >= 3 | LEAN-CHECKED | Their finite 2-to-3 transitions are exact external certificates, not yet Lean-kernel theorems |
+| H10 recurrence for m >= 4 and affine form for m >= 5 | LEAN-CHECKED | Radius-four transport and recurrence are proved in the pinned Lean source |
+| H10 level-five recurrence constant | OPEN — CANDIDATE FORMS RECORDED | The checker verifies only that the supplied polynomial and Fourier forms are equivalent; equality to `defectO10_num_residual_constant` remains to be proved |
 | Structural explanation of 1→2 exception | Open | Correction is certified; recursive cause is not derived |
 | Complete Gate A exceptional-value criterion | Open / not established | Existing diagnostic does not close all cases |
 | Predictive mass-index law | Not established | Needs a derived mechanism and prospective held-out tests |

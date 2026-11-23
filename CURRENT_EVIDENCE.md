@@ -23,7 +23,11 @@ The authoritative definitions of the graph, operators, edge connections, orienta
 | H4 | traceDefect_closed: all-angle identity \(\Delta_m(H^4,\theta)=-16(3^{m-1}+1)\sin^2(\theta/2)\), for every \(m\ge1\). | No remaining gap for this stated theorem. |
 | H6 | defectO6_num_growth_recurrence and defectO6_num_affine_growth: all-angle recurrence and affine form for every \(m\ge3\). The exact residual is defectO6_num_residual_constant. | The finite \(2\to3\) transition is supplied by exact Gaussian-integer polynomial arithmetic in computational/p6_level3_orientation_certificate.py. It is an exact external certificate, not a Lean-kernel theorem. Combining it with the Lean recurrence gives the all-angle formula from \(m\ge2\). |
 | H8 | defectO8_succ_num_level4_constant_boundary and defectO8_num_affine_closed_form_from_level3: all-angle recurrence and affine form from \(m\ge3\). The exact residual is defectO8_num_residual_constant. | The finite \(2\to3\) transition is supplied by the exact sparse-polynomial certificate computational/p8_base_certificate.py. This certificate is not yet a Lean-kernel theorem. |
-| H10 | H10TransportAll_proved establishes radius-four glued-state diagonal transport through degree 9 for both axis configurations, for all \(m\ge4\). defectO10_succ_num_level5_constant_boundary_unconditional proves the recurrence for \(m\ge4\); defectO10_num_affine_closed_form_from_level5_unconditional proves the affine form for \(m\ge5\). | defectO10_num_residual_constant is an exact finite level-five trace expression. It has not yet been expanded into an elementary trigonometric/Fourier polynomial. This is a presentation/simplification gap, not a missing transport hypothesis in the cited Lean results. |
+| H10 | H10TransportAll_proved establishes radius-four glued-state diagonal transport through degree 9 for both axis configurations, for all \(m\\ge4\). defectO10_succ_num_level5_constant_boundary_unconditional proves the recurrence for \(m\\ge4\); defectO10_num_affine_closed_form_from_level5_unconditional proves the affine form for \(m\\ge5\). | The pinned Lean definition `defectO10_num_residual_constant` remains an exact finite level-five trace expression. A proposed polynomial/Fourier expression is recorded in the H10 report, but the checker verifies only that those two supplied forms are equivalent and checks supplied endpoint arithmetic; it does not prove that either form equals the Lean definition for all angles. |
+
+### H10 level-five correction — proposed coefficient forms
+
+The pinned Lean recurrence gives the level-five constant as \(C_{10}^{(5)}=D_6-3D_5\), with `defectO10_num_residual_constant` as its source definition. The H10 report records a proposed polynomial and its proposed Fourier representation. The Python checker proves only that these two supplied expressions are equivalent in \(\\mathbb Z[c,s]/(c^2+s^2-1)\) and checks endpoint arithmetic using supplied trace values. It does not prove that the proposed polynomial equals `defectO10_num_residual_constant` for all real angles or reconstruct the graph traces. The link to the Lean residual therefore remains open; this is an external check of the candidate's internal representation, not a Lean-kernel coefficient theorem.
 
 ### Source map
 
@@ -54,7 +58,7 @@ The page [exact_invariant_limit.md](theorems/exact_invariant_limit.md) records t
 ## 5. Remaining mathematical tasks
 
 1. Formalize the exact finite \(2\to3\) H6 and H8 transition certificates in Lean, if a maintainable kernel-level proof is feasible.
-2. Expand the exact level-five H10 residual into an explicit trigonometric/Fourier expression, if that stronger presentation is required.
+2. Derive and verify that the proposed H10 polynomial equals the pinned Lean definition `defectO10_num_residual_constant` for all real angles; the current checker proves only equivalence of the two supplied candidate forms.
 3. Extend the H6 path-class cancellation result beyond the finite first-level calculation.
 4. Complete Phi-Genesis Gate A and the full exceptional-set criterion.
 5. Establish the operator-eigenvalue interpretation and proposed quadratic law in Phi-Genesis.

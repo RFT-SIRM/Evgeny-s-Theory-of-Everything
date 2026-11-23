@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23
+
+- Recorded a proposed polynomial and Fourier representation for the finite H10 level-five recurrence correction.
+- Added an exact-integer checker for equivalence of the two supplied candidate forms and endpoint arithmetic against supplied trace values; it does not derive the candidate from the pinned Lean residual definition.
+- Kept the H10 all-level recurrence and affine-form theorems separate from this external candidate-form check.
+- Left OP-2 open pending proof that the proposed polynomial equals the pinned Lean residual definition.
+
+
 This file records material repository changes; the complete chronological record
 is the Git commit history.
 
