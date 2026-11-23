@@ -30,7 +30,9 @@ C_{10}^{(5)}(\theta)={}&-249810+2759440\cos u+3693520\sin u\\
 \]
 
 The script verifies the equivalence exactly in the quotient ring
-\(\mathbb Z[c,s]/(c^2+s^2-1)\), using integer binomial coefficients.
+\(\mathbb Z[c,s]/(c^2+s^2-1)\), using integer binomial coefficients. It also
+evaluates the polynomial at \((c,s)=(1,0)\) and \((0,1)\), and checks
+agreement at \(\theta=\pi\) with the supplied trace endpoint values.
 The endpoint arithmetic recorded for the trace calculation is
 \(D_5(\pi)=-2,505,633,280\),
 \(D_6(\pi)=-7,512,392,320\), hence

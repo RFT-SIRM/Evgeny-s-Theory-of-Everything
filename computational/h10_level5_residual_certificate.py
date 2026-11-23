@@ -81,16 +81,28 @@ def verify():
     rhs=reduce_relation(fourier_to_cs())
     if lhs!=rhs:
         raise AssertionError({"polynomial":lhs,"fourier":rhs})
-    if sum(v for (i,j),v in POLY.items() if i==0 and j==0)!=0:
-        raise AssertionError("C10(0) must be zero")
-    if D6_PI-3*D5_PI != 4507520:
-        raise AssertionError("endpoint trace residual mismatch")
+    def evaluate(poly, c, s):
+        return sum(value * (c ** i) * (s ** j) for (i, j), value in poly.items())
+
+    c10_at_zero = evaluate(POLY, 1, 0)
+    c10_at_pi = evaluate(POLY, 0, 1)
+    endpoint_from_traces = D6_PI - 3 * D5_PI
+    if c10_at_zero != 0:
+        raise AssertionError(f"C10(0) must be zero, got {c10_at_zero}")
+    if c10_at_pi != 4507520 or endpoint_from_traces != c10_at_pi:
+        raise AssertionError(
+            f"theta=pi endpoint mismatch: polynomial={c10_at_pi}, traces={endpoint_from_traces}"
+        )
     return {
-        "identity":"verified in Z[c,s]/(c^2+s^2-1)",
-        "polynomial_terms":len(POLY),
-        "fourier_modes":len(FOURIER),
-        "D5_pi":D5_PI,"D6_pi":D6_PI,"C10_pi":D6_PI-3*D5_PI,
-        "scope":"symbolic coefficient identity and exact endpoint arithmetic; graph trace reconstruction is not performed by this script"
+        "identity": "verified in Z[c,s]/(c^2+s^2-1)",
+        "polynomial_terms": len(POLY),
+        "fourier_modes": len(FOURIER),
+        "C10_zero_from_polynomial": c10_at_zero,
+        "C10_pi_from_polynomial": c10_at_pi,
+        "D5_pi": D5_PI,
+        "D6_pi": D6_PI,
+        "C10_pi_from_traces": endpoint_from_traces,
+        "scope": "symbolic coefficient identity and exact endpoint arithmetic; graph trace reconstruction is not performed by this script",
     }
 
 def main():
@@ -98,7 +110,7 @@ def main():
     parser.add_argument("--output")
     args=parser.parse_args()
     result=verify()
-    payload=json.dumps(result,indent=2,sort_keys=True)+"\\n"
+    payload = json.dumps(result, indent=2, sort_keys=True) + "\n"
     if args.output:
         Path(args.output).parent.mkdir(parents=True,exist_ok=True)
         Path(args.output).write_text(payload)
