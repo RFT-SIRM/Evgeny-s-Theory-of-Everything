@@ -25,6 +25,10 @@ The authoritative definitions of the graph, operators, edge connections, orienta
 | H8 | defectO8_succ_num_level4_constant_boundary and defectO8_num_affine_closed_form_from_level3: all-angle recurrence and affine form from \(m\ge3\). The exact residual is defectO8_num_residual_constant. | The finite \(2\to3\) transition is supplied by the exact sparse-polynomial certificate computational/p8_base_certificate.py. This certificate is not yet a Lean-kernel theorem. |
 | H10 | H10TransportAll_proved establishes radius-four glued-state diagonal transport through degree 9 for both axis configurations, for all \(m\ge4\). defectO10_succ_num_level5_constant_boundary_unconditional proves the recurrence for \(m\ge4\); defectO10_num_affine_closed_form_from_level5_unconditional proves the affine form for \(m\ge5\). | defectO10_num_residual_constant is an exact finite level-five trace expression. It has not yet been expanded into an elementary trigonometric/Fourier polynomial. This is a presentation/simplification gap, not a missing transport hypothesis in the cited Lean results. |
 
+### H10 level-five correction — exact coefficient identity
+
+The H10 recurrence constant at level five is recorded as \(C_{10}^{(5)}=D_6-3D_5\). Its polynomial and equivalent Fourier expressions, endpoint values, and evidence boundary are documented in [the H10 report](computational/H10_EXACT_RESIDUAL_2026-11-23.md). The repository script verifies the polynomial/Fourier identity exactly in \(\mathbb Z[c,s]/(c^2+s^2-1)\) and checks the supplied endpoint arithmetic. It does not independently reconstruct the graph trace matrices. This coefficient check is external Python arithmetic, not a Lean-kernel theorem.
+
 ### Source map
 
 - H6/H8 recurrence and affine-form proofs: [FinalTilde.lean](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f/formalization/EvgenyTheorem/FinalTilde.lean).

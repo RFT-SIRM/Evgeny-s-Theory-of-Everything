@@ -11,9 +11,9 @@ For the SU(2)-connected Sierpiński-gasket operators, Lean already proves the al
 
 These are exact algebraic verifications, not numerical fits, but they are not yet Lean-kernel theorems. The next task is to formalize these finite polynomial identities in Lean without creating an unmaintainable proof term. See [Evgeny-Theorem PR #11](https://github.com/RFT-SIRM/Evgeny-Theorem/pull/11) for the source discussion.
 
-## OP-2 — Explicit trigonometric form of the H10 correction
+## OP-2 — Explicit trigonometric form of the H10 correction [CLOSED AT EXTERNAL-CERTIFICATE LEVEL, 23 NOVEMBER 2026]
 
-The unconditional H10 recurrence and affine form are proved in Lean from levels 4 and 5 respectively. The correction defectO10_num_residual_constant is currently an exact finite level-five trace expression. Expand and certify it as an explicit trigonometric/Fourier polynomial, or document why the trace-expression form is the preferred canonical statement.
+The unconditional H10 recurrence and affine form remain Lean-proved from levels 4 and 5 respectively. The coefficient expression is recorded and checked as an exact polynomial/Fourier identity by the external script and test. The script does not independently reconstruct the underlying graph traces; see computational/H10_EXACT_RESIDUAL_2026-11-23.md. A Lean-kernel coefficient theorem remains a possible strengthening.
 
 ## OP-3 — Extend path-class cancellation beyond the first gasket
 

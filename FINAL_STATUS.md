@@ -1,6 +1,6 @@
 # Current research status
 
-**Status as of 9 November 2026:** the synthesis archive is being updated to reflect formal results added after its October snapshot. H4 is fully Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. The signed-Z2 Schur/Rayleigh results are a separate workstream.
+**Status as of 23 November 2026:** H4 is Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. The H10 level-five coefficient expression is accompanied by an exact external polynomial/Fourier identity checker, with the evidence boundary stated in its report. The signed-Z2 Schur/Rayleigh results are separate.
 
 ## Source and verification snapshot
 
@@ -16,7 +16,7 @@
 1. **H4:** all-angle closed formula for every level m ≥ 1, Lean-checked in Evgeny-Theorem.
 2. **H6:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact Gaussian-integer polynomial certificate, not yet a Lean-kernel theorem.
 3. **H8:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact sparse-polynomial certificate, not yet a Lean-kernel theorem.
-4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. The level-five constant remains an exact trace expression.
+4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. The level-five coefficient expression has an exact external polynomial/Fourier identity checker, not a Lean-kernel coefficient proof.
 5. **Phi-Genesis:** the Schur and bootstrap programme includes strict pivot positivity, shifted quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the bootstrap window, and convergence of selected roots as Rayleigh minima. It is not yet an operator eigenvalue theorem.
 6. **Scalar invariant:** the separately defined scalar invariant has a Lean-checked exact limit and finite-level remainder in RFT-Cosmology-Genesis.
 

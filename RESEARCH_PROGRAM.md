@@ -12,9 +12,9 @@ The current formal status is no longer merely numerical:
 
 - **H6:** Lean proves the recurrence and affine form from level 3 onward. The exceptional finite 2→3 identity has an exact Gaussian-integer polynomial certificate outside the Lean kernel.
 - **H8:** Lean proves the recurrence and affine form from level 3 onward. The exceptional finite 2→3 identity has an exact sparse-polynomial certificate outside the Lean kernel.
-- **H10:** Lean proves radius-four corner transport through degree 9, an unconditional recurrence from level 4, and an unconditional affine form from level 5. The exact level-five correction remains a finite trace expression rather than an expanded trigonometric polynomial.
+- **H10:** Lean proves radius-four corner transport through degree 9, an unconditional recurrence from level 4, and an unconditional affine form from level 5. The finite level-five correction $D_6-3D_5$ is expanded by an exact external polynomial/Fourier certificate; the expansion itself is not a Lean-kernel theorem. See [the calculation report](computational/H10_EXACT_RESIDUAL_2026-11-23.md).
 
-The next mathematical tasks are narrowly scoped: formalize the H6/H8 finite base identities in Lean where maintainable, and simplify the exact H10 level-five residual if an explicit coefficient formula is required. Numerical holdouts and modular/CRT certificates remain independent regression evidence, not substitutes for Lean proofs.
+The next mathematical tasks are narrowly scoped: formalize the H6/H8 finite base identities in Lean where maintainable, extend the H6 path-class analysis, and continue the separate Phi-Genesis questions. Numerical holdouts and modular/CRT certificates remain independent regression evidence, not substitutes for Lean proofs.
 
 ## Workstream C — Signed-Z2-flux spectral decimation
 
@@ -39,6 +39,6 @@ The separately defined scalar invariant has an exact finite-level remainder and 
 1. Keep the current evidence matrix and source SHA pins synchronized.
 2. Finish the synthesis PR by passing documentation, exact arithmetic, modular/CRT, and pinned Lean CI on the same head.
 3. Consider Lean-kernel formalization of the H6/H8 finite base bridges.
-4. Derive an explicit H10 correction polynomial if that form is mathematically useful.
+4. Preserve and reproduce the exact H10 coefficient certificate in CI; pursue a Lean-kernel coefficient proof only if it is maintainable.
 5. Continue the remaining Phi-Genesis spectral questions without upgrading quadratic-form statements to eigenvalue theorems.
 6. Attempt a cross-model theorem only after a precise candidate map has been stated and tested.
