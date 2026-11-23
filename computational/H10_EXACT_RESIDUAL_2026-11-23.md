@@ -1,4 +1,4 @@
-# H10 level-five residual: exact coefficient identity
+# H10 level-five residual: proposed coefficient expression and internal identity check
 
 Date: 23 November 2026
 
@@ -6,7 +6,7 @@ The H10 recurrence proved in the pinned Lean source has an unconditional
 level-five affine form. Its finite correction is represented by the trace
 difference (C_{10}^{(5)}=D_6-3D_5).
 
-The coefficient expression recorded for this correction is
+A proposed coefficient expression for this correction is recorded as
 
 \[
 \begin{aligned}
@@ -29,7 +29,7 @@ C_{10}^{(5)}(\theta)={}&-249810+2759440\cos u+3693520\sin u\\
 \end{aligned}
 \]
 
-The script verifies the equivalence exactly in the quotient ring
+The script verifies the equivalence of the supplied polynomial and Fourier forms exactly in the quotient ring
 \(\mathbb Z[c,s]/(c^2+s^2-1)\), using integer binomial coefficients. It also
 evaluates the polynomial at \((c,s)=(1,0)\) and \((0,1)\), and checks
 agreement at \(\theta=\pi\) with the supplied trace endpoint values.
@@ -38,13 +38,16 @@ The endpoint arithmetic recorded for the trace calculation is
 \(D_6(\pi)=-7,512,392,320\), hence
 \(C_{10}^{(5)}(\pi)=4,507,520\).
 
-**Evidence boundary.** This repository-side script checks the exact
-polynomial/Fourier identity and the stated endpoint arithmetic. It does not
+**Evidence boundary.** This repository-side script checks only the internal
+identity between the supplied polynomial and Fourier forms and the stated
+endpoint arithmetic. It does not derive the candidate polynomial from the
+pinned Lean definition `defectO10_num_residual_constant`, nor does it
 reconstruct the level-five and level-six graph trace matrices from scratch.
-The trace values and coefficient expression are inputs to this checker,
-not outputs independently derived by it. The all-level recurrence and
-affine form remain Lean results in the pinned upstream source; this finite
-coefficient expansion is not a Lean-kernel theorem.
+The trace values and candidate coefficients are inputs to this checker,
+not outputs independently derived by it. Therefore equality of the proposed
+polynomial to the source residual for all real angles remains open. The
+all-level recurrence and affine form remain Lean results in the pinned
+upstream source; the candidate-form check is not a Lean-kernel theorem.
 
 Run:
 

@@ -1,6 +1,6 @@
 # Current research status
 
-**Status as of 23 November 2026:** H4 is Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. The H10 level-five coefficient expression is accompanied by an exact external polynomial/Fourier identity checker, with the evidence boundary stated in its report. The signed-Z2 Schur/Rayleigh results are separate.
+**Status as of 23 November 2026:** H4 is Lean-checked; H6/H8 have Lean recurrences from level 3 plus exact external base-transition certificates; H10 has an unconditional Lean recurrence from level 4 and affine form from level 5. A proposed H10 polynomial/Fourier expression is recorded; its checker validates mutual equivalence of the supplied forms and endpoint arithmetic, not equality to the pinned Lean residual definition. The signed-Z2 Schur/Rayleigh results are separate.
 
 ## Source and verification snapshot
 
@@ -16,14 +16,14 @@
 1. **H4:** all-angle closed formula for every level m ≥ 1, Lean-checked in Evgeny-Theorem.
 2. **H6:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact Gaussian-integer polynomial certificate, not yet a Lean-kernel theorem.
 3. **H8:** all-angle Lean recurrence and affine form for every m ≥ 3. The finite 2→3 transition is supplied by an exact sparse-polynomial certificate, not yet a Lean-kernel theorem.
-4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. The level-five coefficient expression has an exact external polynomial/Fourier identity checker, not a Lean-kernel coefficient proof.
+4. **H10:** radius-four glued-state diagonal transport through degree nine is Lean-proved for all m ≥ 4; the all-angle recurrence is unconditional for m ≥ 4, and the affine formula is unconditional for m ≥ 5. Proposed polynomial/Fourier forms for the level-five coefficient have an external mutual-equivalence checker; equality to `defectO10_num_residual_constant` is not yet established.
 5. **Phi-Genesis:** the Schur and bootstrap programme includes strict pivot positivity, shifted quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the bootstrap window, and convergence of selected roots as Rayleigh minima. It is not yet an operator eigenvalue theorem.
 6. **Scalar invariant:** the separately defined scalar invariant has a Lean-checked exact limit and finite-level remainder in RFT-Cosmology-Genesis.
 
 ## Still open
 
 - Lean-kernel proofs of the finite H6 and H8 2→3 certificates.
-- An explicit trigonometric/Fourier expansion of the exact H10 level-five trace correction.
+- Derive and verify that the proposed H10 polynomial equals the pinned Lean definition `defectO10_num_residual_constant` for all real angles.
 - An all-level path-class explanation for higher-moment cancellation.
 - Phi-Genesis operator eigenvalue identification, proposed quadratic law, and the small-level extension.
 - Complete Gate A exceptional-set characterization.

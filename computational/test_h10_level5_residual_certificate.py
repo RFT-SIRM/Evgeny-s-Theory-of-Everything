@@ -9,6 +9,7 @@ class H10ResidualCertificateTests(unittest.TestCase):
         self.assertEqual(
             result["identity"], "verified in Z[c,s]/(c^2+s^2-1)"
         )
+        self.assertEqual(result["source_residual_equality"], "NOT_CHECKED")
         self.assertEqual(result["C10_zero_from_polynomial"], 0)
         self.assertEqual(result["C10_pi_from_polynomial"], 4507520)
         self.assertEqual(result["D5_pi"], -2505633280)

@@ -24,7 +24,7 @@ jobs:
         run: python computational/verify_higher_moment_coefficients_modular.py --output artifacts/higher_moment_modular_certificate.json
       - name: Check H10 certificate Python syntax
         run: python -m py_compile computational/h10_level5_residual_certificate.py computational/test_h10_level5_residual_certificate.py
-      - name: Verify exact H10 level-five correction
+      - name: Check supplied H10 candidate identity and endpoints
         run: python -m computational.h10_level5_residual_certificate --output artifacts/h10_level5_residual_certificate.json
       - name: Run exact H10 regression tests
         run: python -m unittest computational.test_h10_level5_residual_certificate -v

@@ -1,8 +1,6 @@
-"""Exact symbolic checks for the H10 level-five correction.
+"""Exact symbolic checks for proposed H10 level-five coefficient forms.
 
-This certificate verifies the published polynomial/Fourier identity in
-Z[c,s]/(c^2+s^2-1), plus exact endpoint values. It does not rebuild the
-large graph trace from first principles; see the report for this boundary.
+\nThis checker verifies equivalence of the supplied polynomial and Fourier\nexpressions in Z[c,s]/(c^2+s^2-1), plus supplied endpoint arithmetic. It does\nnot establish equality to the pinned Lean definition of the residual or\nrebuild the graph trace from first principles; see the report.
 """
 from __future__ import annotations
 import argparse, json
@@ -102,7 +100,8 @@ def verify():
         "D5_pi": D5_PI,
         "D6_pi": D6_PI,
         "C10_pi_from_traces": endpoint_from_traces,
-        "scope": "symbolic coefficient identity and exact endpoint arithmetic; graph trace reconstruction is not performed by this script",
+        "source_residual_equality": "NOT_CHECKED",
+        "scope": "mutual equivalence of supplied candidate polynomial/Fourier forms and supplied endpoint arithmetic only; equality to defectO10_num_residual_constant is not checked",
     }
 
 def main():

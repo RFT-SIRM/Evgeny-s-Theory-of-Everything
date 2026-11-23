@@ -2,10 +2,11 @@
 
 ## 2026-11-23
 
-- Expanded the exact finite H10 level-five recurrence correction as a polynomial in cos(theta/2), sin(theta/2), and as a Fourier series.
-- Added exact integer/rational arithmetic verification, a separate Gaussian-integer endpoint cross-check at theta=pi, regression tests, and a machine-readable coefficient record.
-- Recorded the H10 coefficient expansion as an exact external certificate, distinct from the all-level Lean recurrence and affine-form theorems.
-- Closed OP-2 and synchronized the current evidence ledger, status, research programme, dissertation, and CI workflow.
+- Recorded a proposed polynomial and Fourier representation for the finite H10 level-five recurrence correction.
+- Added an exact-integer checker for equivalence of the two supplied candidate forms and endpoint arithmetic against supplied trace values; it does not derive the candidate from the pinned Lean residual definition.
+- Kept the H10 all-level recurrence and affine-form theorems separate from this external candidate-form check.
+- Left OP-2 open pending proof that the proposed polynomial equals the pinned Lean residual definition.
+
 
 This file records material repository changes; the complete chronological record
 is the Git commit history.

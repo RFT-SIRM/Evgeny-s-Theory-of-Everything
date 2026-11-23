@@ -34,13 +34,13 @@ For $H^6,H^8,H^{10}$, the recurrence coefficient is fixed from levels 3 and 4 an
 - [Independent sparse level-7 holdout report](computational/HIGHER_MOMENT_SPARSE_LEVEL7.md)
 - [Higher-moment Fourier coefficient candidates](computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md)
 - [Exact finite-level modular/CRT coefficient certificate](computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md)
-- [H10 level-five residual report](computational/H10_EXACT_RESIDUAL_2026-11-23.md)
-- [H10 exact coefficient checker](computational/h10_level5_residual_certificate.py)
+- [H10 level-five candidate-expression report](computational/H10_EXACT_RESIDUAL_2026-11-23.md)
+- [H10 polynomial/Fourier identity checker](computational/h10_level5_residual_certificate.py)
 - [Exact modular certificate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-modular-certificate.yml)
 - [Independent sparse level-7 workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/independent-sparse-level7.yml)
 - [Fourier coefficient candidate workflow](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/actions/workflows/higher-moment-coefficient-candidates.yml)
 
-**Updated proof status.** Lean proves the all-angle H6/H8 recurrences from level 3, with exact external certificates for their finite 2-to-3 transitions. For H10, Lean proves radius-four diagonal transport through degree nine, the unconditional recurrence from level 4, and affine form from level 5. The finite level-five correction is expanded by an exact external polynomial/Fourier identity certificate, not a Lean-kernel coefficient theorem. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) and the H10 certificate report.
+**Updated proof status.** Lean proves the all-angle H6/H8 recurrences from level 3, with exact external certificates for their finite 2-to-3 transitions. For H10, Lean proves radius-four diagonal transport through degree nine, the unconditional recurrence from level 4, and affine form from level 5. Proposed polynomial/Fourier forms for the finite level-five correction are recorded, and the checker verifies their mutual equivalence and supplied endpoint arithmetic; it does not prove equality to `defectO10_num_residual_constant` in the pinned Lean source, so that derivation remains open. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) and the H10 report.
 
 ## Research strands
 

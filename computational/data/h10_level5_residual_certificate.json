@@ -46,5 +46,6 @@
     "D6_pi": -7512392320,
     "C10_pi": 4507520
   },
-  "evidence_scope": "The script checks the polynomial/Fourier identity and supplied endpoint arithmetic; it does not independently reconstruct graph traces."
+  "evidence_scope": "Mutual equivalence of supplied polynomial/Fourier candidate forms and supplied endpoint arithmetic only; equality to defectO10_num_residual_constant is not checked.",
+  "candidate_expression_status": "NOT_VERIFIED_AGAINST_LEAN_RESIDUAL"
 }
