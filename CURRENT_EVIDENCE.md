@@ -1,13 +1,13 @@
 # Current evidence snapshot
 
-**Snapshot date: 9 November 2026.** This file is the authoritative current status of the research strands represented in this synthesis archive. The repository title names a research programme; it is not a claim that a universal theory or a cross-model theorem has been completed.
+**Snapshot date: 23 November 2026.** This file is the authoritative current status of the research strands represented in this synthesis archive. The repository title names a research programme; it is not a claim that a universal theory or a cross-model theorem has been completed.
 
 ## 1. Pinned source projects
 
 | Workstream | Exact source revision | Verification boundary |
 |---|---|---|
 | SU(2)-connected Sierpiński-gasket operators | [Evgeny-Theorem @ 4ccfae17](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f) | Lean 4.33.1 / Mathlib 4.33.1. Latest successful source Lean build: [run 42481191661](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/runs/42481191661), on a7b732a04d1b4e619cd050b2b643daf491e86fa2. A GitHub compare confirms the 14 commits from that build to 4ccfae changed documentation/HTML only, not Lean source. |
-| Signed-Z2-flux spectral decimation | [Phi-Genesis @ a80cc8a0](https://github.com/RFT-SIRM/Phi-Genesis/commit/a80cc8a08ce68bb945d0867fbdfcbea74a20c20f) | Schur/Rayleigh PRs #25–#29 are merged; their PR-head Lean runs passed. Scope: quadratic-form and Rayleigh-minimum statements under their stated hypotheses. |
+| Signed-Z2-flux spectral decimation | [Phi-Genesis @ a80cc8a0](https://github.com/RFT-SIRM/Phi-Genesis/commit/a80cc8a08ce68bb945d0867fbdfcbea74a20c20f) | Pinned Lean source includes the later merged eigenvalue-identification, least-eigenvalue convergence, and signed/signless transfer results (#30–#33). Scope remains the internally defined graph matrices; this is not yet an equivalence to the external SU(2) operator model. |
 | Exact scalar-invariant limit | [RFT-Cosmology-Genesis @ 2a7782a8](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/commit/2a7782a8a56181313808019202089f167cf09cc2) | Merged PR #3; post-merge Lean build [run 38904548580](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/actions/runs/38904548580). This is a distinct theorem about a separately defined scalar formula. |
 
 The synthesis Lean workflow checks out the pinned Evgeny-Theorem source and runs its library build. It does not compile Phi-Genesis or RFT-Cosmology-Genesis as part of the same Lean package.
@@ -38,7 +38,7 @@ The pinned Lean recurrence gives the level-five constant as \(C_{10}^{(5)}=D_6-3
 - Unconditional H10 transport and affine form: [FinalClosed10.lean](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f/formalization/EvgenyTheorem/FinalClosed10.lean).
 - Corner order/orientation support: [CornerLocality.lean](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f/formalization/EvgenyTheorem/CornerLocality.lean).
 
-The H6 finite-transition discussion is tracked in [Evgeny-Theorem PR #11](https://github.com/RFT-SIRM/Evgeny-Theorem/pull/11). An exact external certificate must not be described as a Lean-kernel theorem.
+The finite H6/H8 certificates are maintained in the pinned Evgeny-Theorem source, not in this synthesis repository. [Evgeny-Theorem PR #11](https://github.com/RFT-SIRM/Evgeny-Theorem/pull/11) is closed without merge; its work was superseded by the later source state. An exact external certificate must not be described as a Lean-kernel theorem.
 
 ## 3. Signed-Z2-flux spectral-decimation results
 
@@ -61,7 +61,7 @@ The page [exact_invariant_limit.md](theorems/exact_invariant_limit.md) records t
 2. Derive and verify that the proposed H10 polynomial equals the pinned Lean definition `defectO10_num_residual_constant` for all real angles; the current checker proves only equivalence of the two supplied candidate forms.
 3. Extend the H6 path-class cancellation result beyond the finite first-level calculation.
 4. Complete Phi-Genesis Gate A and the full exceptional-set criterion.
-5. Establish the operator-eigenvalue interpretation and proposed quadratic law in Phi-Genesis.
+5. Establish a quantitative uniform tail estimate and prove or refute the proposed quadratic root-shift asymptotic in Phi-Genesis; least-eigenvalue identification and convergence are already Lean-checked for its internal graph matrices.
 6. Prove a precise bridge between the SU(2)-connected operators and signed-Z2-flux Laplacians, if such a bridge exists.
 
 ## 6. Evidence policy
@@ -75,4 +75,4 @@ A green CI run validates only the assertions exercised by that workflow. It does
 
 ## 7. Merge criterion
 
-The synthesis PR is ready only when the documentation/reference audit, exact modular certificate, recurrence arithmetic audit, and pinned Lean build pass on the same PR head. The source projects are consumed at the exact pins above; this integration does not modify either upstream source project.
+The evidence snapshot is tied to the exact source pins above. The synthesis integration PR #5 has already been merged; its documentation/reference audit, exact modular certificate, and pinned Lean build passed on the merged commit. This documentation update does not modify any upstream source project.

@@ -16,7 +16,7 @@ The standalone research dissertation by **Evgeny Zaprudnov** consolidates the pr
 
 ## Current milestone
 
-The current milestone is a reproducible synthesis of the current formal results: Lean-checked H4; H6/H8 recurrences with exact external base-transition certificates; an unconditional H10 recurrence and affine form; and the separate Schur/Rayleigh results from Phi-Genesis. See [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md) for exact ranges and boundaries.
+The current milestone is a reproducible synthesis of Lean-checked H4; H6/H8 recurrences with exact external finite base-transition certificates; the unconditional H10 recurrence and affine form; the signed-Z2 least-eigenvalue identification and convergence theorem for the explicitly defined internal graph matrices; and the exact limit of a separate scalar invariant. The source pins, theorem ranges, and proof boundaries are recorded in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
 
 ### Higher-moment holdouts
 
@@ -55,7 +55,7 @@ for its specified operator definitions and assumptions, with a Lean 4 formalizat
 
 Source: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis).
 
-This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Its merged Schur work proves the corner-response recursion, pivot positivity in the bootstrap window, quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the window, and convergence of selected roots as Rayleigh minima. The operator eigenvalue formulation, explicit closed form, proposed quadratic law, levels below 6, and Gate A's complete exceptional-set criterion remain open. The mass-index rule is not established as predictive.
+This project studies signed graph Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory spectral or mass-index patterns. Its merged Lean work proves the Schur corner-response bridge, strict pivot positivity in the bootstrap window, uniqueness of the selected A1 root, identification of that root with the least eigenvalue of the internally defined graph matrix Q_(6+n), convergence of the least-eigenvalue sequence, and transfer to the gauge-equivalent signed matrix. The limit lies in an exact rational interval of width 2·10^-36. These statements apply to the specified internal graph matrices; they do not identify them with the external theta=2π local-face operator. Still open are an effective uniform tail estimate, an explicit limiting-constant characterization, proof or refutation of the quadratic root-shift law, the complete Gate A exceptional-set criterion, and any extension beyond the stated level range. The mass-index rule is not established as predictive.
 
 No equivalence between the SU(2)-connected operators and signed Z₂-flux Laplacians is assumed. A bridge between them remains an open research question.
 

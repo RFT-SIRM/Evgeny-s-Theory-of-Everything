@@ -20,9 +20,9 @@ The next mathematical tasks are narrowly scoped: formalize the H6/H8 finite base
 
 **Source:** [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis)
 
-The merged Schur programme proves the graph-matrix corner-response recursion, strict pivot positivity in the bootstrap window, shifted quadratic-form bounds for levels at least 6, uniqueness of the A1 root in the window, and convergence of selected roots as Rayleigh minima of the quadratic form.
+The pinned Lean source proves the graph-matrix corner-response bridge, strict pivot positivity in the bootstrap window, uniqueness of the selected A1 root, identification of that root with the least eigenvalue of its explicitly defined graph matrix Q_(6+n), convergence of the least-eigenvalue sequence, and transfer to the gauge-equivalent signed matrix. The limit is enclosed in an exact rational interval of width 2·10^-36 and is a zero of the limiting A1 characteristic.
 
-Remaining tasks include the operator eigenvalue identification, the proposed quadratic law, the small-level cases N < 6, and the full Gate A exceptional-set criterion. The mass-index fit remains exploratory and is not a predictive law.
+Remaining tasks are a quantitative uniform tail bound, explicit identification of the limiting constant, proof or refutation of the quadratic root-shift asymptotic, the complete Gate A exceptional-set criterion, extension beyond the stated levels, and exact identification with the external theta=2π local-face operator. The mass-index fit remains exploratory and is not a predictive law. This archive records the upstream result only; it does not modify Phi-Genesis.
 
 ## Workstream D — Cross-model bridge
 
