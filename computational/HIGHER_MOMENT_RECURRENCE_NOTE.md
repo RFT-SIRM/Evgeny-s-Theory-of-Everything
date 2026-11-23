@@ -1,6 +1,6 @@
 # Higher-moment recurrence: evidence and exact finite-level coefficients
 
-**Status: exact Fourier coefficients certified for the finite-level residuals; the all-level recurrence remains an open conjecture.**
+**Historical numerical/certificate note (finite-level scope).** This note documents the original finite-level modular/CRT and numerical evidence. Its original statement that the all-level recurrence is open is superseded by the later pinned Lean results summarized in [CURRENT_EVIDENCE.md](../CURRENT_EVIDENCE.md): H6/H8 recurrences are Lean-checked for m ≥ 3, and H10 for m ≥ 4 (with its affine form for m ≥ 5). The finite certificates and numerical holdouts described below retain only their stated finite-level scope.
 
 ## 1. Definitions
 
