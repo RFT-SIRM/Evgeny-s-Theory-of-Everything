@@ -26,9 +26,9 @@ The exact declarations and finite-certificate files are listed in [CURRENT_EVIDE
 
 ## 3. Signed-Z2-flux model
 
-The signed-flux model in [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) uses its own signed Laplacian, gauge conventions, and spectral-decimation boundary data. Its Schur/Rayleigh results are separate from the SU(2) trace-moment results. The current formalized bootstrap statements concern a shifted quadratic form and Rayleigh minima; do not relabel them as an operator eigenvalue theorem without a proof.
+The signed-flux model in [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) uses its own signed Laplacian, gauge conventions, and spectral-decimation boundary data. Its Lean development proves, for its explicitly defined graph matrices at levels N=6+n, that the selected A1 root is the least eigenvalue, proves convergence of the least-eigenvalue sequence to a limit in an exact rational interval of width 2·10^-36, and transfers the result to the gauge-equivalent signed matrix. The limit is also a zero of the limiting A1 characteristic.
 
-Gate A's full exceptional-value criterion, the proposed quadratic spectral law, and the predictive interpretation of the mass-index fit remain unestablished.
+These theorems do not identify the internal graph matrices with the external theta=2π local-face operator, and do not establish an explicit closed form. An effective uniform tail estimate, the quadratic root-shift asymptotic, the complete exceptional-set criterion, and any extension beyond the stated levels remain open. The predictive interpretation of the mass-index fit is not established. This signed-Z2 model remains distinct from the SU(2) trace-moment model.
 
 ## 4. Exact limit of a separately defined scalar invariant
 
