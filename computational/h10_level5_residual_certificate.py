@@ -1,6 +1,9 @@
 """Exact symbolic checks for proposed H10 level-five coefficient forms.
 
-\nThis checker verifies equivalence of the supplied polynomial and Fourier\nexpressions in Z[c,s]/(c^2+s^2-1), plus supplied endpoint arithmetic. It does\nnot establish equality to the pinned Lean definition of the residual or\nrebuild the graph trace from first principles; see the report.
+This checker verifies equivalence of the supplied polynomial and Fourier
+expressions in Z[c,s]/(c^2+s^2-1), plus supplied endpoint arithmetic. It does
+not establish equality to the pinned Lean definition of the residual or
+rebuild the graph trace from first principles; see the report.
 """
 from __future__ import annotations
 import argparse, json

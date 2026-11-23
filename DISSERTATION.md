@@ -79,7 +79,7 @@ for its specified operator definitions and hypotheses, with a Lean 4 formalizati
 The fourth-moment theorem does not automatically imply a recurrence for $H^6$, $H^8$, or $H^{10}$. Higher moments contain additional operator products and possible cancellations, so they require their own derivations. The evidence boundary is therefore explicit:
 - H^4: reported as formally proved upstream and checked by the pinned Lean build.
 - H^6 and H^8: Lean recurrences for $m\ge3$, with exact external $2\to3$ base-transition certificates not yet formalized in Lean.
-- H^10: unconditional Lean recurrence for $m\ge4$, affine form for $m\ge5$, and an exact external polynomial/Fourier expansion of the level-five recurrence constant.
+- H^10: unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Proposed polynomial/Fourier forms for the level-five recurrence constant are recorded and checked against each other, but their equality to the pinned Lean residual definition remains unproved.
 
 ## 4. Exact finite-level modular/CRT certificate
 
