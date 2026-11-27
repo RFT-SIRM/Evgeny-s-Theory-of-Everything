@@ -3,7 +3,8 @@
 ## 1. SU(2)-connected graph operators
 
 URL: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem)  
-Pinned revision: [4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f)
+Pinned revision (exact certificates): [4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/4ccfae17ae8d1ed8c9f1c1488ecec87fe9c97d9f)  
+Lean build pin (since 27 November 2026): [f2d0669066e45e0bf8525bd0b4caf27177986805](https://github.com/RFT-SIRM/Evgeny-Theorem/commit/f2d0669066e45e0bf8525bd0b4caf27177986805) — contains the H12 Lean recurrence for m ≥ 3; the six operator-definition files are identical at both revisions.
 
 Current evidence boundary:
 - H4 all-angle closed formula is Lean-checked for every m ≥ 1.
