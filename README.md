@@ -16,7 +16,7 @@ The standalone research dissertation by **Evgeny Zaprudnov** consolidates the pr
 
 ## Current milestone
 
-The current milestone is a reproducible synthesis of Lean-checked H4; H6/H8 recurrences with exact external finite base-transition certificates; the unconditional H10 recurrence and affine form; the signed-Z2 least-eigenvalue identification and convergence theorem for the explicitly defined internal graph matrices; and the exact limit of a separate scalar invariant. The source pins, theorem ranges, and proof boundaries are recorded in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
+The current milestone is a reproducible synthesis of Lean-checked H4; H6/H8 recurrences with exact external finite base-transition certificates; the unconditional H10 recurrence and affine form; the H12 recurrence and affine form from level 3 (Lean-checked in the pinned upstream build, with an exact external certificate for its explicit polynomial); the signed-Z2 least-eigenvalue identification and convergence theorem for the explicitly defined internal graph matrices; and the exact limit of a separate scalar invariant. The source pins, theorem ranges, and proof boundaries are recorded in [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md).
 
 ### Higher-moment holdouts
 
@@ -113,3 +113,7 @@ Every result should state its definitions, assumptions, proof or algorithm, comm
 ## H12 boundary contraction update — 23 November 2026
 
 The degree-12 gluing expansion now has an exact combinatorial boundary-word contraction: all 1,024 odd-pairing strata vanish and all 1,024 even-pairing strata reduce to ordered products of diagonal 2×2 spin blocks. A cyclic matching argument removes the apparent 48 level-three long-gap cases from the trace; no off-diagonal corner block is needed in the final contraction. The radius-five locality argument and finite audits through levels 3–10 are documented in [the H12 boundary-contraction report](computational/H12_BOUNDARY_DIAGONAL_CONTRACTION_2026-11-23.md). This is not yet a Lean-kernel H12 recurrence: copy-transfer synthesis and the Lean formalization remain open.
+
+## H12 Lean update — 27 November 2026
+
+The Lean proof of the H12 recurrence now exists upstream and is built by this repository's Lean workflow (pin updated to Evgeny-Theorem f2d0669): for every real θ and every m ≥ 3, D_(m+1) = 3 D_m + C_12, with the affine closed form for m ≥ 3. The explicit forms D_3 = 32 s² Q_3 and C_12 = −64 s² Q_12 remain exact external certificates, not Lean-kernel theorems. The independent CRT certificate in this repository agrees with them exactly: its 13-term residual polynomial equals −64 s² Q_12, and D_m(π) matches for m = 3..8 ([cross-check](computational/h12_explicit_formula_crosscheck.py), run in the modular-certificate workflow). Details and scope: [CURRENT_EVIDENCE.md](CURRENT_EVIDENCE.md), section 9.

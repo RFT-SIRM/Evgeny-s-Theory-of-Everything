@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-27
+
+- Updated the Lean workflow pin to Evgeny-Theorem f2d0669, the first revision with the Lean proof of the H12 recurrence for m ≥ 3; recorded that the six operator-definition files behind the exact certificates are unchanged since 4ccfae17.
+- Added an exact cross-check of the explicit H12 closed form against the independent CRT certificate (residual polynomial, residual at θ=π for m=3..7, D_m(π) for m=3..8) and wired its unit test into the modular-certificate workflow.
+- Updated CURRENT_EVIDENCE, FINAL_STATUS, OPEN_PROBLEMS (OP-8) and README. The explicit polynomial form of H12 remains an external exact certificate, not a Lean-kernel theorem; all other open items are unchanged.
+
 ## 2026-11-23
 
 - Recorded a proposed polynomial and Fourier representation for the finite H10 level-five recurrence correction.

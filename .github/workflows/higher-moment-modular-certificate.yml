@@ -40,6 +40,11 @@ jobs:
         run: cmp artifacts/h12_residual_certificate.json computational/data/h12_residual_certificate.json
       - name: Run H12 finite transition regression tests
         run: python -m unittest computational.test_h12_residual_certificate -v
+      - name: Cross-check the explicit H12 closed form against the CRT certificate
+        run: |
+          python -m py_compile computational/h12_explicit_formula_crosscheck.py computational/test_h12_explicit_formula_crosscheck.py
+          python -m computational.h12_explicit_formula_crosscheck
+          python -m unittest computational.test_h12_explicit_formula_crosscheck -v
       - name: Rebuild H12 diagonal boundary contraction inventory
         run: |
           python -m py_compile computational/h12_boundary_diagonal_contraction.py computational/test_h12_boundary_diagonal_contraction.py computational/audit_operator_corner_labels_radius5.py computational/diagnose_corner_moments_h12.py computational/compare_h12_corner_moments_diagnostic.py
